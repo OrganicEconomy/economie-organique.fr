@@ -1,6 +1,13 @@
-Title: Les règles du jeu
+Title: Règles du jeu complètes
 Date: 2024-10-16 15:00
-Category: Détails
+Modified: 2024-10-16 15:00
+Category: Définition
+Tags: Base, Définition
+Slug: regles-du-jeu
+Lang: fr
+Author: Gus
+Summary: Les règles complètes de l'économie organique
+Status: published
 
 # Tout cela n'est qu'un jeu
 
@@ -30,6 +37,15 @@ Notez que ces règles, bien que complètes, sont vouées à évoluer avec le tem
 
 
 # Chapitre I - La monnaie
+## Dualité de la monnaie
+
+La monnaie organique se divise en deux monnaies : **une monnaie citoyenne et une monnaie d'investissement**.
+Il n'est pas possible de n'utiliser qu'une seule des deux et de faire fi de l'autre, **elles sont indissociables**.
+
+La monnaie citoyenne est la monnaie d'usage : elle permet à chaque citoyen et citoyenne d'acheter ses biens de consommation (pain, poulet, voiture, aspirateur, etc).
+
+La monnaie d'investissement ne peut pas être utilisée comme monnaie d'usage, elle ne peut pas servir à acheter un bien, quel qu'il soit.
+La monnaie d'investissement **doit** être investie par les citoyens dans un ou plusieurs [écosystèmes]({filename}/definitions/ecosysteme.md).
 
 # Chapitre II - La propriété
 
