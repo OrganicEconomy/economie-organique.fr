@@ -30,6 +30,11 @@ En d'autres termes, le salaire, ce n'est que du bonus !
 * Si un acteur a son ratio déjà atteint alors que d'autres ne l'ont pas (ratio supérieur), il passe son tour jusqu'à ce que tous les ratios aient été remplis.
 * Une fois tous les ratios complétés, la distribution des unités de monnaie suivantes reprend le même schéma.
 
+C'est un peu comme si tout le monde avait un verre, avec des tailles de verres qui peuvent varier.
+Tant qu'on n'a pas rempli tous les verres, on continu à remplir ceux où il reste de la place.
+Quand tous les verres sont pleins, on vide tout et on recommence.
+Sauf que dans le cas de la monnaie, on ne la balance pas dans l'évier mais ça va dans les expériences économiques des acteurs.
+
 ## Exemple de distribution de salaire
 
 * Sam, Frodon et Pippin font parti d'un écosystème, la comté.

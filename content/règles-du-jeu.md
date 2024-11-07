@@ -100,12 +100,12 @@ Pour mieux comprendre => [Expérience économique]({filename}/definitions/experi
 ## Écosystème
 
 * Un écosystème est une structure morale.
-* L'écosystème est la seule forme morale possible en économie organique.
+* L'écosystème est la seule forme morale possible en économie organique. Pas d'entreprise, pas d'association, pas de structure étatique : des écosystèmes !
 * N'importe quel citoyen ou groupe de citoyens peut, à tout moment, créer un écosystème.
 * Un écosystème se définit par un nom et un identifiant (une série de chiffres).
 * L'écosystème est la seule structure qui puisse recevoir la monnaie d'investissement des citoyens.
-* La monnaie d'investissement reçue de la part des citoyens pour l'écosystème (sous forme d'engagements d'au moins six mois) devient de la monnaie citoyenne et a une durée de vie de 30 jours.
-* La monnaie d'investissement reçue de la part des citoyens est la seule et unique forme de trésorerie qu'un écosystème puisse avoir.
+* La monnaie d'investissement reçue de la part des citoyens par l'écosystème (sous forme d'engagements d'au moins six mois) devient de la monnaie citoyenne et a une durée de vie de 30 jours.
+* La monnaie d'investissement reçue de la part des citoyens est la seule et unique forme de trésorerie qu'un écosystème puisse avoir. Point de profit mes amis.
 * Un écosystème ne peut pas stocker la monnaie citoyenne reçue via le paiement de citoyens.
 * Toute monnaie citoyenne directement reçue par un écosystème est immédiatement tranferée dans le salaire des citoyens qui y sont acteurs (voir *Salaire des acteurs* ci-dessous).
 
@@ -117,10 +117,10 @@ Pour mieux comprendre => [Écosystème]({filename}/definitions/ecosysteme.md)
     1. [Administrateur]({filename}/definitions/administrateur.md)
     2. [Payeur]({filename}/definitions/payeur.md)
     3. [Acteur]({filename}/definitions/acteur.md)
-* Un citoyen peut avoir un ou plusieurs de ces rôles au sein d'un ou plusieurs écosystèmes.
+* Un citoyen peut avoir un ou plusieurs de ces rôles au sein d'un ou plusieurs écosystèmes. Sans limite.
 * Plusieurs citoyens peuvent avoir les mêmes rôles au sein du même écosystème.
-* Il ne peut pas y avoir zéro administrateur dans un écosystème, il doit obligatoirement y en avoir au moins un.
-* Tout citoyen faisant parti de l'écosystème y tient forcément au moins le rôle d'acteur. Ainsi, l'administrateur est forcément aussi acteur.
+* Il ne peut pas y avoir zéro administrateur dans un écosystème, il doit obligatoirement y en avoir au moins un. Sinon, ce serait comme avoir perdu son mot de passe ou ses clés :X
+* Tout citoyen faisant parti de l'écosystème y tient obligatoirement au moins le rôle d'acteur. Ainsi, l'administrateur est forcément aussi acteur.
 * Il peut y avoir zéro payeur dans un écosystème. Pas de souci.
 
 Pour mieux comprendre => [Administrateur]({filename}/definitions/administrateur.md), [Payeur]({filename}/definitions/payeur.md), [Acteur]({filename}/definitions/acteur.md)
@@ -139,6 +139,18 @@ Pour mieux comprendre => [Salaire]({filename}/definitions/salaire.md)
 
 # Chapitre III - Propriété du sol
 
+Cette partie ne peut évidemment pas être mise en place tout de suite dans notre monde capitaliste.
+À défaut de cela, elle reste une cible, une inspiration pour le moment où une bascule potentielle nous permettra de changer encore plus profondément notre société.
+
+## Usufruit
+
+* Un citoyen, une citoyenne n'est pas propriétaire d'un bien immobilier, ni d'un terrain ni de quoi que ce soit qui s'en approche.
+* Un citoyen ne peut posséder que des objets matériels, mais pas de bien immateriel ni de portion de terre.
+* Pour habiter un lieu, un citoyen se porte usufruitier d'une parcelle.
+* Un citoyen usufruitier paye un loyer au clocher auquel il s'est rattaché.
+
 ## Clocher
+
+
 
 # Chapitre IV - La loi et la justice
