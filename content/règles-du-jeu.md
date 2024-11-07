@@ -18,7 +18,7 @@ Un jeu, comme qui dirait, plutôt bof...
 Mais bon, un jeu où chacun de nous est un joueur ou une joueuse (ou un je ne sais quoi entre les deux, notre époque étant très confuse).
 
 Et bien sûr, qui dit jeu dit règles du jeu.
-Mais ici, ces règles sont particulières et tout à fait unique pour un jeu de société car elles présentent trois caractéristiques assez... colossales.
+Mais ici, ces règles sont particulières et tout à fait uniques pour un jeu de société car elles présentent trois caractéristiques assez... colossales.
 Les voici :
 1. Les règles ne sont pas établies à l'avance : elles changent et évoluent pendant la partie.
 2. Certaines personnes peuvent créer, modifier voire supprimer des règles ; mais la majorité, les autres, ne le peuvent pas.
@@ -33,45 +33,45 @@ C'est-à-dire qu'on ne peut pas tous gagner : il faut des perdants pour qu'il y 
 Tout cela étant dit, voici maintenant les règles du jeu, totales et exhaustives, d'une société entièrement organique.
 Notez que contrairement à ses prédécesseurs, l'économie organique ne présente pas les trois règles fondamentales, c'est-à-dire que :
 1. Les règles sont très limitées et cette base suffit. Bon, pour le moment, elles vont surement encore un peu bouger, mais grosso-modo, vous avez compris.
-2. Personne ne peut modifier les règles de base. Mais toutes les citoyennes, tous les citoyens, peuvent créer, modifier ou supprimer des sous-règles. 
+2. Personne ne peut modifier les règles de base. Mais toutes les citoyennes et tous les citoyens peuvent créer, modifier ou supprimer des sous-règles. 
 3. Chacun est libre de changer de jeu (voir le chapitre Propriété).
 
 # Chapitre I - Le citoyen
 
 * Dans toutes les définitions ci-dessous, *citoyen* est le terme générique qui regroupe tout individu (homme, femme, enfant) qui s'intègre dans une économie organique.
-* Il n'y a aucune condition pour être citoyen : aucun droit du sol, aucune faculté mentale ou technique, rien que d'être un être humain. Cette limitation pourra être élargie dès lors qu'un animal développe la faculté et le besoin de commercer ou qu'un extra-terrestre débarque sur terre.
+* Il n'y a aucune condition pour être citoyen : aucun droit du sol, aucune faculté mentale ou technique, rien que d'être un être humain. Cette limitation pourra être élargie dès lors qu'un animal développera la faculté de commercer ou qu'un extra-terrestre débarquera sur terre.
 * Le citoyen est une personne physique.
 * Le citoyen est définie, techniquement, par un nom de son choix et par un identifiant unique (une série de chiffres).
 
 # Chapitre II - La monnaie
 ## Dualité de la monnaie
 
-* La monnaie organique se divise en deux monnaies : **une monnaie citoyenne et une monnaie d'investissement**. Il n'est pas possible de n'utiliser qu'une seule des deux et de faire fi de l'autre, **elles sont indissociables**.
+* La monnaie organique se divise en deux monnaies : **une monnaie citoyenne et une monnaie d'investissement**. Il n'est pas possible de n'utiliser qu'une seule des deux et de faire fi de l'autre, **elles sont indissociables**. Comme le beurre et le demi-sel.
 
 * Lors de la création du compte d'un citoyen, celui-ci ce voit attribué 3 comptes :
     * un compte de [monnaie citoyenne]({filename]/definitions/monnaie-citoyenne.md) ;
     * un compte de [monnaie d'investissement]({filename}/definitions/monnaie-d-investissement.md) ;
-    * un compte d'[expérience économique]({filename}/definitions/experience-economique.md).
+    * et un compte d'[expérience économique]({filename}/definitions/experience-economique.md).
 * Ces trois comptes sont initialement à zéro.
-* Un citoyen ne peut avoir qu'un seul comptes de chaque. Pas un de plus.
+* Un citoyen ne peut avoir qu'un seul compte de chaque. Pas un de plus. Et pas un de moins d'ailleurs.
 
 ## Monnaie citoyenne
 
 * Chaque jour, le citoyen obtient une quantité de monnaie citoyenne (```Q```) calculée selon son expérience économique (```E```) :
-    * ```Q = E^(1/3) + 1```
-* La [monnaie citoyenne]({filename]/definitions/monnaie-citoyenne.md) est la monnaie d'usage : elle permet à chaque citoyen et citoyenne d'acheter ses biens de consommation (pain, poulet, voiture, aspirateur, etc).
+    * ```Q = E^(1/3) + 1``` (Oui, on fait des maths, mais c'est parce qu'on fait un truc concret là !)
+* La [monnaie citoyenne]({filename}/definitions/monnaie-citoyenne.md) est la monnaie d'usage : elle permet à chaque citoyen et citoyenne d'acheter ses biens de consommation (pain, poulet, voiture, aspirateur, etc).
 * Le citoyen peut dépenser sa monnaie citoyenne auprès de tout citoyen et de tout écosystème.
 * Le citoyen peut engager une portion de sa monnaie citoyenne auprès d'autres citoyens et/ou d'écosystèmes (voir [engagement]({filename}/definitions/engagement.md)).
 * Chaque unité de monnaie citoyenne a une durée de vie de 30 jours.
 * Il va sans dire que les unités de monnaie citoyenne les plus anciennes doivent être dépensées avant les autres.
-* Toute unité de monnaie citoyenne non dépensée qui arrive a échéance des 30 jours de vie est immédiatement versée sur l'[expérience économique]({filename}/definitions/experience-economique.md) de son propriétaire.
+* Toute unité de monnaie citoyenne non dépensée qui arrive a échéance des 30 jours de vie est immédiatement versée sur l'[expérience économique]({filename}/definitions/experience-economique.md) de son propriétaire. Pas de gaspillage.
 
 Pour mieux comprendre => [Monnaie citoyenne]({filename}/definitions/monnaie-citoyenne.md)
 
 ## Monnaie d'investissement
 
 * Chaque jour, le citoyen obtient une quantité de monnaie d'investissement (```Q```) calculée selon son expérience économique (```E```) :
-    * ```Q = E^(1/3) + 1```
+    * ```Q = E^(1/3) + 1``` (Oui, c'est la même formule de calcul que pour la première, c'est facile à retenir).
 * La monnaie d'investissement **doit** être investie par les citoyens dans un ou plusieurs [écosystèmes]({filename}/definitions/ecosysteme.md). La monnaie d'investissement ne peut pas être utilisée comme monnaie d'usage, elle ne peut pas servir à acheter un bien, quel qu'il soit.
 * La monnaie d'investissement a une durée de vie de 1 (un) jour.
 * L'investissement se fait uniquement par engagements de six mois minimum (voir [engagement]({filename}/definitions/engagement.md)).
@@ -88,14 +88,14 @@ Pour mieux comprendre => [Monnaie d'investissement]({filename}/definitions/monna
 * La quantité de monnaie dans l'expérience économique d'un citoyen est inalterable. Elle ne peut pas descendre, être ponctionnée ni aliénée.
 * L'expérience économique peut stagner ou croître, mais jamais baisser.
 * La quantité de [monnaie citoyenne]({filename}/definitions/monnaie-citoyenne.md) et de [monnaie d'investissement]({filename}/definitions/monnaie-d-investissement.md) sont calculées selon la quantité de monnaie totale présente dans l'expérience économique à l'instant du calcul.
-* La formule de calcul est la suivante :
+* La formule de calcul est la suivante, pour rappel :
     * ``` Q = E^(1/3) + 1```
     * où ```Q``` est la quantité de monnaie citoyenne et de monnaie d'investissement générées quotidiennement ;
     * et ```E``` le montant de l'expérience économique.
 
 Pour mieux comprendre => [Expérience économique]({filename}/definitions/experience-economique.md)
 
-# Chapitre II- Entreprendre
+# Chapitre III - Entreprendre
 
 ## Écosystème
 
