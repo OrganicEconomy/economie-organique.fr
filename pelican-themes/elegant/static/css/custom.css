@@ -1,0 +1,5 @@
+.article-content,
+div.recent-posts p {
+  font: 1.2em/1.6 "PT Serif Caption",Baskerville,Garamond,Georgia,"DejaVu Serif","Times New Roman",Times,serif;
+  text-align: justify;
+}

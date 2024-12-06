@@ -11,7 +11,7 @@ Status: published
 
 # Tout cela n'est qu'un jeu
 
-La société est un jeu.
+**La société est un jeu.**
 J'avoue qu'il n'est pas très drôle, du moins pas hyper souvent.
 Et en plus, pas pour tout le monde et surtout pas tout le temps.
 Un jeu, comme qui dirait, plutôt bof...
@@ -139,7 +139,7 @@ Pour mieux comprendre => [Salaire]({filename}/definitions/salaire.md)
 
 # Chapitre III - Propriété du sol
 
-Cette partie ne peut évidemment pas être mise en place tout de suite dans notre monde capitaliste.
+Contrairement aux précédentes, cette partie ne peut pas être mise en place tout de suite dans notre monde capitaliste.
 À défaut de cela, elle reste une cible, une inspiration pour le moment où une bascule potentielle nous permettra de changer encore plus profondément notre société.
 
 ## Usufruit
@@ -151,6 +151,29 @@ Cette partie ne peut évidemment pas être mise en place tout de suite dans notr
 
 ## Clocher
 
+* Un clocher est un écosystème.
+* N'importe quel citoyen dont la parcelle est rattachée à un clocher peut y être acteur, même pour un ratio de zéro, afin de pouvoir y participer.
+* Un clocher est dans l'obligation d'accepter qu'un citoyen rattaché soit acteur du clocher.
+* Les loyers payés par les citoyens rattachés à un clocher vont directement dans le salaire des acteurs du clocher.
 
+La zone des clochers :
+    * Un clocher administre des parcelles physiques qui doivent toutes être contigües.
+    * Un clocher doit administrer au moins trois parcelles différentes.
+    * Un citoyen ou un groupe de citoyen dont la parcelle se trouve à la frontière de deux zones de clochers différents peut choisir de changer de clocher parmi ces deux là.
+    * La zone d'administration d'un clocher est donc mouvante : elle peut grandir et rapetisser.
+    * N'importe quel groupe de citoyens usufruitiers de trois parcelles contigües peuvent créer un nouveau clocher et y être rattaché.
+    * Si une zone de clocher devient non contigüe suite à une séparation de groupe ou si un clocher se retrouve avec seulement deux parcelles habitées, les citoyens de la zone doivent choisir entre :
+        * Créer un nouveau clocher (s'ils sont sur au moins trois parcelles contigües).
+        * Se rattacher à un des clochers dont la zone est contigüe avec leurs parcelles.
+    * Un clocher est dans l'obligation d'accepter un citoyen ou groupe de citoyen à devenir usufruitier si celui-ci en éprouve le besoin, est en capacité de payer le loyer et qu'une parcelle habitable est disponible.
+
+* Les rôles des acteurs du clocher sont les suivants :
+    * Enregistrer les arrivées et les départs des citoyens usufruitiers.
+    * Entretenir les parcelles non habitables (qui sont donc communes).
+    * Organiser en toute neutralité la politique de la zone administrée.
+
+Pour mieux comprendre => [Clocher]({filename}/definitions/clocher.md)
 
 # Chapitre IV - La loi et la justice
+
+On n'en est pas encore là. Ce sujet reste pour savoir qu'il va falloir l'approfondir.
