@@ -6,7 +6,7 @@ Tags: Définition, Propriété
 Lang: fr
 Author: Gus
 Summary: La définition du clocher.
-Status: published
+Status: hidden
 
 # Le clocher
 

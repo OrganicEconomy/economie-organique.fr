@@ -6,7 +6,7 @@ Tags: Définition, Propriété
 Lang: fr
 Author: Gus
 Summary: La définition de l'usufruit.
-Status: published
+Status: hidden
 
 # L'usufruit
 

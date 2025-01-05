@@ -6,7 +6,7 @@ Tags: Définition, Écosystème
 Lang: fr
 Author: Gus
 Summary: La définition du rôle d'un administrateur dans un écosystème.
-Status: published
+Status: hidden
 
 # L'administrateur
 

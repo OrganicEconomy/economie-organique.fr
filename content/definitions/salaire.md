@@ -6,7 +6,7 @@ Tags: Définition, écosystème
 Lang: fr
 Author: Gus
 Summary: La définition détaillée du salaire en économie-organique.
-Status: published
+Status: hidden
 
 # Le Salaire
 

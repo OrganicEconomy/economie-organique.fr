@@ -6,7 +6,7 @@ Tags: Définition, Monnaie
 Lang: fr
 Author: Gus
 Summary: La définition de l'engagement
-Status: published
+Status: hidden
 
 # L'engagement
 

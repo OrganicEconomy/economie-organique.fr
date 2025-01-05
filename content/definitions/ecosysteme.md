@@ -6,7 +6,7 @@ Tags: Définition, écosystème
 Lang: fr
 Author: Gus
 Summary: La définition détaillée de ce qu'est un écosystème en économie-organique.
-Status: published
+Status: hidden
 
 # L'écosystème
 

@@ -6,7 +6,7 @@ Tags: Définition, Écosystème
 Lang: fr
 Author: Gus
 Summary: La définition du droit de pioche.
-Status: published
+Status: hidden
 
 # Le Droit de pioche
 

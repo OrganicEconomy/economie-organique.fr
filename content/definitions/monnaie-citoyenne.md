@@ -6,7 +6,7 @@ Tags: Définition, Monnaie
 Lang: fr
 Author: Gus
 Summary: La définition de la monnaie citoyenne
-Status: published
+Status: hidden
 
 # La monnaie citoyenne
 

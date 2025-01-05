@@ -6,7 +6,7 @@ Tags: Définition, Monnaie
 Lang: fr
 Author: Gus
 Summary: La définition de la monnaie d'investissement
-Status: published
+Status: hidden
 
 # La monnaie d'investissement
 
