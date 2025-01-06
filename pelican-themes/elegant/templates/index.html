@@ -102,10 +102,10 @@
                 {% if loop.index0 < RECENT_ARTICLES_COUNT %}
                 <div itemscope class="recent-posts-article span4">
                     <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
-                        {% if article.featimg %}
-                            <div class="featured-img" style="background-image: url('{{ SITEURL }}/{{ article.featimg }}')"></div>
+                        {% if article.featured_image %}
+                            <div class="featured-img" style="background-image: url('{{ SITEURL }}/{{ article.featured_image }}')"></div>
                         {% endif %}
-												<h6 class="entry-title">{{ article.title }}</h6>
+                        <h6 class="entry-title">{{ article.title }}</h6>
                         {%if article.subtitle %}
                         <small class="subtitle">
                             {{ article.subtitle }}
