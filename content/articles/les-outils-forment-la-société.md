@@ -8,6 +8,7 @@ Lang: fr
 Author: Gus
 Summary: On entend souvent le postulat que "l'Homme est mauvais" et que c'est de là que viendrait tous nos soucis. Mais si c'était faux ? Si, en réalité, les outils induisaient nos comportements ?
 Status: published
+Featured_image: images/cactus.jpg
 
 # L'Homme est-il mauvais ?
 

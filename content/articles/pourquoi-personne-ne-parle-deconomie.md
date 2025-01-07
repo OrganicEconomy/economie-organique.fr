@@ -1,6 +1,13 @@
 Title: Pourquoi personne ne parle d'économie ?
 Date: 2024-10-10 15:32
-Category: Économie
+Category: Blog
+Tags: Blog
+Slug: personne-ne-parle-d-economie
+Lang: fr
+Author: Gus
+Summary: Mais pourquoi personne ne parle ni ne pense à l'économie ? Cet outil qui représente pourtant la base de notre système humain semble être complètement ignoré, comme s'il était imuable, une fatalité. Alors qu'en fait, y'a moyen !
+Status: published
+Featured_image: images/Personne-ne-parle-d-economie-min.jpg
 
 # C'est surement une erreur
 

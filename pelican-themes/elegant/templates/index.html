@@ -41,9 +41,9 @@
 
 <div class="row-fluid">
     {% if LANDING_PAGE_TITLE %}
-    {% set css_class = 'span10 offset2' %}
+    {% set css_class = 'col-10 offset-2' %}
     {% if PROJECTS and LANDING_PAGE_TITLE %}
-    {% set css_class = 'span12' %}
+    {% set css_class = 'col-12' %}
     {% endif %}
     <header class="page-header {{css_class}}">
     <h1><a href="{{ SITEURL }}">{{ LANDING_PAGE_TITLE }}</a></h1>
@@ -52,9 +52,9 @@
 
     <div class="row-fluid">
         {% if LANDING_PAGE_TITLE and landing_page.page %}
-        {% set css_class = 'span8 offset2' %}
+        {% set css_class = 'col-8 offset-2' %}
         {% if PROJECTS and LANDING_PAGE_TITLE %}
-        {% set css_class = 'span8' %}
+        {% set css_class = 'col-8' %}
         {% endif %}
         <div class="{{css_class}}">
             <header>
@@ -67,9 +67,9 @@
         {% endif %}
 
         {% if PROJECTS %}
-        {% set css_class = 'span8 offset2' %}
+        {% set css_class = 'col-8 offset-2' %}
         {% if PROJECTS and LANDING_PAGE_TITLE %}
-        {% set css_class = 'span4' %}
+        {% set css_class = 'col-4' %}
         {% endif %}
         <div class="{{css_class}}">
             <header>
@@ -87,28 +87,29 @@
     </div>
 
     {% if articles %}
-    {% set css_class = 'span12' %}
+    {% set css_class = 'col-12' %}
     {% if articles and PROJECTS and LANDING_PAGE_TITLE %}
-    {% set css_class = 'span12' %}
+    {% set css_class = 'col-12' %}
     {% endif %}
     {% from '_includes/_defaults.html' import RECENT_ARTICLES_COUNT, ARCHIVES_URL, CATEGORIES_URL with context %}
-    <div class="row-fluid">
+    <div class="row">
         <div class="{{css_class}}">
-            <header>
-            <h1 id="recent-posts">Articles récents <a id="allposts" href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Tous les articles</a></h1>
+            <header class="row">
+		    <h1 id="recent-posts" class="col-12 col-md-6">Articles récents </h1>
+		    <h1 class="col-12 col-md-6"><a id="allposts" href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Tous les articles</a></h1>
             </header>
-            <div class="recent-posts">
+            <div class="recent-posts row">
                 {% for article in articles %}
                 {% if loop.index0 < RECENT_ARTICLES_COUNT %}
-                <div itemscope class="recent-posts-article span4">
+                <div itemscope class="recent-posts-article col-12 col-sm-6 col-md-4">
                     <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
                         {% if article.featured_image %}
                             <div class="featured-img" style="background-image: url('{{ SITEURL }}/{{ article.featured_image }}')"></div>
                         {% endif %}
                         <h6 class="entry-title">{{ article.title }}</h6>
-                        {%if article.subtitle %}
-                        <small class="subtitle">
-                            {{ article.subtitle }}
+                        {%if article.summary %}
+                        <small class="summary">
+                            {{ article.summary }}
                         </small>
                         {% endif %}
                     </a>

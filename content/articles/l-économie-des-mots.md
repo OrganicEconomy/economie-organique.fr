@@ -8,6 +8,7 @@ Lang: fr
 Author: Gus
 Summary: L'impact des mots sur notre vision du monde
 Status: published
+Featured_image: images/L-economie-des-mots-min.jpg
 
 # Le vocabulaire capitaliste
 

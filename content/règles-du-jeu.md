@@ -8,7 +8,7 @@ Lang: fr
 Author: Gus
 Summary: Les règles complètes de l'économie organique
 Status: published
-Featured_image: images/cactus.jpg
+Featured_image: images/règles du jeu-min.jpg
 
 # Tout cela n'est qu'un jeu
 
