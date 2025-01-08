@@ -50,7 +50,7 @@ Notez que contrairement à ses prédécesseurs, l'économie organique ne présen
 * La monnaie organique se divise en deux monnaies : **une monnaie citoyenne et une monnaie d'investissement**. Il n'est pas possible de n'utiliser qu'une seule des deux et de faire fi de l'autre, **elles sont indissociables**. Comme le beurre et le demi-sel.
 
 * Lors de la création du compte d'un citoyen, celui-ci ce voit attribué 3 comptes :
-    * un compte de [monnaie citoyenne]({filename]/definitions/monnaie-citoyenne.md) ;
+    * un compte de [monnaie citoyenne]({filename}/definitions/monnaie-citoyenne.md) ;
     * un compte de [monnaie d'investissement]({filename}/definitions/monnaie-d-investissement.md) ;
     * et un compte d'[expérience économique]({filename}/definitions/experience-economique.md).
 * Ces trois comptes sont initialement à zéro.

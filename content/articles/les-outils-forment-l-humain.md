@@ -1,14 +1,14 @@
-Title: Les outils forment l'Homme
+Title: Les outils forment les humain
 Date: 2025-01-06 15:00
 Modified: 2025-01-06 15:00
 Category: Blog
 Tags: Ivan Illich, Blog
-Slug: les-outils-forment-l-homme
+Slug: les-outils-forment-les-humains
 Lang: fr
 Author: Gus
 Summary: On entend souvent le postulat que "l'Homme est mauvais" et que c'est de là que viendrait tous nos soucis. Mais si c'était faux ? Si, en réalité, les outils induisaient nos comportements ?
 Status: published
-Featured_image: images/cactus.jpg
+Featured_image: images/les-outils-font-les-humains-min.jpg
 
 # L'Homme est-il mauvais ?
 
