@@ -112,14 +112,24 @@ Donc c'est la merde...
 
 # La monnaie indépendante
 
-Alors dans ce cas, il ne nous reste plus qu'à nous tourner vers une monnaie indépendante de la monnaie nationale.
-Ainsi, il n'est plus possible de passer de l'une à l'autre, il y a une sorte d'égalité devant l'accession à cette monnaie (pas besoin d'avoir des Euros) et on ne fait pas double usage de la monnaie.
+Dans ce cas, il ne nous reste plus qu'à nous tourner vers une monnaie indépendante de la monnaie nationale.
+Il n'est alors plus possible de passer de l'une à l'autre, il y a une sorte d'égalité devant l'accession à cette monnaie (pas besoin d'avoir des Euros) et on ne fait pas double usage de la monnaie.
 Cela semble parfait.
 Et ça l'est.
-Il faut, pour être vraiment libératrice, que la monnaie soit indépendante de la monnaie nationale.
-Malheureusement, il y a encore ici deux problématiques qui sont immenses :
-- Premièrement, il est très difficile d'y faire adhérer. La confiance en une monnaie dépend pour partie de la taille de sa communauté. Donc tant que celle-ci est trop petite, la réaction est souvent "ça m'intéresse, je vous rejoins dès que vous êtes plus nombreux", ce qui a pour conséquence qu'elle reste petite.
-- Deuxièmement et principalement, qui va payer les hôpitaux, les écoles et autres services publiques ? Il nous faut des euros pour cela...
+> Il faut, pour être vraiment libératrice, que la monnaie soit indépendante de la monnaie nationale.
+
+Malheureusement, il y a encore ici des problématiques non résolues.
+
+Premièrement, il est difficile d'y faire adhérer.
+La confiance en une monnaie dépend surtout de la taille de sa communauté.
+Donc tant que celle-ci est trop petite, la réaction est souvent "Je vous rejoins dès que vous êtes plus nombreux", ce qui ralentit grandement le processus d'adoption.
+Mais ça n'empêche pas les plus téméraires d'y arriver et de réussir, à force de patience et de bienveillance, à créer une belle et solide communauté.
+
+C'est le cas par exemple du JEU (pour Jardin d'Échange Universel).
+Franchement, c'est chouette !
+La communauté est grande, forte et résiliente.
+Les usagers créent leur monnaie et les échanges se font sans intermédiaire à l'aide d'un carnet de points JEU.
+
 Ainsi, en souhaitant se défaire d'un système pour ses mauvais côtés, nous torpillons en même temps ses seuls bons côtés. Alors que faire ?
 
 Le Guzi : Penser local, agir global
