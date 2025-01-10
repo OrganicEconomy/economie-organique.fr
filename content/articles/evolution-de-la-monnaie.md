@@ -10,7 +10,7 @@ Summary: La monnaie est apparue quasiment avec l'humain (j'extrapole à peine). 
 Status: published
 Featured_image: images/evolution-de-la-monnaie-min.jpg
 
-La monnaie, ou d'une certaine manière ce quon appelle l'"économie" a existé en même temps que l'humain, ou quasiment.
+La monnaie, ou d'une certaine manière ce qu'on appelle l'économie a existé en même temps que l'humain, ou quasiment.
 Mais qu'ont représenté depuis des millénaires les différentes monnaies qui se sont succédées, comment ont-elles évolué et comment se sont-elles améliorées ?
 
 # Le début de l'histoire
@@ -22,7 +22,7 @@ Celui-ci a pour lui d'être bien pratique parce qu'on échange ce dont on a beso
 
 Non, je ne mangerai pas mes chèvres, n'essayez pas de tricher !
 
-Et bien c'est là qu'apparait le commerce triangulaire : j'échange mes chèvres contre des patins à glace, puis j'échange les patins contre mon sandwich.
+Et bien c'est là qu'apparaît le commerce triangulaire : j'échange mes chèvres contre des patins à glace, puis j'échange les patins contre mon sandwich.
 Et non, vous n'avez pas rêvé, je me suis bien fait enfler !
 
 Mais mettons que ce sandwich était vraiment délicieux.
@@ -41,10 +41,10 @@ Et ces métaux eurent de nombreux noms qui se succédèrent suite à trop d'infl
 
 # Le début des orfèvres 
 
-Nous en sommes aux débuts du 17ème siècle, je l'ai faite rapide.
+Nous en sommes au début du 17ème siècle, je l'ai faite rapide.
 Et maintenant les orfèvres se mettent à stocker les éléments précieux en échange d'un certificat de valeur.
 Donc j'y amène ma Ferrari en échange d'un certificat qui assure que j'ai déposé pour valeur d'une Ferrari chez l'orfèvre.
-Et à ce moment là, si je veux acheter un autre sandwich, je peux aller retirer ma Ferrari pour ensuite l'échanger contre ce fameux sandwich, mais je peux également directement donner le certificat au vendeur de sandwich, si celui-ci est d'accord.
+Et à ce moment-là, si je veux acheter un autre sandwich, je peux aller retirer ma Ferrari pour ensuite l'échanger contre ce fameux sandwich, mais je peux également directement donner le certificat au vendeur de sandwich, si celui-ci est d'accord.
 Et bien sûr qu'il est d'accord, parce qu'il sait que les orfèvres sont fiables.
 D'autant plus qu'à l'époque, les Ferraries sont plutôt rares !
 
@@ -61,7 +61,7 @@ Après ça, tout devient très compliqué : comme nous n'arrivons pas à prononc
 
 Quoi qu'il arrive, chaque monnaie finit par péricliter à cause d'une récession, d'une inflation ou d'un étalon or qui fait défaut.
 Ah, cet étalon or...
-Il semble qu'il ne serve qu'à rendre ceux qui sont en situation difficile pauvres ; et ceux pour qui ça va bien riches.
+Il semble qu'il ne serve qu'à rendre ceux qui sont en situation difficile : pauvres ; et ceux pour qui ça va bien : riches.
 
 Seulement à partir de 1971, nous ne nous basons plus sur l'or.
 Et non !
@@ -75,8 +75,8 @@ Je vous épargne les dernières années et les transactions à haute fréquence 
  
 # Les dernières "inventions" monétaires 
 
-Reste le Bitcoin et ses cousines cryptomonnaies.
-Là il y a une évolution.
+Reste le Bitcoin et ses cousines crypto monnaies.
+Là, il y a une évolution.
 L'énorme nouveauté ici, c'est la décentralisation de la monnaie.
 Il n'y a plus d'autorité centrale.
 Personne n'a le pouvoir sur notre argent : il ne peut pas être bloqué ou confisqué.
@@ -103,7 +103,7 @@ Une solution qui n'a en rien évolué depuis le sesterce jusqu'à l'euro.
 Par définition, le capitalisme est plutôt un mode "récent".
 C'est un modèle économique qui se base sur les détenteurs de capitaux (les pétés de thune) et la propriété privée (parce que les pétés de thune peuvent tout s'acheter, mais pas les travailleurs).
 Or, selon moi, nous pouvons généraliser comme ceci :
-> Une société est capitaliste si elle repose sur une monnaie capitaliste. À savoir, une monnaie que l'on peut accumuler infiniment en quantité et en temps.
+> Une société est capitaliste si elle repose sur une monnaie capitaliste. À savoir, une monnaie que l'on peut accumuler à l'infini en quantité et en temps.
 
 Ça veut dire que, mis à part les usages de produits consommables (sel, fèves de cacao, feuilles de thé), toutes les monnaies de toute l'histoire de l'humanité ont été et sont encore aujourd'hui capitalistes.
 L'Euro est capitaliste, tout autant que le Bitcoin, le sesterce ou l'or.
@@ -116,14 +116,14 @@ Nous sommes capables de nourrir et de loger toute l'humanité sans aucun souci.
 Il suffit de voir, à titre d'exemple, le milliard de tonnes de nourriture qui passe de la production à la poubelle sans passer par un estomac chaque année dans le monde.
 Nous n'avons plus besoin de cette peur pour assurer notre survie.
 
-Qui plus est, dans tous les domaines, nous arrivons à créer une telle production dans un climat mondial de concurrence.
+Qui plus est, dans tous les domaines, nous arrivons à créer une telle production dans un climat mondial concurrentiel.
 Alors imaginez un peu ce que cela donnerait si nous étions plutôt en collaboration.
 
 C'est là que l'économie organique entre en jeu.
 Elle semble être la première théorie économique qui fonctionne différemment.
 Différemment des autres et précédentes monnaies, mais pas différemment de la Nature elle-même.
 Si je vous payais en eau, que vous la buviez, vous ne pourriez pas payer avec cette eau à nouveau.
-Ce serait dégoutant !
+Ce serait dégoûtant !
 Dans la Nature, tout évolue, tout se transforme, tout est flux.
 Dans la Nature, l'accumulation apporte toujours des contraintes et la fructification ne peut avoir lieu sans diversité.
 

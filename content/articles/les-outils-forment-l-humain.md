@@ -12,7 +12,7 @@ Featured_image: images/les-outils-font-les-humains-min.jpg
 
 # L'Homme est-il mauvais ?
 
-La vilainie de l'être humain me semble être un peu surévaluée.
+La vilenie de l'être humain me semble être un peu surévaluée.
 Il est facile, dans un contexte social qui se tend un peu plus chaque jour, de capituler en admettant le postulat que "l'Homme est mauvais".
 Et comme ça, c'est très simple, c'est pas ma faute, c'est la faute des mauvais hommes et des méchantes femmes qui sont, au choix, égoïstes, avares, agressifs, menteurs, etc.
 
@@ -20,7 +20,7 @@ Sauf que c'est bien sûr plus subtil que ça.
 La nature humaine est complexe et faite de beaucoup de composantes qu'il serait inutile d'essayer d'énoncer de manière exhaustive.
 Mais le bon sens me fait penser que, malgré cette complexité, un facteur semble simple : l'environnement, le contexte dans lequel l'humain évolue.
 
-Je m'avance peut-être un peu sur de la psychologie à la légère, mais en général, une enfance heureuse, pleine d'amour et de bienveillance, ne créé pas d'adulte complètement débile, égoïste ou violent.
+Je m'avance peut-être un peu sur de la psychologie à la légère, mais en général, une enfance heureuse, pleine d'amour et de bienveillance, ne crée pas d'adulte complètement débile, égoïste ou violent.
 Donc on peut se demander si c'est l'humain qui est fondamentalement influencé par une force maléfique (le diable pour certains, mais on met ce qu'on veut derrière) ou si c'est simplement la violence des structures humaines qui influence ses occupants.
 
 # Mais à quel jeu joue-t-on ?
@@ -29,7 +29,7 @@ Tout ça ne nous fait pas prendre beaucoup de recul.
 On reste focalisé sur les émotions et les pulsions des "gens".
 
 Me concernant, j'aime bien comparer la société à un jeu de société.
-Imaginez que nous jouions tous une imense partie de Monopoly.
+Imaginez que nous jouions tous une immense partie de Monopoly.
 (Qui est un jeu de merde, je le dis au passage, mais je l'utilise ici parce que j'ai plus de chance d'être compris avec cet exemple là qu'avec un Scythe, un Through the ages ou le SDA JCE qui sont, eux, d'excellents jeux.)
 Pour rappel, au Monopoly, la façon de jouer la plus complète est d'être le dernier en lice après avoir mis l'ensemble des autres joueuses et joueurs sur la paille.
 Alors là, on est dans un jeu, on ne fait pas dans le sentiment, on rigole.
@@ -41,14 +41,14 @@ De même pour les champs-élysés que je n'ai alors pas eu besoin de négocier.
 J'ai fait la partie de ma vie et j'ai eu les moyens de payer toutes les maisons qu'il fallait et, comble de ma chance, tout le monde est passé par mes propriétés, involontairement bien sûr.
 Et finalement, j'ai gagné, ce qui implique fatalement que tous les autres joueurs ont perdu.
 
-Maintenant, prenons le recul sur la partie qui vient de se passer : avec ma veine incomensurable, et peut-être quelques coups de chienne et négociations en ma faveur, j'ai été un bon gros enfoiré dans cette partie.
+Maintenant, prenons du recul sur la partie qui vient de se passer : avec ma veine incommensurable, et peut-être quelques coups de chienne et négociations en ma faveur, j'ai été un bon gros enfoiré dans cette partie.
 Et est-ce ma faute de joueur ?
-Les règles du jeu disent : "vous devez flinguer tout les autres" (économiquement bien sûr).
+Les règles du jeu disent : "vous devez flinguer tous les autres" (économiquement bien sûr).
 Alors à ce moment, il est délicat d'accuser les joueurs de jouer selon les règles.
 Et si on ne respectait pas les règles ? Si un joueur décidait d'être "gentil" pour ne pas éliminer sa petite soeur ?
 Dans ce cas, deux options :
 
-* soit il se fait bouffer par un autre joueur, ainsi que ça petite soeur (dur !);
+* soit il se fait bouffer par un autre joueur, ainsi que sa petite soeur (dur !);
 * soit, et je ne sais pas si c'est mieux, le jeu étant ainsi fait qu'il finira quand même, à son insu, par éliminer sa petite soeur qui n'a vraiment pas de pot !
 
 # L'outil plus fort que l'humain
@@ -69,9 +69,9 @@ Si tu as  de la chance, ou si tu triches, tu gagnes.
 Sinon, tu perds.
 
 Personnellement, j'ai l'intégrité droite comme un poteau, mais j'ai eu à mon avis assez de chance pour vivre heureux.
-En revanche, pour celles et ceux qui ont la chance d'une patate dans un champs de mildioux, c'est chaud !
+En revanche, pour celles et ceux qui ont la chance d'une patate dans un champ de mildious, c'est chaud !
 
-Notre bon vieux Illich, malheureusement parti au début des anées deux mille, nous a quand même donné de bonnes pistes.
+Notre bon vieux Illich, malheureusement parti au début des années deux mille, nous a quand même donné de bonnes pistes.
 Il a notamment démontré à quel point les transports, l'éducation, la santé et l'industrialisation sont devenus des outils qui, ayant largement dépassé leur seuil de convivialité, écrasent les hommes et les femmes et les soumet à être esclaves de la machine.
 Il n'a néanmoins pas fait de proposition de l'outil économique capitaliste, mais nous a prévenu :
 > La limitation de l'outillage restera lettre morte tant qu'une nouvelle théorie économique n'aura pas atteint le stade opérationnel pour assurer la redistribution dans une société décentralisée.
@@ -82,15 +82,15 @@ Bouyah !
 
 Je tiens à préciser ici que nous parlons d'outils qui façonnent la société.
 Modifier la forme des marteaux et des clous ne va pas changer le goût de la moutarde (oulah, j'en arrive à des expressions un peu capilotractées).
-Mais pire encore, changer les outils à fort impact sur nos modes de vie, tels que le réfrigogidérateur, la cuisson électrique, la chaudière au gaz et bien d'autres encore, ne changerait pas grand chose non plus.
+Mais pire encore, changer les outils à fort impact sur nos modes de vie, tels que le réfrigogidérateur, la cuisson électrique, la chaudière au gaz et bien d'autres encore, ne changerait pas grand-chose non plus.
 Comme l'a expliqué François Jarrige :
 > Ce n'est pas la technique qu'il faut changer en premier, c'est la société [...] C'est quand on aura une société différente, qu'on aura aussi des systèmes techniques différents.
 
 C'est pourquoi il faut transformer les outils fondamentaux de l'humain.
 Et, même s'il faudra y passer aussi, ce n'est pas selon moi le transport, l'éducation ou l'industrie qu'il faut changer, mais encore plus fondamentalement notre outil économique qui est, par nature, capitaliste.
-J'irais même plus loin en considérant que c'est même cet outil là, et seulement lui, qui a poussé tous les autres à franchir les seuils de convivalité qui détruisent l'humain et son environnement.
+J'irais même plus loin en considérant que c'est même cet outil là, et seulement lui, qui a poussé tous les autres à franchir les seuils de convivialité qui détruisent l'humain et son environnement.
 
-Ce ne sont pas les maniats du pétrole ou les politiciens corrompus qui saccage notre monde et notre humanité, c'est l'outil capitaliste qui encouragent à la fils-de-puterie et qui récompense les plus vilains en leur mettant entre les mains le pouvoir de décider pour les autres.
+Ce ne sont pas les magnats du pétrole ou les politiciens corrompus qui saccagent notre monde et notre humanité, c'est l'outil capitaliste qui encourage à la fils-de-puterie et qui récompense les plus vilains en leur mettant entre les mains le pouvoir de décider pour les autres.
 Il ne faut plus s'attaquer aux joueurs qui, s'ils tombent un jour, seront remplacés par d'autres joueurs du même acabit.
 
 A la place, il faut repenser l'outil économique et ce, en respectant encore une fois les indices laissés par Ivan Illich :
