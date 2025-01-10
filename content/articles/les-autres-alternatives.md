@@ -6,7 +6,7 @@ Tags: Monnaie, Blog, Monnaie locale, Bitcoin, Monnaie libre, SEL
 Slug: les-autres-alternatives
 Lang: fr
 Author: Gus
-Summary: La monnaie est apparue quasiment avec l'humain (j'extrapole à peine). Mais comment a-t-elle évolué ? Ou plutôt, a-t-elle réellement évolué ?
+Summary: Pourquoi développer encore quelque chose de nouveau alors qu'il y a déjà tant d'initiatives économiques de par le monde ?
 Status: published
 Featured_image: images/les-autres-alternatives-min.jpg
 
