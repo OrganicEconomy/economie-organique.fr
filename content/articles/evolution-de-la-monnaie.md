@@ -22,19 +22,19 @@ Celui-ci a pour lui d'être bien pratique parce qu'on échange ce dont on a beso
 
 Non, je ne mangerai pas mes chèvres, n'essayez pas de tricher !
 
-Et bien c'est là qu'apparaît le commerce triangulaire : j'échange mes chèvres contre des patins à glace, puis j'échange les patins contre mon sandwich.
+Et bien c'est là qu'apparaît le commerce triangulaire : j'échange mes chèvres contre des patins à glace, puis j'échange les patins contre mon sandwich.
 Et non, vous n'avez pas rêvé, je me suis bien fait enfler !
 
 Mais mettons que ce sandwich était vraiment délicieux.
 
 Malheureusement, se trimballer des chèvres à tout bout de champs, ça peut vite être broutant.
-C'est alors qu'apparaissent, c'est au pluriel parce qu'il y en a eu beaucoup, partout et à peu près en même temps : les monnaies.
+C'est alors qu'apparaissent, c'est au pluriel parce qu'il y en a eu beaucoup, partout et à peu près en même temps : les monnaies.
 
 De la pierre, du sel (d'où viendra le "salaire"), de l'ambre, des pierres précieuses, des lingots de métal, mais aussi du grain de blé ou de poivre, des fèves de cacao, des feuilles de tabac, des peaux de bêtes (oh non, mes chèvres !), de la morue séchée, des feuilles de thé, et même des coquillages.
 
-Et puis vint le métal : l'or (extrait du fleuve Pactole, c'est marrant non ?), l'argent, le bronze, utilisés seuls ou mélangés entre eux. Mélange inventé par un gars nommé Crésus en 650 avant J-C.
+Et puis vint le métal : l'or (extrait du fleuve Pactole, c'est marrant non ?), l'argent, le bronze, utilisés seuls ou mélangés entre eux. Mélange inventé par un gars nommé Crésus en 650 avant J-C.
 Quand même hein, qu'est-ce qu'on en apprend dans cet article !
-Ou comme dirait Kronk : "Oh oui, tous les éléments se recollent".
+Ou comme dirait Kronk : "Oh oui, tous les éléments se recollent".
 
 Et ces métaux eurent de nombreux noms qui se succédèrent suite à trop d'inflation ou à l'abandon par disparition lente. Nous passâmes par le sesterce, le denier, l'aureus, le solidus, le sol, le sou, le nomisma, le besant, la sceattas, le dinar, la livre, l'obole, le florin, etc.
 Ça en fait...
@@ -57,11 +57,11 @@ Malins, dans tous les sens du terme.
 Ainsi nous nous retrouvons avec plus de monnaie en route que d'or dans les stocks.
 Nous ne sommes qu'en 1665 et ça sent déjà le foin.
 
-Après ça, tout devient très compliqué : comme nous n'arrivons pas à prononcer Thaler, nous créons le Dollar (prononcer "tollar" ça sonne mieux) et tout le bazar que vient mettre l'or dans tout ça avec son extraction massive au 19ème siècle, je ne vous dis pas.
+Après ça, tout devient très compliqué : comme nous n'arrivons pas à prononcer Thaler, nous créons le Dollar (prononcer "tollar" ça sonne mieux) et tout le bazar que vient mettre l'or dans tout ça avec son extraction massive au 19ème siècle, je ne vous dis pas.
 
 Quoi qu'il arrive, chaque monnaie finit par péricliter à cause d'une récession, d'une inflation ou d'un étalon or qui fait défaut.
 Ah, cet étalon or...
-Il semble qu'il ne serve qu'à rendre ceux qui sont en situation difficile : pauvres ; et ceux pour qui ça va bien : riches.
+Il semble qu'il ne serve qu'à rendre ceux qui sont en situation difficile : pauvres ; et ceux pour qui ça va bien : riches.
 
 Seulement à partir de 1971, nous ne nous basons plus sur l'or.
 Et non !
@@ -79,16 +79,16 @@ Reste le Bitcoin et ses cousines crypto monnaies.
 Là, il y a une évolution.
 L'énorme nouveauté ici, c'est la décentralisation de la monnaie.
 Il n'y a plus d'autorité centrale.
-Personne n'a le pouvoir sur notre argent : il ne peut pas être bloqué ou confisqué.
+Personne n'a le pouvoir sur notre argent : il ne peut pas être bloqué ou confisqué.
 C'est la cryptographie qui assure la conformité des échanges. 
 
 La technique s'est donc nettement améliorée, c'est amusant, mais bien inutile.
-En effet, d'une part il faut nuancer cette avancée, car l'impact sur la planète en terme de consommation électrique et donc d'émissions de gaz à effet de serre est loin d'être négligeable et, d'autre part, le fond est resté le même : le bitcoin est basé sur le fonctionnement de l'extraction de l'or et de sa raréfaction avec le temps.
+En effet, d'une part il faut nuancer cette avancée, car l'impact sur la planète en terme de consommation électrique et donc d'émissions de gaz à effet de serre est loin d'être négligeable et, d'autre part, le fond est resté le même : le bitcoin est basé sur le fonctionnement de l'extraction de l'or et de sa raréfaction avec le temps.
 Or nous avons bien vu que ça ne fonctionnait pas.
 Cela reste toujours une monnaie qui pousse à accumuler et dont la valeur fluctue selon des paramètres arbitraires.
 Les outils changent, mais l'histoire reste la même.
 
-Alors faisons une pause là-dessus : au final, l'objectif de toutes ces monnaies, c'est de simplifier le troc, n'est-ce pas ?
+Alors faisons une pause là-dessus : au final, l'objectif de toutes ces monnaies, c'est de simplifier le troc, n'est-ce pas ?
 Donc plutôt que d'avoir mes deux chèvres et ma Ferrari qui me suivent partout, je préfère avoir un petit porte monnaie qui me permet, en plus, d'acheter au détail.
 Ou même une carte bleue, à la limite. 
 Alors pourquoi faut-il ajouter derrière tout ça, un "bordel sans nom" qui fait que personne, à part peut être quelques spécialistes, et encore, n'est capable de saisir dans son ensemble le système financier d'aujourd'hui.
@@ -102,7 +102,7 @@ Une solution qui n'a en rien évolué depuis le sesterce jusqu'à l'euro.
 
 Par définition, le capitalisme est plutôt un mode "récent".
 C'est un modèle économique qui se base sur les détenteurs de capitaux (les pétés de thune) et la propriété privée (parce que les pétés de thune peuvent tout s'acheter, mais pas les travailleurs).
-Or, selon moi, nous pouvons généraliser comme ceci :
+Or, selon moi, nous pouvons généraliser comme ceci :
 > Une société est capitaliste si elle repose sur une monnaie capitaliste. À savoir, une monnaie que l'on peut accumuler à l'infini en quantité et en temps.
 
 Ça veut dire que, mis à part les usages de produits consommables (sel, fèves de cacao, feuilles de thé), toutes les monnaies de toute l'histoire de l'humanité ont été et sont encore aujourd'hui capitalistes.

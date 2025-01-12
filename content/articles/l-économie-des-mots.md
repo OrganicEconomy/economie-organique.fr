@@ -48,7 +48,7 @@ Pour donner un exemple concret à ces réflexions, partons d'une boulangerie.
 Si, dans le cadre du capitalisme tel qu'il est aujourd'hui, je vous demandais d'investir de l'argent dans ma boulangerie.
 Vous le feriez peut-être, mais seulement si vous étiez sûr d'avoir, à terme, ou même à court terme, un retour sur investissement.
 Dans le cas contraire, même si je faisais le meilleur pain du monde, il serait hors de question que vous m'envoyiez de l'argent sans avoir à y gagner.
-C'est le principe même de la spéculation : faire fructifier l'argent.
+C'est le principe même de la spéculation : faire fructifier l'argent.
 Du temps d'Aristote, gagner de l'argent grâce à l'usure (i.e un prêt avec intérêts, en somme) était un péché puni de mort.
 Ce qui, selon moi, était cohérent, bien qu'une punition un tantinet exagérée, mais passons.
 Il faudrait que ma boulangerie soit de grande envergure ; qu'elle propose des prix attractifs ; qu'elle produise et vende beaucoup de pain ; qu'elle utilise des farines peu chères pour augmenter au maximum les marges.
@@ -56,8 +56,8 @@ Dans tout ça se perdent l'amour du pain, le plaisir de la boulange et la lenteu
 Alors là, impossible, ou hautement improbable que mon pain reste le meilleur du monde.
 
 Maintenant, imaginez un contexte économique différent.
-Vous avez deux monnaies : une monnaie qui vous sert à faire vos achats de la vie de tous les jours ; et une monnaie d'investissement, qui ne peut qu'être investie, rien d'autre.
-Ce contexte a un impact colossal : l'investissement de votre monnaie d'investissement n'a aucun rapport avec votre monnaie d'usage.
+Vous avez deux monnaies : une monnaie qui vous sert à faire vos achats de la vie de tous les jours ; et une monnaie d'investissement, qui ne peut qu'être investie, rien d'autre.
+Ce contexte a un impact colossal : l'investissement de votre monnaie d'investissement n'a aucun rapport avec votre monnaie d'usage.
 C'est-à-dire qu'envoyer de l'argent pour investir ne vous empêchera jamais de vous payer à manger.
 Dans ce cas seulement, l'investissement peut se faire sans retour, sans volonté de faire des gains financiers.
 Avec un tel cadre, ma boulangerie devient autrement plus attrayante.

@@ -13,8 +13,8 @@ Featured_image: images/Personne-ne-parle-d-economie-min.jpg
 
 Mais qu'est-ce que vous faites là ?
 Vous avez dû vous perdre sur internet parce que personne ne s'interesse à l'économie.
-L'économie est à la société capitaliste ce que les Ents sont à la terre du milieu : personne n'en a rien à faire.
-C'est pire en fait : personne ne sait que ça existe.
+L'économie est à la société capitaliste ce que les Ents sont à la terre du milieu : personne n'en a rien à faire.
+C'est pire en fait : personne ne sait que ça existe.
 
 Et pourtant, quelle folie d'ignorer cela alors que c'est au coeur de tout ! Tout ? Oui, tout ! Et même pas que tout mais plutôt absolument tout.
 

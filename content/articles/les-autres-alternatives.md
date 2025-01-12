@@ -10,7 +10,7 @@ Summary: Pourquoi développer encore quelque chose de nouveau alors qu'il y a d�
 Status: published
 Featured_image: images/les-autres-alternatives-min.jpg
 
-En s'informant sur l'économie organique, d'aucun pourrait se dire : "plutôt que de développer une énième monnaie, ne pourrions-nous pas nous contenter d'un outil existant, fonctionnel et éprouver qu'il suffirait alors de déployer à grande échelle ?"
+En s'informant sur l'économie organique, d'aucun pourrait se dire : "plutôt que de développer une énième monnaie, ne pourrions-nous pas nous contenter d'un outil existant, fonctionnel et éprouver qu'il suffirait alors de déployer à grande échelle ?"
 
 C'est finaud !
 
@@ -28,7 +28,7 @@ Pour se procurer telle monnaie, il est nécessaire d'adhérer à l'association p
 Auprès de cette association, on peut se procurer la liste des commerces qui acceptent les paiements avec cette devise.
 
 Voilà pour la définition globale.
-Après, d'une monnaie à l'autre, il y a quelques variantes :
+Après, d'une monnaie à l'autre, il y a quelques variantes :
 
 * Certaines sont adossées à l'Euro (1 abeille = 1 €, par exemple), d'autres sont indépendantes.
 * Certaines sont fondantes (la valeur d'un billet baisse avec le temps), la plupart pas.
@@ -40,8 +40,8 @@ Beaucoup de ces monnaies locales complémentaires sont mises en place pour réta
 
 # Première limite structurelle
 
-Avant de parler des limites, nous pouvons déjà préciser que : ça fonctionne.
-Il y a environ 80 monnaies locales complémentaires actuellement en circulation, pour plus de 40.000 particuliers et 10.000 professionnels et associations (source: [sol-monnaies-locales.org](https://sol-monnaies-locales.org/mlcc)).
+Avant de parler des limites, nous pouvons déjà préciser que : ça fonctionne.
+Il y a environ 80 monnaies locales complémentaires actuellement en circulation, pour plus de 40.000 particuliers et 10.000 professionnels et associations (source : [sol-monnaies-locales.org](https://sol-monnaies-locales.org/mlcc)).
 
 Peut-être pourrions nous même nous satisfaire de celles-ci.
 Étant donné qu'elles ont toutes une visée éthique, il serait sensé de vouloir les généraliser.
@@ -52,7 +52,7 @@ Sinon l'une d'elle risquerait d'écraser les autres et devenir la monnaie nation
 
 En revanche, peut-être qu'une grande quantité de communautés régies chacune par une monnaie locale dédiée pourrait faire l'affaire.
 Mais alors comment échanger entre communautés ?
-Au choix : soit nous avons recours à une monnaie nationale ; soit il nous faut une structure de contrôle qui calcule ou définit les taux de change entre les différentes monnaies.
+Au choix : soit nous avons recours à une monnaie nationale ; soit il nous faut une structure de contrôle qui calcule ou définit les taux de change entre les différentes monnaies.
 Cette seconde option est celle qui a lieu entre les pays à monnaies différentes, et on voit que ce n'est pas une sinécure...
 
 La première problématique des monnaies locales complémentaires est donc qu'elles ne sont **que** complémentaires.
@@ -61,18 +61,18 @@ Cela implique qu'**elles reposent quoi qu'il arrive sur le système** dont elles
 # Les monnaie adossée à la monnaie nationale
 
 Cela est particulièrement vrai pour les monnaies adossées à l'Euro.
-Inventons par exemple le "Lembas" et décidons que : 1 Lembas = 1€.
+Inventons par exemple le "Lembas" et décidons que : 1 Lembas = 1€.
 Donc nous montons une association où l'on peut y échanger 100€ contre 100 Lembas.
 Cela permet maintenant de soutenir l'économie locale en payant en Lembas les commerçants qui l’acceptent, super !
 
 Mais, une minute !
-Trois problèmes viennent d'émerger :
+Trois problèmes viennent d'émerger :
 
 * Ces 100€ sont sur un compte ? Donc ils vont servir à investir ou quoi que ce soit ? Alors nous venons de multiplier la monnaie, n'est-ce pas ? Il y a maintenant 100€ qui fructifient dans l'économie globale et 100 Lembas qui se promènent dans notre localité.
 * Les commerçants que nous payons en Lembas vont pouvoir à leur tour les échanger contre des euros (c'est ce qui fait que les monnaies adossées à l'euro ont plus de succès, elles rassurent les commerçants). Le principe de localité est-il alors réel ?
-* Enfin, en dépendant de l'euro, soit ses variations de valeur impactent également notre monnaie et dans ce cas une crise sur l'euro devient une crise pour le Lembas ; soit le Lembas est constant alors que l'Euro ne l'est pas, ce qui devient une porte ouverte à la spéculation : en échangeant nos Euros contre des Lembas au bon moment, et inversement, nous pouvons faire du profit ! 
+* Enfin, en dépendant de l'euro, soit ses variations de valeur impactent également notre monnaie et dans ce cas une crise sur l'euro devient une crise pour le Lembas ; soit le Lembas est constant alors que l'Euro ne l'est pas, ce qui devient une porte ouverte à la spéculation : en échangeant nos Euros contre des Lembas au bon moment, et inversement, nous pouvons faire du profit ! 
 
-# Une solution : la monnaie fondante
+# Une solution : la monnaie fondante
 
 La solution est très simple, me direz-vous, il faut et il suffit de faire une monnaie fondante.
 Si notre monnaie perd de la valeur avec le temps, la spéculation devient plus difficile, voir impossible et problème résolu !
@@ -104,7 +104,7 @@ En revanche, en économie fondante, c'est mort. Sa petite somme de sécurité, i
 Donc, au final, j'ai quand même bien l'impression que ça n'est pas applicable et, surtout, pas juste du tout !
 
 Et deuxièmement, la monnaie fondante n'est pas linéaire, dans le sens où il faut bien que la fonte ait lieu à un moment précis, dans notre exemple, tous les trois mois.
-J'avoue que ce détail est très gênant : selon le timing, il y a moyen de se débrouiller pour dépenser les billets qui valent bientôt moins en fin de période et récupérer de beaux billets bien gonflés en début de la suivante.
+J'avoue que ce détail est très gênant : selon le timing, il y a moyen de se débrouiller pour dépenser les billets qui valent bientôt moins en fin de période et récupérer de beaux billets bien gonflés en début de la suivante.
 Je peux me tromper, mais connaissant la relation humaine avec l'argent, je suis assez confiant.
 
 Enfin, je ne vous ai pas dit le pire, mais le Chiemgauer est adossé à l'euro, lui aussi.
@@ -150,8 +150,8 @@ Les participants peuvent refuser une transaction lorsqu'ils voient que leur inte
 
 À l'opposé, rien n'empêche d'engranger autant de points que l'on souhaite.
 Aussi longtemps qu'on le désire.
-Ça ne prend pas de place : c'est un montant inscrit sur un carnet.
-Ça ne périclite pas : mes points JEU sont imputrescibles.
+Ça ne prend pas de place : c'est un montant inscrit sur un carnet.
+Ça ne périclite pas : mes points JEU sont imputrescibles.
 
 Alors, comme nous le constatons dans nos sociétés actuelles, ceux qui répondent aux besoins les plus importants, ou alors qui le font le mieux, ou pire le vendent le mieux, ont la possibilité d'accumuler une grande quantité de monnaie.
 Cela voudrait dire que, vases communicants obligent, beaucoup d'autres utilisateurs et utilisatrices seront dans le négatif voire sévèrement dans le négatif.
@@ -161,16 +161,16 @@ Et ça, bon... C'est moyen sachant que l'objectif reste d'avoir un solde proche 
 En général, dans ce type d'alternatives, on part du principe que tout le monde peut toujours et en tout temps donner à la communauté.
 Or, c'est un peu plus complexe que ça.
 Les situations sont variées et souvent changeantes
-Pour les saisonniers, on peut imaginer des fluctuations de leur compte acceptables : ils descendent dans le moins pendant un long moment et, la belle saison venue, paf ! ils reviennent à zéro voire dans le positif.
+Pour les saisonniers, on peut imaginer des fluctuations de leur compte acceptables : ils descendent dans le moins pendant un long moment et, la belle saison venue, paf ! ils reviennent à zéro voire dans le positif.
 Puis ça recommence.
 
 Mais si ce que je sais faire, ce que j'aime faire n'est utile à personne ?
 Alors, il faudra bien que je trouve quelque chose d'autre pour pouvoir renflouer mon compte.
-Bien sûr, cela n'est pas valable dans une situation mixte : je fais ce que j'aime et qui est utile aux autres pour gagner des points JEU, pour le reste j'utilise des euros (que j'obtiens par mon emploi).
+Bien sûr, cela n'est pas valable dans une situation mixte : je fais ce que j'aime et qui est utile aux autres pour gagner des points JEU, pour le reste j'utilise des euros (que j'obtiens par mon emploi).
 Mais si j'en viens à ne vivre que du JEU, quelle différence cela fait-il, finalement, avec l'euro ?
-Aucune : je dois gagner ma croûte, d'une manière ou d'une autre, même si pour ça je dois bosser chez Monsanto ou Total.
+Aucune : je dois gagner ma croûte, d'une manière ou d'une autre, même si pour ça je dois bosser chez Monsanto ou Total.
 
-La situation la plus complexe est finalement le handicap fort : physique, mental ou de vieillesse.
+La situation la plus complexe est finalement le handicap fort : physique, mental ou de vieillesse.
 Quand je ne suis pas/plus en capacité, que me reste-t-il pour être économiquement intégré ?
 J'avoue avoir des doutes sur ce genre de modèle quant à une gestion, notamment, des personnes (très) âgées.
 Vous me direz sûrement qu'il suffit de mettre en place un système de retraite, et je vous en remercie car ça fait une très bonne transition pour la suite.
@@ -183,20 +183,20 @@ Avec ça, on pourrait alors mettre en place ce fameux système de retraite, paye
 Imaginons un peu ce grand basculement politique qui aurait permis de réussir à tout passer en JEU.
 À ce moment-là, pourrions-nous nous dire "Alléluia, nous avons réussi !" ?
 
-Et bien, nous aurions gagné les éléments suivants :
+Et bien, nous aurions gagné les éléments suivants :
 
 * Il n'y a plus de banques, plus d'usure, plus de taux d'intérêts.
 * Il est possible de subvenir à ses besoins sans être dans le positif. Bien que ceci soit limité, donc argument à nuancer voir à oublier.
-* Il n'y a plus d'inflation : le total d'argent en circulation est de zéro, tout le temps.
+* Il n'y a plus d'inflation : le total d'argent en circulation est de zéro, tout le temps.
 
 Tout cela vous fait rêver, n'est-ce pas ?
-Et bien, pourtant, je suis plutôt d'avis que nous serions loins du compte, car il resterait encore :
+Et bien, pourtant, je suis plutôt d'avis que nous serions loins du compte, car il resterait encore :
 
 * Que l'on pourrait accumuler autant d'argent que l'on voudrait et, à fortiori, avoir beaucoup de pouvoir par rapport à d'autres.
 * Qu'il faudrait toujours se vendre sur un marché du travail qui serait rigoureusement le même que l'actuel. Ça ! C'est ce qui détruit le monde !
 * Qu'il serait tout autant possible de spéculer sur des marchés de toutes sortes.
 * Des politiques qui décident de tout et utilisent les impôts comme bon leur semble, notamment pour de l'atomique, de l'électrique, de la guerre, du numérique et j'en passe.
-* Des centralités qui définiraient et contrôleraient : le montant de nos impôts, de notre retraite (si nous en avons une), des remboursements de la sécurité sociale, etc...
+* Des centralités qui définiraient et contrôleraient : le montant de nos impôts, de notre retraite (si nous en avons une), des remboursements de la sécurité sociale, etc...
 * Que l'on peut être propriétaire terrien et, donc, posséder le sol et le monde. Ce qui est une incommensurable source d'inégalité et d'injustice.
 
 Ce qui veut dire que, malgré un coût énorme qu'il aurait fallu pour basculer dans cette nouvelle monnaie, il nous resterait encore un sacré travail pour arriver à une société juste et paisible.
@@ -207,9 +207,9 @@ Comme vous avez pu le lire, si vous avez lu jusqu'ici parce que cet article s'é
 Néanmoins, nous sommes encore loin d'avoir trouvé le système idéal.
 
 Enfin, je dis ça, je dis rien, mais vous êtes sur le site "economie-organique.fr", donc vous imaginez bien que j'ai peut être une piste d'amélioration.
-Pour que notre société soit juste et paisible (entre autre), le système économique doit __obligatoires__ :
+Pour que notre société soit juste et paisible (entre autre), le système économique doit __obligatoires__ :
 
-* supprimer le marché du travail : le salaire, le revenu et l'emploi doivent être trois notions complètement indépendantes ;
+* supprimer le marché du travail : le salaire, le revenu et l'emploi doivent être trois notions complètement indépendantes ;
 * utiliser une monnaie indépendante des monnaies existantes ;
 * reposer sur une monnaie non capitaliste, à savoir qu'on ne puisse pas la stocker ni en temps ni en quantité ;
 * intégrer une gestion des retraites et des invalides, mais sans contrôle ni arbitre ;
