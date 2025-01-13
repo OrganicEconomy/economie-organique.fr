@@ -151,4 +151,7 @@
     {% from '_includes/comments.html' import comments_script with context %}
     {{ comments_script() }}
     {% include '_includes/photos_footer.html' %}
+	{% if article.custom_script %}
+	<script src="scripts/{{ article.custom_script }}"></script>
+	{% endif %}
 {% endblock script %}
