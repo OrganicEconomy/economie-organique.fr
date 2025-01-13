@@ -11,10 +11,6 @@ Status: published
 Custom_script: la-vitesse-relle-de-la-voiture.js
 Featured_image: 
 
-# TEST
-
-<button type="button" class="btn btn-primary">Primary</button>
-
 # Second Test
 
 Nia niania, les voitures vont vite nia nia nia
@@ -79,7 +75,7 @@ Dans le doute, vous pouvez utiliser la valeur moyenne qui était de 11.700 km/an
     <div id="collapseKmPerYear" class="collapse show" aria-labelledby="headingKmPerYear" data-parent="#accordion-km">
       <div class="card-body">
           <div class="input-group">
-            <input type="text" class="form-control km-per-year" aria-label="km/an" value="11700">
+            <input id="km-per-year-1" type="text" class="form-control km-per-year" aria-label="km/an" value="11700">
             <div class="input-group-append">
               <span class="input-group-text">km/an (moyenne 11700 km)</span>
             </div>
@@ -98,13 +94,32 @@ Dans le doute, vous pouvez utiliser la valeur moyenne qui était de 11.700 km/an
     <div id="collapseKmHomeWork" class="collapse" aria-labelledby="headingKmHomeWork" data-parent="#accordion-km">
       <div class="card-body">
         <div class="input-group">
-          <input type="text" class="form-control km-home-work" aria-label="km">
+          <input id="km-home-work-1" type="text" class="form-control km-home-work" aria-label="km">
           <div class="input-group-append">
             <span class="input-group-text">km (moyenne 13 km)</span>
           </div>
         </div>
+        Pour combien de jours travaillés par semaine ?
+        <div class="input-group">
+          <input id="days-home-work-1" type="text" class="form-control days-home-work" aria-label="jours">
+          <div class="input-group-append">
+            <span class="input-group-text">Jours/Semaine</span>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+
+Il faut aussi sélectionner le type de votre lieu de vie, ce qui définira la base de vitesse moyenne.
+
+<div class="input-group">
+    <button type="button" class="btn btn-outline-primary typology-city">Grande ville</button>
+    <button type="button" class="btn btn-outline-primary typology-medium">Ville moyenne</button>
+    <button type="button" class="btn btn-outline-primary typology-campaign">Campagne</button>
+  <input id="average-base-speed-1" type="text" class="form-control average-base-speed" aria-label="km/h">
+  <div class="input-group-append">
+    <span class="input-group-text">km/h (en moyenne)</span>
   </div>
 </div>
 
@@ -127,7 +142,7 @@ Pour cela, il vous faut votre revenu annuel ou mensuel NET :
     <div id="collapseEurosPerYear" class="collapse show" aria-labelledby="headingEurosPerYear" data-parent="#accordion-salary">
       <div class="card-body">
           <div class="input-group">
-            <input type="text" class="form-control euros-per-year" aria-label="€">
+            <input id="euros-per-year-1" type="text" class="form-control euros-per-year" aria-label="€">
             <div class="input-group-append">
               <span class="input-group-text">€/an</span>
             </div>
@@ -146,7 +161,7 @@ Pour cela, il vous faut votre revenu annuel ou mensuel NET :
     <div id="collapseEurosPerMonth" class="collapse" aria-labelledby="headingEurosPerMonth" data-parent="#accordion-salary">
       <div class="card-body">
         <div class="input-group">
-          <input type="text" class="form-control euro-per-month" aria-label="€">
+          <input id="euros-per-month-1" type="text" class="form-control euros-per-month" aria-label="€">
           <div class="input-group-append">
             <span class="input-group-text">€/mois</span>
           </div>
@@ -161,7 +176,7 @@ Ainsi que votre temps de travail par semaine (en heures bien sûr) :
   <div class="input-group-prepend">
     <span class="input-group-text">Je travaille </span>
   </div>
-  <input type="text" class="form-control time-work-per-week" aria-label="h">
+  <input id="time-work-per-week-1" type="text" class="form-control time-work-per-week" aria-label="h">
   <div class="input-group-append">
     <span class="input-group-text">h/semaine</span>
   </div>
@@ -176,7 +191,7 @@ Dans chaque cas, si vous ne savez pas, vous pouvez laisser la valeur moyenne (qu
   <div class="input-group-prepend">
     <span class="input-group-text">Prix de la voiture </span>
   </div>
-  <input type="text" class="form-control car-price" aria-label="€">
+  <input id="car-price-1" type="text" class="form-control car-price" aria-label="€">
   <div class="input-group-append">
     <span class="input-group-text">€</span>
   </div>
@@ -185,7 +200,7 @@ Dans chaque cas, si vous ne savez pas, vous pouvez laisser la valeur moyenne (qu
   <div class="input-group-prepend">
     <span class="input-group-text">Prix du permis de conduire</span>
   </div>
-  <input type="text" class="form-control permis-price" aria-label="€" value="1204">
+  <input id="permis-price-1" type="text" class="form-control permis-price" aria-label="€" value="1204">
   <div class="input-group-append">
     <span class="input-group-text">€</span>
   </div>
@@ -194,16 +209,25 @@ Dans chaque cas, si vous ne savez pas, vous pouvez laisser la valeur moyenne (qu
   <div class="input-group-prepend">
     <span class="input-group-text">Prix carburant</span>
   </div>
-  <input type="text" class="form-control gaz-price-per-liter" aria-label="€" value="1,65">
+  <input id="gaz-price-per-liter-1" type="text" class="form-control gaz-price-per-liter" aria-label="€" value="1,65">
   <div class="input-group-append">
     <span class="input-group-text">€/L</span>
   </div>
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
+    <span class="input-group-text">Consommation carburant</span>
+  </div>
+  <input id="gaz-consumption-1" type="text" class="form-control gaz-consumption" aria-label="L/100km">
+  <div class="input-group-append">
+    <span class="input-group-text">L/100km</span>
+  </div>
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
     <span class="input-group-text">Prix assurance</span>
   </div>
-  <input type="text" class="form-control insurance-price-per-year" aria-label="€" value="610">
+  <input id="insurance-price-per-year-1" type="text" class="form-control insurance-price-per-year" aria-label="€" value="610">
   <div class="input-group-append">
     <span class="input-group-text">€/an</span>
   </div>
@@ -212,7 +236,7 @@ Dans chaque cas, si vous ne savez pas, vous pouvez laisser la valeur moyenne (qu
   <div class="input-group-prepend">
     <span class="input-group-text">Entretien</span>
   </div>
-  <input type="text" class="form-control maintenance-price-per-year" aria-label="€" value="1000">
+  <input id="maintenance-price-per-year-1" type="text" class="form-control maintenance-price-per-year" aria-label="€" value="1000">
   <div class="input-group-append">
     <span class="input-group-text">€/an</span>
   </div>
@@ -221,16 +245,16 @@ Dans chaque cas, si vous ne savez pas, vous pouvez laisser la valeur moyenne (qu
   <div class="input-group-prepend">
     <span class="input-group-text">Parking</span>
   </div>
-  <input type="text" class="form-control parking-price-per-year" aria-label="€" value="100">
+  <input id="parking-price-per-year-1" type="text" class="form-control parking-price-per-year" aria-label="€" value="100">
   <div class="input-group-append">
     <span class="input-group-text">€/an</span>
   </div>
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text">PV/Amandes</span>
+    <span class="input-group-text">PV/Amendes</span>
   </div>
-  <input type="text" class="form-control control-price-per-year" aria-label="€" value="46">
+  <input id="control-price-per-year-1" type="text" class="form-control control-price-per-year" aria-label="€" value="46">
   <div class="input-group-append">
     <span class="input-group-text">€/an</span>
   </div>
@@ -239,7 +263,7 @@ Dans chaque cas, si vous ne savez pas, vous pouvez laisser la valeur moyenne (qu
   <div class="input-group-prepend">
     <span class="input-group-text">Lavage</span>
   </div>
-  <input type="text" class="form-control wash-price-per-year" aria-label="€" value="60">
+  <input id="wash-price-per-year-1" type="text" class="form-control wash-price-per-year" aria-label="€" value="60">
   <div class="input-group-append">
     <span class="input-group-text">€/an</span>
   </div>
@@ -259,7 +283,7 @@ Soit vous estimez vous-même, ou vous pouvez retrouver la moyenne pour votre vil
   <div class="input-group-prepend">
     <span class="input-group-text">Temps de bouchon</span>
   </div>
-  <input type="text" class="form-control traffic-jam-time-per-year" aria-label="h">
+  <input id="traffic-jam-time-per-year-1" type="text" class="form-control traffic-jam-time-per-year" aria-label="h">
   <div class="input-group-append">
     <span class="input-group-text">h/an</span>
   </div>
@@ -273,7 +297,7 @@ Mais après, vous pouvez faire vos calculs et modifier vous-même, comme toujour
   <div class="input-group-prepend">
     <span class="input-group-text">Temps à faire le plein</span>
   </div>
-  <input type="text" class="form-control gaz-fill-time-per-year" aria-label="h">
+  <input id="gaz-fill-time-per-year-1" type="text" class="form-control gaz-fill-time-per-year" aria-label="h">
   <div class="input-group-append">
     <span class="input-group-text">h/an</span>
   </div>
@@ -286,7 +310,7 @@ Saisissez 0 (zéro) si vous ne mettez jamais vos main dans ses parties intimes e
   <div class="input-group-prepend">
     <span class="input-group-text">Temps d'entretien</span>
   </div>
-  <input type="text" class="form-control maintenance-time-per-year" aria-label="h">
+  <input id="maintenance-time-per-year-1" type="text" class="form-control maintenance-time-per-year" aria-label="h">
   <div class="input-group-append">
     <span class="input-group-text">h/an</span>
   </div>
@@ -307,7 +331,7 @@ Le budget dédié aux infrastructures routières, que nous diviserons ici bien s
   <div class="input-group-prepend">
     <span class="input-group-text">Budget infrastructures</span>
   </div>
-  <input type="text" class="form-control maintenance-budget-year" aria-label="Meuros/an" value="820">
+  <input id="maintenance-budget-year-1" type="text" class="form-control maintenance-budget-year" aria-label="Meuros/an" value="820">
   <div class="input-group-append">
     <span class="input-group-text">Meuros/an</span>
   </div>
@@ -318,7 +342,7 @@ Et ensuite le budget dédié aux ouvrages d'art qui peuplent nos espace de dépl
   <div class="input-group-prepend">
     <span class="input-group-text">Budget art</span>
   </div>
-  <input type="text" class="form-control art-budget-year" aria-label="Meuros/an" value="123">
+  <input id="art-budget-year-1" type="text" class="form-control art-budget-year" aria-label="Meuros/an" value="123">
   <div class="input-group-append">
     <span class="input-group-text">Meuros/an</span>
   </div>
@@ -337,7 +361,7 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   <div class="input-group-prepend">
     <span class="input-group-text">Je parcours </span>
   </div>
-  <input type="text" class="form-control km-per-year" aria-label="km/an" value="11700">
+  <input id="km-per-year-2" type="text" class="form-control km-per-year" aria-label="km/an" value="11700">
   <div class="input-group-append">
     <span class="input-group-text">km/an (moyenne 11700 km)</span>
   </div>
@@ -346,17 +370,31 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   <div class="input-group-prepend">
     <span class="input-group-text">OU Distance maison/travail </span>
   </div>
-  <input type="text" class="form-control km-home-work" aria-label="km">
+  <input id="km-home-work-2" type="text" class="form-control km-home-work" aria-label="km">
   <div class="input-group-append">
     <span class="input-group-text">km (moyenne 13 km)</span>
   </div>
+  <div class="input-group">
+    <input id="days-home-work-2" type="text" class="form-control days-home-work" aria-label="jours">
+    <div class="input-group-append">
+      <span class="input-group-text">Jours/Semaine</span>
+    </div>
+  </div>
 </div>
-
+<div class="input-group">
+    <button type="button" class="btn btn-outline-primary typology-city">Grande ville</button>
+    <button type="button" class="btn btn-outline-primary typology-medium">Ville moyenne</button>
+    <button type="button" class="btn btn-outline-primary typology-campaign">Campagne</button>
+  <input id="average-base-speed-2" type="text" class="form-control average-base-speed" aria-label="km/h">
+  <div class="input-group-append">
+    <span class="input-group-text">km/h (en moyenne)</span>
+  </div>
+</div>
 <div class="input-group">
   <div class="input-group-prepend">
     <span class="input-group-text">Je gagne </span>
   </div>
-  <input type="text" class="form-control euros-per-year" aria-label="€">
+  <input id="euros-per-year-2" type="text" class="form-control euros-per-year" aria-label="€">
   <div class="input-group-append">
     <span class="input-group-text">€/an</span>
   </div>
@@ -365,7 +403,7 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   <div class="input-group-prepend">
     <span class="input-group-text">OU Je gagne </span>
   </div>
-  <input type="text" class="form-control euro-per-month" aria-label="€">
+  <input id="euros-per-month-2" type="text" class="form-control euros-per-month" aria-label="€">
   <div class="input-group-append">
     <span class="input-group-text">€/mois</span>
   </div>
@@ -375,7 +413,7 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   <div class="input-group-prepend">
     <span class="input-group-text">Je travaille </span>
   </div>
-  <input type="text" class="form-control time-work-per-week" aria-label="h">
+  <input id="time-work-per-week-2" type="text" class="form-control time-work-per-week" aria-label="h">
   <div class="input-group-append">
     <span class="input-group-text">h/semaine</span>
   </div>
@@ -385,7 +423,7 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   <div class="input-group-prepend">
     <span class="input-group-text">Prix de la voiture </span>
   </div>
-  <input type="text" class="form-control car-price" aria-label="€">
+  <input id="car-price-2" type="text" class="form-control car-price" aria-label="€">
   <div class="input-group-append">
     <span class="input-group-text">€</span>
   </div>
@@ -394,7 +432,7 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   <div class="input-group-prepend">
     <span class="input-group-text">Prix du permis de conduire</span>
   </div>
-  <input type="text" class="form-control permis-price" aria-label="€" value="1204">
+  <input id="permis-price-2" type="text" class="form-control permis-price" aria-label="€" value="1204">
   <div class="input-group-append">
     <span class="input-group-text">€</span>
   </div>
@@ -403,54 +441,63 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   <div class="input-group-prepend">
     <span class="input-group-text">Prix carburant</span>
   </div>
-  <input type="text" class="form-control gaz-price-per-liter" aria-label="€" value="1,65">
+  <input id="gaz-price-per-liter-2" type="text" class="form-control gaz-price-per-liter" aria-label="€" value="1,65">
   <div class="input-group-append">
     <span class="input-group-text">€/L</span>
   </div>
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
+    <span class="input-group-text">Consommation carburant</span>
+  </div>
+  <input id="gaz-consumption-2" type="text" class="form-control gaz-consumption" aria-label="L/100km">
+  <div class="input-group-append">
+    <span class="input-group-text">L/100km</span>
+  </div>
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
     <span class="input-group-text">Prix assurance</span>
   </div>
-  <input type="text" class="form-control insurance-price-per-year" aria-label="€" value="610">
+  <input id="insurance-price-per-year-2" type="text" class="form-control insurance-price-per-year" aria-label="€" value="610">
   <div class="input-group-append">
-    <span class="input-group-text">€/an</span>
+    <span class="input-group-text">€/an (moyenne: 610)</span>
   </div>
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
     <span class="input-group-text">Entretien</span>
   </div>
-  <input type="text" class="form-control maintenance-price-per-year" aria-label="€" value="1000">
+  <input id="maintenance-price-per-year-2" type="text" class="form-control maintenance-price-per-year" aria-label="€" value="1000">
   <div class="input-group-append">
-    <span class="input-group-text">€/an</span>
+    <span class="input-group-text">€/an (moyenne 1000)</span>
   </div>
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
     <span class="input-group-text">Parking</span>
   </div>
-  <input type="text" class="form-control parking-price-per-year" aria-label="€" value="100">
+  <input id="parking-price-per-year-2" type="text" class="form-control parking-price-per-year" aria-label="€" value="100">
   <div class="input-group-append">
-    <span class="input-group-text">€/an</span>
+    <span class="input-group-text">€/an (moyenne 100)</span>
   </div>
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text">PV/Amandes</span>
+    <span class="input-group-text">PV/Amendes</span>
   </div>
-  <input type="text" class="form-control control-price-per-year" aria-label="€" value="46">
+  <input id="control-price-per-year-2" type="text" class="form-control control-price-per-year" aria-label="€" value="46">
   <div class="input-group-append">
-    <span class="input-group-text">€/an</span>
+    <span class="input-group-text">€/an (moyenne 46)</span>
   </div>
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
     <span class="input-group-text">Lavage</span>
   </div>
-  <input type="text" class="form-control wash-price-per-year" aria-label="€" value="60">
+  <input id="wash-price-per-year-2" type="text" class="form-control wash-price-per-year" aria-label="€" value="60">
   <div class="input-group-append">
-    <span class="input-group-text">€/an</span>
+    <span class="input-group-text">€/an (moyenne 60)</span>
   </div>
 </div>
 
@@ -458,9 +505,9 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   <div class="input-group-prepend">
     <span class="input-group-text">Temps de bouchon</span>
   </div>
-  <input type="text" class="form-control traffic-jam-time-per-year" aria-label="h">
+  <input id="traffic-jam-time-per-year-2" type="text" class="form-control traffic-jam-time-per-year" aria-label="h">
   <div class="input-group-append">
-    <span class="input-group-text">h/an</span>
+    <span class="input-group-text">h/an (moyenne ~70)</span>
   </div>
 </div>
 
@@ -468,7 +515,7 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   <div class="input-group-prepend">
     <span class="input-group-text">Temps à faire le plein</span>
   </div>
-  <input type="text" class="form-control gaz-fill-time-per-year" aria-label="h">
+  <input id="gaz-fill-time-per-year-2" type="text" class="form-control gaz-fill-time-per-year" aria-label="h">
   <div class="input-group-append">
     <span class="input-group-text">h/an</span>
   </div>
@@ -478,7 +525,7 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   <div class="input-group-prepend">
     <span class="input-group-text">Temps d'entretien</span>
   </div>
-  <input type="text" class="form-control maintenance-time-per-year" aria-label="h">
+  <input id="maintenance-time-per-year-2" type="text" class="form-control maintenance-time-per-year" aria-label="h" value="0">
   <div class="input-group-append">
     <span class="input-group-text">h/an</span>
   </div>
@@ -488,7 +535,7 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   <div class="input-group-prepend">
     <span class="input-group-text">Budget infrastructures</span>
   </div>
-  <input type="text" class="form-control maintenance-budget-year" aria-label="Meuros/an" value="820">
+  <input id="maintenance-budget-year-2" type="text" class="form-control maintenance-budget-year" aria-label="Meuros/an" value="820">
   <div class="input-group-append">
     <span class="input-group-text">Meuros/an</span>
   </div>
@@ -498,7 +545,7 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   <div class="input-group-prepend">
     <span class="input-group-text">Budget art</span>
   </div>
-  <input type="text" class="form-control art-budget-year" aria-label="Meuros/an" value="123">
+  <input id="art-budget-year-2" type="text" class="form-control art-budget-year" aria-label="Meuros/an" value="123">
   <div class="input-group-append">
     <span class="input-group-text">Meuros/an</span>
   </div>
@@ -521,10 +568,12 @@ Si vous voulez comprendre les détails du calcul :
 
 * Nous avons la distance ```d``` parcourue en un an : <span id="distance-d">X</span> km.
 * Nous calulons le temps ```t``` composé des éléments suivants :
-    * ```t1``` le temps passé dans la voiture : <span id="time-t1">X</span> heures.
-    * ```t2``` le temps passé à travailler pour payer les frais de la voiture : <span id="time-t2">X</span> heures.
-    * ```t3``` le temps passé à travailler pour payer les impôts qui financent les routes : <span id="time-t3">X</span> heures.
-    * Soit ```t = t1 + t2 + t3``` = <span id="time-t">X</span> heures.
+    * ```t1``` le temps passé à conduire la voiture, normal : <span id="time-t1">X</span> heures.
+    * ```t2``` le temps travaillé pour payer les frais de la voiture : <span id="time-t2">X</span> heures.
+    * ```t3``` le temps perdu dans et pour la voiture : <span id="time-t3">X</span> heures.
+    * ```t4``` le temps travaillé pour payer les impôts qui financent les routes : <span id="time-t4">X</span> heures.
+    * Soit ```t = t1 + t2 + t3 + t4``` = <span id="time-t">X</span> heures.
+* Les temps passés sont calculés sur votre temps horaire : <span id="hourly-fee">X</span> euros/heure.
 * Enfin, pour calculer la vitesse moyenne, il n'y a plus qu'à faire ```v = d / t``` (distance totale divisée par temps total).
 
 # Aller encore plus loin
