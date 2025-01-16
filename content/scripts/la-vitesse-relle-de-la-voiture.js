@@ -14,9 +14,6 @@ $("#km-home-work-1").on("keyup", function(event) {
 $("#euros-per-year-1").on("keyup", function(event) {
 	$("#euros-per-year-2").val($(this).val());
 });
-$("#euros-per-month-1").on("keyup", function(event) {
-	$("#euros-per-month-2").val($(this).val());
-});
 $("#time-work-per-week-1").on("keyup", function(event) {
 	$("#time-work-per-week-2").val($(this).val());
 });
@@ -59,10 +56,12 @@ $("#maintenance-time-per-year-1").on("keyup", function(event) {
 $("#maintenance-budget-year-1").on("keyup", function(event) {
 	$("#maintenance-budget-year-2").val($(this).val());
 });
-$("#art-budget-year-1").on("keyup", function(event) {
-	$("#art-budget-year-2").val($(this).val());
+$("#health-budget-year-1").on("keyup", function(event) {
+	$("#health-budget-year-2").val($(this).val());
 });
-
+$("#auto-budget-year-1").on("keyup", function(event) {
+	$("#auto-budget-year-2").val($(this).val());
+});
 // Specifis functions
 $(".gaz-consumption").on("keyup", function(event) {
 	$(".gaz-fill-time-per-year").val(getTimeToFill().toFixed(2));
@@ -80,7 +79,7 @@ $(".typology-campaign").on("click", function() {
 
 function getTimeToFill () {
 	var distance = getDistance();
-	var gaz_consumption = parseFloat($("#gaz-consumption-2").val().replace(",", "."));
+	var gaz_consumption = customRound($("#gaz-consumption-2"));
 	// Time to fill : /45 (1 fill per 45L) and /4 (1/4 hour per fill)
 	var total_liter_consumed = distance*(gaz_consumption/100);
 	return total_liter_consumed / 45 / 4;
@@ -106,21 +105,70 @@ $("#calculate").on("click", function(event) {
 
 	speed = distance / (t1 + t2 + t3 + t4);
 
-	$("#distance-d").text(distance.toFixed(2));
-	$("#hourly-fee").text(hourly_fee.toFixed(2));
-	$("#time-t1").text(t1.toFixed(2));
-	$("#time-t2").text(t2.toFixed(2));
-	$("#time-t3").text(t3.toFixed(2));
-	$("#time-t4").text(t4.toFixed(2));
+	// Details
+	$(".distance-d").text(distance.toFixed(0));
+	$(".hourly-fee").text(hourly_fee.toFixed(2));
+	$(".time-t1").text(t1.toFixed(0));
+	$(".time-t2").text(t2.toFixed(0));
+	$(".time-t3").text(t3.toFixed(0));
+	$(".time-t4").text(t4.toFixed(0));
 
-	$("#time-t").text((t1+t2+t3+t4).toFixed(2));
-	$("#resulting-speed").text(speed.toFixed(2));
+	// Results
+	$(".time-notaxe").text((t1+t2+t3).toFixed(0));
+	$(".time-t").text((t1+t2+t3+t4).toFixed(0));
+	$(".resulting-speed").text(speed.toFixed(2));
+	$(".resulting-time").text(((t1+t2+t3+t4) / 365).toFixed(0));
+	$(".resulting-comparison").text(getComparison(speed));
+
+	// Infos about bike
+	$(".bike-time").text(getBikeTime(distance).toFixed(0));
+	$(".resulting-bike-time-notaxe").text(((t1+t2+t3) - getBikeTime(distance)).toFixed(0));
+	$(".resulting-bike-workless-notaxe").text(((t2+t3) / 52).toFixed(0));
+	$(".resulting-bike-time").text((t1+t2+t3+t4).toFixed(0));
+	$(".resulting-bike-workless").text(((t1+t2+t3+t4) / 52).toFixed(0));
 });
 
+function getBikeTime(distance) {
+	/* basic bike speed is 15 km/h */
+	return distance / 15;
+}
+
+function getComparison(speed) {
+	if (speed < 7) {
+		return "comme un piéton en promenade";
+	}
+	if (speed <= 10) {
+		return "moins vite qu'une poule";
+	}
+	if (speed > 25) {
+		return "plutôt vite, la voiture semble adaptée";
+	}
+	if (speed >= 17) {
+		return "aussi vite qu'en VAE";
+	}
+	switch (Math.round(speed)) {
+		case 10 :
+		case 11 :
+			return "aussi vite qu'une poule";
+		case 12 :
+			return "comme un cycliste débutant en promenade";
+		case 13 :
+			return "à la vitesse d'un crabe";
+		case 14 :
+		case 15 :
+		case 16 :
+			return "aussi vite qu'à vélo";
+	}
+}
+
+function customRound(field) {
+	return parseFloat(field.val().replace(",", ".") || 0);
+}
+
 function getDistance() {
-	var km_per_year = parseFloat($("#km-per-year-2").val().replace(",", "."));
-	var km_home_work = parseFloat($("#km-home-work-2").val().replace(",", "."));
-	var days_home_work = parseFloat($("#days-home-work-2").val().replace(",", "."));
+	var km_per_year = customRound($("#km-per-year-2"));
+	var km_home_work = customRound($("#km-home-work-2"));
+	var days_home_work = customRound($("#days-home-work-2"));
 	if (km_per_year > 0) {
 		return km_per_year;
 	} else if (km_home_work > 0 && days_home_work > 0) {
@@ -130,17 +178,14 @@ function getDistance() {
 }
 
 function getHourlyFee() {
-	var euros_per_year = parseFloat($("#euros-per-year-2").val().replace(",", "."));
-	var euros_per_month = parseFloat($("#euros-per-month-2").val().replace(",", "."));
-	var time_work_per_week = parseFloat($("#time-work-per-week-2").val().replace(",", "."));
+	var euros_per_year = customRound($("#euros-per-year-2"));
+	var time_work_per_week = customRound($("#time-work-per-week-2"));
 	var result;
 	if (time_work_per_week <= 0) {
 		result = 0;
 	}
 	if (euros_per_year > 0) {
 		result = euros_per_year / 52 / time_work_per_week;
-	} else if (euros_per_month > 0) {
-		result = euros_per_month / 4.33 / time_work_per_week;
 	}
 	return result;
 }
@@ -150,23 +195,23 @@ function getCarPricePerYear(distance) {
 	var result = 0;
 
 	// Car price is divided into 10 years (average use of a car)
-	var car_price = parseFloat($("#car-price-2").val().replace(",", "."));
+	var car_price = customRound($("#car-price-2"));
 	result += car_price / 10;
 
 	// Permit is divided into 30 years (estimated of use)
-	var permis_price = parseFloat($("#permis-price-2").val().replace(",", "."));
+	var permis_price = customRound($("#permis-price-2"));
 	result += permis_price / 30;
 
 	// Gaz price is consumtion per 100L / 100 then multiplicated by km/year
-	var gaz_price_per_liter = parseFloat($("#gaz-price-per-liter-2").val().replace(",", "."));
-	var gaz_consumption = parseFloat($("#gaz-consumption-2").val().replace(",", "."));
+	var gaz_price_per_liter = customRound($("#gaz-price-per-liter-2"));
+	var gaz_consumption = customRound($("#gaz-consumption-2"));
 	result += ((gaz_consumption / 100) * distance) * gaz_price_per_liter;
 
-	var insurance_price_per_year = parseFloat($("#insurance-price-per-year-2").val().replace(",", "."));
-	var maintenance_price_per_year = parseFloat($("#maintenance-price-per-year-2").val().replace(",", "."));
-	var parking_price_per_year = parseFloat($("#parking-price-per-year-2").val().replace(",", "."));
-	var control_price_per_year = parseFloat($("#control-price-per-year-2").val().replace(",", "."));
-	var wash_price_per_year = parseFloat($("#wash-price-per-year-2").val().replace(",", "."));
+	var insurance_price_per_year = customRound($("#insurance-price-per-year-2"));
+	var maintenance_price_per_year = customRound($("#maintenance-price-per-year-2"));
+	var parking_price_per_year = customRound($("#parking-price-per-year-2"));
+	var control_price_per_year = customRound($("#control-price-per-year-2"));
+	var wash_price_per_year = customRound($("#wash-price-per-year-2"));
 
 	result += insurance_price_per_year + maintenance_price_per_year + parking_price_per_year + control_price_per_year + wash_price_per_year;
 
@@ -174,15 +219,15 @@ function getCarPricePerYear(distance) {
 }
 
 function getTimeSpendForCarPerYear() {
-	var traffic_jam_time_per_year = parseFloat($("#traffic-jam-time-per-year-2").val().replace(",", "."));
-	var gaz_fill_time_per_year = parseFloat($("#gaz-fill-time-per-year-2").val().replace(",", "."));
-	var maintenance_time_per_year = parseFloat($("#maintenance-time-per-year-2").val().replace(",", "."));
+	var traffic_jam_time_per_year = customRound($("#traffic-jam-time-per-year-2"));
+	var gaz_fill_time_per_year = customRound($("#gaz-fill-time-per-year-2"));
+	var maintenance_time_per_year = customRound($("#maintenance-time-per-year-2"));
 
 	return traffic_jam_time_per_year + gaz_fill_time_per_year + maintenance_time_per_year;
 }
 
 function getDriveTimePerYear(distance) {
-	var average_speed = parseFloat($("#average-base-speed-2").val().replace(",", "."));
+	var average_speed = customRound($("#average-base-speed-2"));
 
 	return distance / average_speed;
 }
@@ -192,10 +237,11 @@ function getCarTaxesPerYear() {
 	 * The total budget is in millions euros, so we just have to divide it
 	 * by 40 (40 millions of taxable franchies).
 	 */
-	var maintenance_budget_year = parseFloat($("#maintenance-budget-year-2").val().replace(",", "."));
-	var art_budget_year = parseFloat($("#art-budget-year-2").val().replace(",", "."));
+	var maintenance_budget_year = customRound($("#maintenance-budget-year-2"));
+	var health_budget_year = customRound($("#health-budget-year-2"));
+	var auto_budget_year = customRound($("#auto-budget-year-2"));
 
-	return (maintenance_budget_year + art_budget_year) / 40;
+	return (maintenance_budget_year + health_budget_year + auto_budget_year) / 38.7;
 }
 
 /*
@@ -203,7 +249,6 @@ km-per-year-2
 km-home-work-2
 days-home-work-2
 euros-per-year-2
-euros-per-month-2
 time-work-per-week-2
 car-price-2
 permis-price-2
@@ -218,5 +263,6 @@ traffic-jam-time-per-year-2
 gaz-fill-time-per-year-2
 maintenance-time-per-year-2
 maintenance-budget-year-2
-art-budget-year-2
+health-budget-year-2
+auto-budget-year-2
 */

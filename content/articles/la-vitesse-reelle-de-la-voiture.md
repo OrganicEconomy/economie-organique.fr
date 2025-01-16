@@ -11,27 +11,6 @@ Status: published
 Custom_script: la-vitesse-relle-de-la-voiture.js
 Featured_image: 
 
-# Second Test
-
-Nia niania, les voitures vont vite nia nia nia
-<div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-secondary">Left</button>
-  <button type="button" class="btn btn-secondary">Middle</button>
-  <button type="button" class="btn btn-secondary">Right</button>
-</div>
-
-# 3ème test
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Je vais à </span>
-  </div>
-  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-  <div class="input-group-append">
-    <span class="input-group-text">km/h</span>
-  </div>
-</div>
-
 # Avant propos
 
 Cet article se base sur *À la recherche du temps gagné*, de Jean-Pierre Dupuy.
@@ -52,7 +31,7 @@ N'est-ce pas ?
 Et bien, comme dirait Sam : *"Sauf votre respect, vous vous trompez."*
 
 Mais ici, point de fausse théorie ou d'arguments falacieux.
-Nous allons faire de simples et beaux calculs qui vous permettrons de tester, avec vos propres valeurs, la vitesse moyenne réelle de votre voiture d'amour.
+Contraints à l'ère des mathématiques comme seule loi, nous allons faire de simples et beaux calculs qui vous permettrons de tester, avec vos propres valeurs, la vitesse moyenne réelle de votre voiture d'amour.
 
 Sur ce, accrochez vos ceintures et démarrons !
 
@@ -60,216 +39,187 @@ Sur ce, accrochez vos ceintures et démarrons !
 
 Pour commencer, notre base sera le nombre de kilomètres que parcourt votre glorieux véhicule.
 
-Soit vous connaissez le nombre de kilomètres par an, soit on peut calculer en fonction de la distance maison-travail (même si cette seconde version néglige les autres déplacements, mais ce n'est pas grâve).
-Dans le doute, vous pouvez utiliser la valeur moyenne qui était de 11.700 km/an en 2023 (➔[source](https://www.statistiques.developpement-durable.gouv.fr/393-millions-de-voitures-en-circulation-en-france-au-1er-janvier-2024)).
+Il nous faut votre kilométrage annuel (enfin, celui de votre voiture), la distance maison-travail et le nombre d'aller-retour par semaine faits entre la dite maison et le dit travail.
+Dans le doute, vous pouvez utiliser les valeurs moyennes indiquées en-dessous des champs (➔[source](https://www.statistiques.developpement-durable.gouv.fr/393-millions-de-voitures-en-circulation-en-france-au-1er-janvier-2024)).
 
-<div id="accordion-km">
-  <div class="card">
-    <div class="card-header" id="headingKmPerYear">
-      <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseKmPerYear" aria-expanded="true" aria-controls="collapseKmPerYear">
-          Chaque année, je parcours :
-        </button>
-      </h5>
+<form>
+  <div class="form-group">
+    <label for="total-distance-1">Distance annuelle</label>
+    <div class="input-group">
+      <input id="km-per-year-1" type="text" class="form-control km-per-year">
+      <div class="input-group-append">
+        <span class="input-group-text">km/an</span>
+      </div>
     </div>
-    <div id="collapseKmPerYear" class="collapse show" aria-labelledby="headingKmPerYear" data-parent="#accordion-km">
-      <div class="card-body">
-          <div class="input-group">
-            <input id="km-per-year-1" type="text" class="form-control km-per-year" aria-label="km/an" value="11700">
-            <div class="input-group-append">
-              <span class="input-group-text">km/an (moyenne 11700 km)</span>
-            </div>
-          </div>
+    <small id="km-per-year-1-helper" class="form-text text-muted">Moyenne : 11700 km/an</small>
+  </div>
+  <div class="form-group">
+    <label for="home-work-distance-1">Distance habitat-travail</label>
+    <div class="input-group">
+      <input id="km-home-work-1" type="text" class="form-control km-home-work">
+      <div class="input-group-append">
+        <span class="input-group-text">km</span>
+      </div>
+    </div>
+    <small id="km-home-work-1-helper" class="form-text text-muted">Moyenne : 13 km</small>
+  </div>
+  <div class="form-group">
+    <label for="days-home-work-1">Nombre d'aller/retour maison-travail</label>
+    <div class="input-group">
+      <input id="days-home-work-1" type="text" class="form-control days-home-work">
+      <div class="input-group-append">
+        <span class="input-group-text">a-r/Semaine</span>
       </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-header" id="headingKmHomeWork">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseKmHomeWork" aria-expanded="false" aria-controls="collapseKmHomeWork">
-          OU Distance entre mon travail et mon lieu de vie
-        </button>
-      </h5>
-    </div>
-    <div id="collapseKmHomeWork" class="collapse" aria-labelledby="headingKmHomeWork" data-parent="#accordion-km">
-      <div class="card-body">
-        <div class="input-group">
-          <input id="km-home-work-1" type="text" class="form-control km-home-work" aria-label="km">
-          <div class="input-group-append">
-            <span class="input-group-text">km (moyenne 13 km)</span>
-          </div>
-        </div>
-        Pour combien de jours travaillés par semaine ?
-        <div class="input-group">
-          <input id="days-home-work-1" type="text" class="form-control days-home-work" aria-label="jours">
-          <div class="input-group-append">
-            <span class="input-group-text">Jours/Semaine</span>
-          </div>
-        </div>
+</form>
+
+
+Il faut aussi connaître votre vitesse moyenne, soit elle est indiquée par votre tableau de bord "intelligent", soit vous pouvez vous baser sur une moyenne.
+
+<form>
+  <div class="form-group">
+    <label for="average-base-speed-1">Vitesse moyenne</label>
+    <div class="input-group">
+      <input id="average-base-speed-1" type="text" class="form-control average-base-speed" aria-label="km/h">
+      <div class="input-group-append">
+        <span class="input-group-text">km/h (en moyenne)</span>
       </div>
     </div>
+    <small id="average-base-speed-1-helper" class="form-text text-muted">
+    Moyennes :
+    <button type="button" class="btn btn-sm btn-outline-primary typology-city">Grande ville (18)</button>
+    <button type="button" class="btn btn-sm btn-outline-primary typology-medium">Ville moyenne (26)</button>
+    <button type="button" class="btn btn-sm btn-outline-primary typology-campaign">Campagne (35)</button>
+    </small>
   </div>
-</div>
+</form>
 
-Il faut aussi sélectionner le type de votre lieu de vie, ce qui définira la base de vitesse moyenne.
-
-<div class="input-group">
-    <button type="button" class="btn btn-outline-primary typology-city">Grande ville</button>
-    <button type="button" class="btn btn-outline-primary typology-medium">Ville moyenne</button>
-    <button type="button" class="btn btn-outline-primary typology-campaign">Campagne</button>
-  <input id="average-base-speed-1" type="text" class="form-control average-base-speed" aria-label="km/h">
-  <div class="input-group-append">
-    <span class="input-group-text">km/h (en moyenne)</span>
-  </div>
-</div>
 
 # Rouler sur l'or
 
 Dans la suite du calcul, nous allons ajouter aux kilomètres parcourus tout le temps que vous passez pour ou dans votre véhicule.
 Tout ce temps sera ensuite converti en euro, en se basant sur votre revenu horaire.
 
-Pour cela, il vous faut votre revenu annuel ou mensuel NET :
+Pour cela, il vous faut votre revenu annuel ainsi que votre temps de travail hebdomadaire.
 
-<div id="accordion-salary">
-  <div class="card">
-    <div class="card-header" id="headingEurosPerYear">
-      <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseEurosPerYear" aria-expanded="true" aria-controls="collapseEurosPerYear">
-          Salaire NET annuel
-        </button>
-      </h5>
-    </div>
-    <div id="collapseEurosPerYear" class="collapse show" aria-labelledby="headingEurosPerYear" data-parent="#accordion-salary">
-      <div class="card-body">
-          <div class="input-group">
-            <input id="euros-per-year-1" type="text" class="form-control euros-per-year" aria-label="€">
-            <div class="input-group-append">
-              <span class="input-group-text">€/an</span>
-            </div>
-          </div>
+<form>
+  <div class="form-group">
+    <label for="euros-per-year-1">Salaire NET annuel</label>
+    <div class="input-group">
+      <input id="euros-per-year-1" type="text" class="form-control euros-per-year">
+      <div class="input-group-append">
+        <span class="input-group-text">€/an</span>
       </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-header" id="headingEurosPerMonth">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEurosPerMonth" aria-expanded="false" aria-controls="collapseEurosPerMonth">
-          OU Salaire net mensuel
-        </button>
-      </h5>
-    </div>
-    <div id="collapseEurosPerMonth" class="collapse" aria-labelledby="headingEurosPerMonth" data-parent="#accordion-salary">
-      <div class="card-body">
-        <div class="input-group">
-          <input id="euros-per-month-1" type="text" class="form-control euros-per-month" aria-label="€">
-          <div class="input-group-append">
-            <span class="input-group-text">€/mois</span>
-          </div>
-        </div>
+  <div class="form-group">
+    <label for="time-work-per-week-1">Heures travaillées par semaine</label>
+    <div class="input-group">
+      <input id="time-work-per-week-1" type="text" class="form-control time-work-per-week">
+      <div class="input-group-append">
+        <span class="input-group-text">h/semaine</span>
       </div>
     </div>
   </div>
-</div>
-Ainsi que votre temps de travail par semaine (en heures bien sûr) :
-
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Je travaille </span>
-  </div>
-  <input id="time-work-per-week-1" type="text" class="form-control time-work-per-week" aria-label="h">
-  <div class="input-group-append">
-    <span class="input-group-text">h/semaine</span>
-  </div>
-</div>
+</form>
 
 # Dépenser plutôt que se dépenser
 
 Voyons maintenant les autres dépenses liées à votre chère automobile.
-Dans chaque cas, si vous ne savez pas, vous pouvez laisser la valeur moyenne (quand il y en a une).
+Si vous ne savez pas, vous pouvez utiliser la valeur moyenne ([➔ sources](https://bonpote.com/le-vrai-cout-dune-voiture-ou-de-la-voiture/)).
 
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Prix de la voiture </span>
+<form>
+  <div class="form-group">
+    <label for="car-price-1">Prix de la voiture </label>
+    <div class="input-group">
+      <input id="car-price-1" type="text" class="form-control car-price" aria-label="€">
+      <div class="input-group-append">
+        <span class="input-group-text">€</span>
+      </div>
+    </div>
   </div>
-  <input id="car-price-1" type="text" class="form-control car-price" aria-label="€">
-  <div class="input-group-append">
-    <span class="input-group-text">€</span>
+  <div class="form-group">
+    <label for="permis-price-1">Prix du permis de conduire</label>
+    <div class="input-group">
+      <input id="permis-price-1" type="text" class="form-control permis-price">
+      <div class="input-group-append">
+        <span class="input-group-text">€</span>
+      </div>
+    </div>
+    <small id="permis-price-1-helper" class="form-text text-muted">Moyenne : 1204 euros</small>
   </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Prix du permis de conduire</span>
+  <div class="form-group">
+    <label for="gaz-price-per-liter-1">Prix du carburant</label>
+    <div class="input-group">
+      <input id="gaz-price-per-liter-1" type="text" class="form-control gaz-price-per-liter">
+      <div class="input-group-append">
+        <span class="input-group-text">€/L</span>
+      </div>
+    </div>
+    <small id="permis-price-1-helper" class="form-text text-muted">Environ 1.8€/L mais ça bouge beaucoup</small>
   </div>
-  <input id="permis-price-1" type="text" class="form-control permis-price" aria-label="€" value="1204">
-  <div class="input-group-append">
-    <span class="input-group-text">€</span>
+  <div class="form-group">
+    <label for="gaz-consumption-1">Consommation carburant</label>
+    <div class="input-group">
+      <input id="gaz-consumption-1" type="text" class="form-control gaz-consumption" aria-label="L/100km">
+      <div class="input-group-append">
+        <span class="input-group-text">L/100km</span>
+      </div>
+    </div>
   </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Prix carburant</span>
+  <div class="form-group">
+    <label for="insurance-price-per-year-1">Prix assurance</label>
+    <div class="input-group">
+      <input id="insurance-price-per-year-1" type="text" class="form-control insurance-price-per-year">
+      <div class="input-group-append">
+        <span class="input-group-text">€/an</span>
+      </div>
+    </div>
+    <small id="insurance-price-per-year-1-helper" class="form-text text-muted">Moyenne : 610 €/an</small>
   </div>
-  <input id="gaz-price-per-liter-1" type="text" class="form-control gaz-price-per-liter" aria-label="€" value="1,65">
-  <div class="input-group-append">
-    <span class="input-group-text">€/L</span>
+  <div class="form-group">
+    <label for="maintenance-price-per-year-1">Entretien</label>
+    <div class="input-group">
+      <input id="maintenance-price-per-year-1" type="text" class="form-control maintenance-price-per-year">
+      <div class="input-group-append">
+        <span class="input-group-text">€/an</span>
+      </div>
+    </div>
+    <small id="maintenance-price-per-year-1-helper" class="form-text text-muted">Moyenne : 1000 €/an</small>
   </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Consommation carburant</span>
+  <div class="form-group">
+    <label for="parking-price-per-year-1">Parking</label>
+    <div class="input-group">
+      <input id="parking-price-per-year-1" type="text" class="form-control parking-price-per-year">
+      <div class="input-group-append">
+        <span class="input-group-text">€/an</span>
+      </div>
+    </div>
+    <small id="parking-price-per-year-1-helper" class="form-text text-muted">Moyenne : 100 €/an</small>
   </div>
-  <input id="gaz-consumption-1" type="text" class="form-control gaz-consumption" aria-label="L/100km">
-  <div class="input-group-append">
-    <span class="input-group-text">L/100km</span>
+  <div class="form-group">
+    <label for="control-price-per-year-1">PV/Amendes</label>
+    <div class="input-group">
+      <input id="control-price-per-year-1" type="text" class="form-control control-price-per-year">
+      <div class="input-group-append">
+        <span class="input-group-text">€/an</span>
+      </div>
+    </div>
+    <small id="control-price-per-year-1-helper" class="form-text text-muted">Moyenne : 46 €/an</small>
   </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Prix assurance</span>
+  <div class="form-group">
+    <label for="wash-price-per-year-1">Lavage</label>
+    <div class="input-group">
+      <input id="wash-price-per-year-1" type="text" class="form-control wash-price-per-year">
+      <div class="input-group-append">
+        <span class="input-group-text">€/an</span>
+      </div>
+    </div>
+    <small id="wash-price-per-year-1-helper" class="form-text text-muted">Moyenne : 60 €/an</small>
   </div>
-  <input id="insurance-price-per-year-1" type="text" class="form-control insurance-price-per-year" aria-label="€" value="610">
-  <div class="input-group-append">
-    <span class="input-group-text">€/an</span>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Entretien</span>
-  </div>
-  <input id="maintenance-price-per-year-1" type="text" class="form-control maintenance-price-per-year" aria-label="€" value="1000">
-  <div class="input-group-append">
-    <span class="input-group-text">€/an</span>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Parking</span>
-  </div>
-  <input id="parking-price-per-year-1" type="text" class="form-control parking-price-per-year" aria-label="€" value="100">
-  <div class="input-group-append">
-    <span class="input-group-text">€/an</span>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">PV/Amendes</span>
-  </div>
-  <input id="control-price-per-year-1" type="text" class="form-control control-price-per-year" aria-label="€" value="46">
-  <div class="input-group-append">
-    <span class="input-group-text">€/an</span>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Lavage</span>
-  </div>
-  <input id="wash-price-per-year-1" type="text" class="form-control wash-price-per-year" aria-label="€" value="60">
-  <div class="input-group-append">
-    <span class="input-group-text">€/an</span>
-  </div>
-</div>
+</form>
 
-[➔ sources](https://bonpote.com/le-vrai-cout-dune-voiture-ou-de-la-voiture/)
 
 # Le temps c'est de l'argent
 
@@ -322,33 +272,74 @@ J'imagine que vous en avez un peu marre de remplir des champs comme si vous fais
 Mais ne vous en faites pas, c'est la fin.
 Ici, une dernière petite info pour la route.
 
-Nous avons compté le temps passé dans et pour la voiture et l'argent (qui sera transposé en temps) dépense pour celle-ci également.
+Nous avons compté le temps passé dans et pour la voiture et l'argent (qui sera transposé en temps) dépensé pour celle-ci également.
 Il nous reste désormais à compter l'argent que l'état, et donc indirectement nous via les impôts, dépense pour entretenir notre voierie délicate.
-Cela se compte en deux informations (dont la source se trouve [➔ ici](https://www.senat.fr/basile/visio.do?id=qSEQ230305619)) :
 
-Le budget dédié aux infrastructures routières, que nous diviserons ici bien sûr par le nombre d'usager (820 millions en 2023) :
+Cela se compte en plusieurs informations (dont la source se trouve [➔ ici](https://www.senat.fr/basile/visio.do?id=qSEQ230305619), [➔ là](https://www.unionroutiere.fr/wp-content/uploads/2024/02/Faits-et-chiffes-2023.pdf) et [➔ là](https://www.onisr.securite-routiere.gouv.fr/sites/default/files/2024-09/Bilan%20SR%202023%20version%20site%20internet%2012%20septembre.pdf)) :
+
+Le budget dédié aux infrastructures routières, que nous diviserons ici par le nombre d'usagers de la route (38,7 millions en 2022), est constitué de plusieurs chiffres clés (chiffres 2023) :
+
+* la maintenance des routes : 910 millions d'euros ;
+* la création et maintenance des ouvrages d'art : 123 millions ;
+* la maintenance de la chaussée : 320 millions ;
+* soit un total de : 1,353 milliards d'euros
+
 <div class="input-group">
   <div class="input-group-prepend">
     <span class="input-group-text">Budget infrastructures</span>
   </div>
-  <input id="maintenance-budget-year-1" type="text" class="form-control maintenance-budget-year" aria-label="Meuros/an" value="820">
+  <input id="maintenance-budget-year-1" type="text" class="form-control maintenance-budget-year" placeholder="1353" value="1353">
   <div class="input-group-append">
-    <span class="input-group-text">Meuros/an</span>
+    <span class="input-group-text">Millions d'euros/an</span>
   </div>
 </div>
 
-Et ensuite le budget dédié aux ouvrages d'art qui peuplent nos espace de déplacement (123 millions en 2023 ; je sais, ça fait mal au fion de compter ça, mais c'est dans les compte mon p'tit père !) :
+Mais ce n'est pas tout, ça va même empirer.
+Ajoutons à cela le prix que nous payons pour les accidents liés à l'automobile :
+
+* les morts : 12,7 milliards ;
+* les hospitalisations : 24 milliards ;
+* les victimes légères : 3,7 milliards ;
+* les dégâts matériels : 11,2 milliards ;
+* soit un total de 51,6 milliards (oui, là on parle de milliards).
+
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text">Budget art</span>
+    <span class="input-group-text">Budget santé</span>
   </div>
-  <input id="art-budget-year-1" type="text" class="form-control art-budget-year" aria-label="Meuros/an" value="123">
+  <input id="health-budget-year-1" type="text" class="form-control health-budget-year" placeholder="51600" value="51600">
   <div class="input-group-append">
-    <span class="input-group-text">Meuros/an</span>
+    <span class="input-group-text">Millions d'euros/an</span>
   </div>
 </div>
 
-Je vous ai laissé les champs modifiables au cas où vous voudriez faire des tests, particulièrement pour voir ce que ça change si on ne les compte pas ;).
+J'imagine que ça fait beaucoup, mais sachez que certaines estimations donnent un résultat double.
+Alors restons sur une estimation "basse" pour ne pas fausser nos calculs.
+
+Enfin, quelques subventions de l'état en prime (payées bien sûr par nos impôts, hein) :
+
+* [France 2030](https://www.economie.gouv.fr/france-2030-plan-soutien-filiere-automobile) : 1 milliard par an ;
+* [l'enveloppe budgétaire pour le bonus écologique](https://www.autoplus.fr/environnement/le-bonus-ecologique-2025-entre-deja-en-vigueur-a-quoi-faut-il-sattendre-1356927.html) : 700 millions pour 2025 (c'était le double en 2024);
+* [les autres bonus](https://www.auto-infos.fr/article/coup-de-frein-brutal-sur-le-bonus-et-malus-automobile-durci-la-double-peine-pour-2025.284201) : 300 milliond pour 2025 (pareil, ça a bien baissé) ;
+* soit un total de 2 milliards.
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Budget automobile</span>
+  </div>
+  <input id="auto-budget-year-1" type="text" class="form-control auto-budget-year" placeholder="2000" value="2000">
+  <div class="input-group-append">
+    <span class="input-group-text">Millions d'euros/an</span>
+  </div>
+</div>
+
+Peut-être pensez-vous que cela devrait être rationnalisé par rapport aux impôts que vous payez.
+Mais en pratique, on le paye tous d'une manière ou d'une autre.
+
+Néanmoins, je vous ai laissé les champs modifiables pour que vous puissiez faire des tests, comme voir ce que ça change si on met zéro.
+
+Notez d'ailleurs que ce "simulateur" n'a rien d'officiel.
+Mais il est open source et vous pouvez regarder le détail des calculs dans le code sur [github]().
 
 # Résultats
 
@@ -357,199 +348,154 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
 
 ### Regroupement de tous les champs
 
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Je parcours </span>
-  </div>
-  <input id="km-per-year-2" type="text" class="form-control km-per-year" aria-label="km/an" value="11700">
-  <div class="input-group-append">
-    <span class="input-group-text">km/an (moyenne 11700 km)</span>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">OU Distance maison/travail </span>
-  </div>
-  <input id="km-home-work-2" type="text" class="form-control km-home-work" aria-label="km">
-  <div class="input-group-append">
-    <span class="input-group-text">km (moyenne 13 km)</span>
-  </div>
+<form>
   <div class="input-group">
-    <input id="days-home-work-2" type="text" class="form-control days-home-work" aria-label="jours">
+    <input id="km-per-year-2" type="text" class="form-control km-per-year" placeholder="moyenne : 11700">
     <div class="input-group-append">
-      <span class="input-group-text">Jours/Semaine</span>
+      <span class="input-group-text">km/an parcourus</span>
     </div>
   </div>
-</div>
-<div class="input-group">
-    <button type="button" class="btn btn-outline-primary typology-city">Grande ville</button>
-    <button type="button" class="btn btn-outline-primary typology-medium">Ville moyenne</button>
-    <button type="button" class="btn btn-outline-primary typology-campaign">Campagne</button>
-  <input id="average-base-speed-2" type="text" class="form-control average-base-speed" aria-label="km/h">
-  <div class="input-group-append">
-    <span class="input-group-text">km/h (en moyenne)</span>
+  
+  <div class="input-group">
+    <input id="km-home-work-2" type="text" class="form-control km-home-work" placeholder="moyenne : 13">
+    <div class="input-group-append">
+      <span class="input-group-text">km maison/travail</span>
+    </div>
   </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Je gagne </span>
+  
+  <div class="input-group">
+    <input id="days-home-work-2" type="text" class="form-control days-home-work">
+    <div class="input-group-append">
+      <span class="input-group-text">aller-retour / semaine</span>
+    </div>
   </div>
-  <input id="euros-per-year-2" type="text" class="form-control euros-per-year" aria-label="€">
-  <div class="input-group-append">
-    <span class="input-group-text">€/an</span>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">OU Je gagne </span>
-  </div>
-  <input id="euros-per-month-2" type="text" class="form-control euros-per-month" aria-label="€">
-  <div class="input-group-append">
-    <span class="input-group-text">€/mois</span>
-  </div>
-</div>
 
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Je travaille </span>
+  <div class="input-group">
+    <input id="average-base-speed-2" type="text" class="form-control average-base-speed" placeholder="moyennes : 18, 26 ou 35">
+    <div class="input-group-append">
+      <span class="input-group-text">km/h de moyenne</span>
+    </div>
   </div>
-  <input id="time-work-per-week-2" type="text" class="form-control time-work-per-week" aria-label="h">
-  <div class="input-group-append">
-    <span class="input-group-text">h/semaine</span>
+  
+  <div class="input-group">
+    <input id="euros-per-year-2" type="text" class="form-control euros-per-year">
+    <div class="input-group-append">
+      <span class="input-group-text">€/an durement gagnés</span>
+    </div>
   </div>
-</div>
+  
+  <div class="input-group">
+    <input id="time-work-per-week-2" type="text" class="form-control time-work-per-week">
+    <div class="input-group-append">
+      <span class="input-group-text">h/semaine bossées</span>
+    </div>
+  </div>
+  
+  <div class="input-group">
+    <input id="car-price-2" type="text" class="form-control car-price">
+    <div class="input-group-append">
+      <span class="input-group-text">€ la voiture, c'est pas cher</span>
+    </div>
+  </div>
 
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Prix de la voiture </span>
+  <div class="input-group">
+    <input id="permis-price-2" type="text" class="form-control permis-price" placeholder="Moyenne : 1204">
+    <div class="input-group-append">
+      <span class="input-group-text">€ pour le permis</span>
+    </div>
   </div>
-  <input id="car-price-2" type="text" class="form-control car-price" aria-label="€">
-  <div class="input-group-append">
-    <span class="input-group-text">€</span>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Prix du permis de conduire</span>
-  </div>
-  <input id="permis-price-2" type="text" class="form-control permis-price" aria-label="€" value="1204">
-  <div class="input-group-append">
-    <span class="input-group-text">€</span>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Prix carburant</span>
-  </div>
-  <input id="gaz-price-per-liter-2" type="text" class="form-control gaz-price-per-liter" aria-label="€" value="1,65">
-  <div class="input-group-append">
-    <span class="input-group-text">€/L</span>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Consommation carburant</span>
-  </div>
-  <input id="gaz-consumption-2" type="text" class="form-control gaz-consumption" aria-label="L/100km">
-  <div class="input-group-append">
-    <span class="input-group-text">L/100km</span>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Prix assurance</span>
-  </div>
-  <input id="insurance-price-per-year-2" type="text" class="form-control insurance-price-per-year" aria-label="€" value="610">
-  <div class="input-group-append">
-    <span class="input-group-text">€/an (moyenne: 610)</span>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Entretien</span>
-  </div>
-  <input id="maintenance-price-per-year-2" type="text" class="form-control maintenance-price-per-year" aria-label="€" value="1000">
-  <div class="input-group-append">
-    <span class="input-group-text">€/an (moyenne 1000)</span>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Parking</span>
-  </div>
-  <input id="parking-price-per-year-2" type="text" class="form-control parking-price-per-year" aria-label="€" value="100">
-  <div class="input-group-append">
-    <span class="input-group-text">€/an (moyenne 100)</span>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">PV/Amendes</span>
-  </div>
-  <input id="control-price-per-year-2" type="text" class="form-control control-price-per-year" aria-label="€" value="46">
-  <div class="input-group-append">
-    <span class="input-group-text">€/an (moyenne 46)</span>
-  </div>
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Lavage</span>
-  </div>
-  <input id="wash-price-per-year-2" type="text" class="form-control wash-price-per-year" aria-label="€" value="60">
-  <div class="input-group-append">
-    <span class="input-group-text">€/an (moyenne 60)</span>
-  </div>
-</div>
 
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Temps de bouchon</span>
+  <div class="input-group">
+    <input id="gaz-price-per-liter-2" type="text" class="form-control gaz-price-per-liter" value="1,80">
+    <div class="input-group-append">
+      <span class="input-group-text">€/L d'essence</span>
+    </div>
   </div>
-  <input id="traffic-jam-time-per-year-2" type="text" class="form-control traffic-jam-time-per-year" aria-label="h">
-  <div class="input-group-append">
-    <span class="input-group-text">h/an (moyenne ~70)</span>
-  </div>
-</div>
 
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Temps à faire le plein</span>
+  <div class="input-group">
+    <input id="gaz-consumption-2" type="text" class="form-control gaz-consumption">
+    <div class="input-group-append">
+      <span class="input-group-text">L/100km consommés</span>
+    </div>
   </div>
-  <input id="gaz-fill-time-per-year-2" type="text" class="form-control gaz-fill-time-per-year" aria-label="h">
-  <div class="input-group-append">
-    <span class="input-group-text">h/an</span>
-  </div>
-</div>
 
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Temps d'entretien</span>
+  <div class="input-group">
+    <input id="insurance-price-per-year-2" type="text" class="form-control insurance-price-per-year" placeholder="Moyenne : 610">
+    <div class="input-group-append">
+      <span class="input-group-text">€/an d'assurance</span>
+    </div>
   </div>
-  <input id="maintenance-time-per-year-2" type="text" class="form-control maintenance-time-per-year" aria-label="h" value="0">
-  <div class="input-group-append">
-    <span class="input-group-text">h/an</span>
-  </div>
-</div>
 
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Budget infrastructures</span>
+  <div class="input-group">
+    <input id="maintenance-price-per-year-2" type="text" class="form-control maintenance-price-per-year" placeholder="Moyenne : 1000">
+    <div class="input-group-append">
+      <span class="input-group-text">€/an d'entretien</span>
+    </div>
   </div>
-  <input id="maintenance-budget-year-2" type="text" class="form-control maintenance-budget-year" aria-label="Meuros/an" value="820">
-  <div class="input-group-append">
-    <span class="input-group-text">Meuros/an</span>
-  </div>
-</div>
 
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Budget art</span>
+  <div class="input-group">
+    <input id="parking-price-per-year-2" type="text" class="form-control parking-price-per-year" placeholder="Moyenne : 100">
+    <div class="input-group-append">
+      <span class="input-group-text">€/an de parking</span>
+    </div>
   </div>
-  <input id="art-budget-year-2" type="text" class="form-control art-budget-year" aria-label="Meuros/an" value="123">
-  <div class="input-group-append">
-    <span class="input-group-text">Meuros/an</span>
+
+  <div class="input-group">
+    <input id="control-price-per-year-2" type="text" class="form-control control-price-per-year" placeholder="Moyenne : 46">
+    <div class="input-group-append">
+      <span class="input-group-text">€/an d'amendes (ouch)</span>
+    </div>
   </div>
-</div>
+
+  <div class="input-group">
+    <input id="wash-price-per-year-2" type="text" class="form-control wash-price-per-year" placeholder="Moyenne : 60">
+    <div class="input-group-append">
+      <span class="input-group-text">€/an de lavage</span>
+    </div>
+  </div>
+  
+  <div class="input-group">
+    <input id="traffic-jam-time-per-year-2" type="text" class="form-control traffic-jam-time-per-year" placeholder="Moyenne : 70)">
+    <div class="input-group-append">
+      <span class="input-group-text">h/an dans les bouchons</span>
+    </div>
+  </div>
+  
+  <div class="input-group">
+    <input id="gaz-fill-time-per-year-2" type="text" class="form-control gaz-fill-time-per-year">
+    <div class="input-group-append">
+      <span class="input-group-text">h/an à faire le plein</span>
+    </div>
+  </div>
+  
+  <div class="input-group">
+    <input id="maintenance-time-per-year-2" type="text" class="form-control maintenance-time-per-year">
+    <div class="input-group-append">
+      <span class="input-group-text">h/an à entretenir la bagnole</span>
+    </div>
+  </div>
+  
+  <div class="input-group">
+    <input id="maintenance-budget-year-2" type="text" class="form-control maintenance-budget-year" placeholder="1353" value="1353">
+    <div class="input-group-append">
+      <span class="input-group-text">Meuros/an pour les infrastructures</span>
+    </div>
+  </div>
+  
+  <div class="input-group">
+    <input id="health-budget-year-2" type="text" class="form-control health-budget-year" placeholder="51600" value="51600">
+    <div class="input-group-append">
+      <span class="input-group-text">Meuros/an pour la santé</span>
+    </div>
+  </div>
+
+  <div class="input-group">
+    <input id="auto-budget-year-2" type="text" class="form-control auto-budget-year" placeholder="2000" value="2000">
+    <div class="input-group-append">
+      <span class="input-group-text">Millions d'euros/an</span>
+    </div>
+  </div>
+</form>
 
 ### Résultats
 
@@ -558,22 +504,112 @@ Voilà, vous pouvez finalement cliquer sur *Calculer* et profiter des résultats
 <button id="calculate" type="button" class="btn btn-block btn-primary">Calculer</button>
 
 <div class="row justify-content-center">
-<h2 class="col-12">La vitesse moyenne réelle de votre voiture est de</h2>
-<h2><span id="resulting-speed">X</span> km/h</h2>.
+  <h2 class="col-12">La vitesse moyenne réelle de votre voiture est de</h2>
+  <h2><code><span class="resulting-speed">X</span></code> km/h</h2>
+</div>
+
+<div class="row justify-content-center">
+  <h5>Vous allez donc, en moyenne, <span class="resulting-comparison">...</span></h5>
+</div>
+
+<div class="row justify-content-center">
+  <h5>et vous passez <code><span class="resulting-time">X</span></code> heures par jour dans/pour votre voiture</span></h5>
 </div>
 
 ### Détails du calcul
 
 Si vous voulez comprendre les détails du calcul :
 
-* Nous avons la distance ```d``` parcourue en un an : <span id="distance-d">X</span> km.
+* Nous avons la distance ```d``` parcourue en un an : <code><span class="distance-d">X</span></code> km.
 * Nous calulons le temps ```t``` composé des éléments suivants :
-    * ```t1``` le temps passé à conduire la voiture, normal : <span id="time-t1">X</span> heures.
-    * ```t2``` le temps travaillé pour payer les frais de la voiture : <span id="time-t2">X</span> heures.
-    * ```t3``` le temps perdu dans et pour la voiture : <span id="time-t3">X</span> heures.
-    * ```t4``` le temps travaillé pour payer les impôts qui financent les routes : <span id="time-t4">X</span> heures.
-    * Soit ```t = t1 + t2 + t3 + t4``` = <span id="time-t">X</span> heures.
-* Les temps passés sont calculés sur votre temps horaire : <span id="hourly-fee">X</span> euros/heure.
+    * ```t1``` le temps passé à conduire la voiture, normal : <code><span class="time-t1">X</span></code> heures.
+    * ```t2``` le temps travaillé pour payer les frais de la voiture : <code><span class="time-t2">X</span></code> heures.
+    * ```t3``` le temps perdu dans et pour la voiture : <code><span class="time-t3">X</span></code> heures.
+    * ```t4``` le temps travaillé pour payer les impôts qui financent les routes : <code><span class="time-t4">X</span></code> heures.
+    * Soit ```t = t1 + t2 + t3 + t4``` = <code><span class="time-t">X</span></code> heures.
+* Les temps passés sont calculés sur votre temps horaire : <code><span class="hourly-fee">X</span></code> euros/heure.
 * Enfin, pour calculer la vitesse moyenne, il n'y a plus qu'à faire ```v = d / t``` (distance totale divisée par temps total).
 
-# Aller encore plus loin
+# Aller plus loin
+
+On peut maintenant s'amuser à se poser la question suivante : si je faisais du vélo, plutôt ?
+
+Pour que ce soit notable, prenons le cas extrême où l'on échange la voiture contre un vélo, pour tous vos déplacements (c'est peu réaliste dans notre société, mais on est là pour s'amuser, non ?).
+Ce qui veut dire que vous ne payez plus d'emprunt, d'assurance, d'essence ni tout ça.
+En revanche, vous payez toujours les impôts car vous êtes encore dans une société orchestrée par l'automobile.
+
+Pour faire <code><span class="distance-d">X</span></code> kilomètres, à vélo, cela vous prendrait (en roulant environ à 15 km/h) : <code><span class="bike-time">X</span></code> heures.
+Mais comme vous économiseriez <code><span class="time-notaxe">X</span></code> heures en moins pour et dans la voiture.
+
+<div class="row justify-content-center">
+  <h5>Votre gain à vélo serait de <code><span class="resulting-bike-time-notaxe">X</span></code> heures</h5>.
+</div>
+
+<div class="row justify-content-center">
+  <h5>Et vous pourriez travailler <code><span class="resulting-bike-workless-notaxe">X</span></code> heures de moins par semaine</h5>.
+</div>
+
+Notez que votre résultat peut être négatif.
+Ce qui laisse penser, dans ce cas, que votre mode de vie est totallement dépendant et inséparable du modèle tout voiture.
+
+Bien sûr, tout cela est très théorique, étant donné qu'il faudra passer pas mal de temps sur le vélo.
+Et c'est sans compter la météo.
+
+Cela dit, nous ne comptons pas ici :
+
+* le temps passé à faire du sport (temps moins nécessaire lorsqu'on fait du vélo quotidiennement) ;
+* le temps passé chez le médecin (parce qu'on ne faisait pas assez de sport) ;
+* le temps passé à payer ces différents coûts.
+
+# Aller moins vite
+
+Et puis, tant qu'à faire, imaginons une société sans voiture, carrément.
+
+Dans ce cas, je retire tous les impôts liés à l'automobile, évidemment.
+Mais surtout, dans une société imaginaire de laquelle aurait été retirée la voiture, on peut aisément imaginer que les distances seraient drastiquement réduites.
+
+En effet, qui accepterait de parcourir 15 bornes matin et soir à vélo juste pour aller bosser ?
+Déjà que le faire en voiture semble abhérant...
+
+Non, selon moi, une société sans voiture est forcément installée sur un modèle économique non capitaliste.
+Pourquoi pas une [économie organique]({filename}/règles-du-jeu.md), tiens.
+Je dis ça comme ça, évidemment oO.
+
+Bref, en tout cas, dans ce cadre, les économies seraient drastiques.
+
+<div class="row justify-content-center">
+  <h5>Une société organique vous ferait gagner <code><span class="resulting-bike-time">X</span></code> heures</h5>.
+</div>
+
+<div class="row justify-content-center">
+  <h5>Et vous pourriez donc travailler <code><span class="resulting-bike-workless">X</span></code> heures de moins par semaine</h5>.
+</div>
+
+Encore une fois, nous ne comptons pas moult éléments :
+
+* la santé de la population (+ de sport, - de pollution, - d'accidents, etc) ;
+* l'état de la planète (- de béton, + d'arbres, - de pollution encore, etc) ;
+* et j'en passe.
+
+# Conclusion
+
+La plupart du temps, on voit beaucoup d'informations sur le prix de la voiture : en prenant en compte tous les coûts induits par celle-ci, cela permet de se dire "pfiouh là là, c'est vachement cher en fait."
+
+D'autres articles vont vous donner la vitesse moyenne effective de la voiture, vous précisant qu'en fait, avec tous les arrêts, les bouchons et autres, on ne roule pas si vite qu'on le pense et que la vitesse n'est que ponctuelle.
+
+Enfin, une troisième catégorie plus en vogue s'inquiète du poids écologique de la voiture, en faisant des comparatifs interminables entre différents modèles pour trouver le plus "saint".
+
+Mais toutes ces approches ne font que nous proposer des optimisations, des moyens souvent techniques pour dépenser un peu moins, polluer un peu moins, rouler un peu moins.
+Aucune ne se permet, aucune n'ose remettre en question la véracité de l'outil automobile.
+
+Or, c'est pourtant vrai, la voiture nous immobilise, nous emprisonne.
+Elle est vendue et a été vendue comme un outil qui libère, mais c'en est au contraire un qui soumet son conducteur à passer des examens pour pouvoir la conduire ; qui le force à travailler pour la payer, payer son essence et tous les frais qui vont avec ; qui le force à respirer un air de plus en plus vicié ; qui le force à faire appels à des experts pour la fabriquer, la réparer, la mettre au rebut.
+
+Bref, maintenant vous savez quel temps votre voiture vous siphone.
+C'est un bon départ pour se poser de nombreuses autres questions.
+
+> La bicyclette élargit le rayon d'action personnel sans interdire de passer où l'on ne peut rouler : il suffit alors de pousser son vélo - Ivan Illich
+
+Allez, bisous !
+
+Gus.
