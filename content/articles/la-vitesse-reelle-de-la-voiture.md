@@ -15,25 +15,25 @@ Featured_image:
 
 Cet article se base sur *À la recherche du temps gagné*, de Jean-Pierre Dupuy.
 Un texte paru dans le *Bulletin interministériel pour la RCB*, n°20, mars 1975 et également en annexe de *Énergie et équité* de Ivan Illich.
-À partir de ses réflexions, je vous propose ici un outil concret pour calculer la vitesse moyenne réelle de votre propre véhicule et, même, d'aller un peu plus loin sur les implications économiques que cela a sur votre vie.
+À partir de ces réflexions, je vous propose ici un outil concret pour calculer la vitesse moyenne réelle de votre propre véhicule et, même, d'aller un peu plus loin sur les implications économiques que cela a sur votre vie.
 
 Rien que ça !
 
-Notez également que cette article est une page web statique.
+Notez également que cet article est une page web statique.
 Cela signifie qu'aucune des informations que vous entrez ici ne sera envoyée ni collectée où que ce soit.
 Votre calcul est et reste chez vous, sur votre ordinateur dans votre petit explorateur internet.
-Néanmoins, je vous invide grandement à partager votre résultat, histoire qu'on voit ce que ça donne.
+Néanmoins, je vous invite grandement à partager votre résultat, histoire qu'on voit ce que ça donne.
 
 # Introduction
 
-Je suis cetain que vous pensez que la voiture est une machine puissante et efficace ainsi qu'un outil de transport individuel particulièrement rapide.
+Je suis certain que vous pensez que la voiture est une machine puissante et efficace ainsi qu'un outil de transport individuel particulièrement rapide.
 N'est-ce pas ?
 Et bien, comme dirait Sam : *"Sauf votre respect, vous vous trompez."*
 
-Mais ici, point de fausse théorie ou d'arguments falacieux.
-Contraints à l'ère des mathématiques comme seule loi, nous allons faire de simples et beaux calculs qui vous permettrons de tester, avec vos propres valeurs, la vitesse moyenne réelle de votre voiture d'amour.
+Cela dit, ne faisons pas dans la théorie.
+Contraints à l'ère des mathématiques comme seule loi, nous allons faire de simples et beaux calculs qui vous permettront de tester, avec vos propres valeurs, la vitesse moyenne réelle de votre voiture d'amour.
 
-Sur ce, accrochez vos ceintures et démarrons !
+Alors, accrochez vos ceintures et démarrons !
 
 # Une partie de 1000 bornes
 
@@ -101,7 +101,7 @@ Il faut aussi connaître votre vitesse moyenne, soit elle est indiquée par votr
 Dans la suite du calcul, nous allons ajouter aux kilomètres parcourus tout le temps que vous passez pour ou dans votre véhicule.
 Tout ce temps sera ensuite converti en euro, en se basant sur votre revenu horaire.
 
-Pour cela, il vous faut votre revenu annuel ainsi que votre temps de travail hebdomadaire.
+Pour calculer ce dernier, il vous faut votre revenu annuel ainsi que votre temps de travail hebdomadaire.
 
 <form>
   <div class="form-group">
@@ -150,14 +150,14 @@ Si vous ne savez pas, vous pouvez utiliser la valeur moyenne ([➔ sources](http
     <small id="permis-price-1-helper" class="form-text text-muted">Moyenne : 1204 euros</small>
   </div>
   <div class="form-group">
-    <label for="gaz-price-per-liter-1">Prix du carburant</label>
+    <label for="gaz-price-per-liter-1">Prix du carburant </label>
     <div class="input-group">
       <input id="gaz-price-per-liter-1" type="text" class="form-control gaz-price-per-liter">
       <div class="input-group-append">
         <span class="input-group-text">€/L</span>
       </div>
     </div>
-    <small id="permis-price-1-helper" class="form-text text-muted">Environ 1.8€/L mais ça bouge beaucoup</small>
+    <small id="permis-price-1-helper" class="form-text text-muted">Prix du jour <a href="https://www.carburants.org/prix-du-jour/">➔ là</a></small>
   </div>
   <div class="form-group">
     <label for="gaz-consumption-1">Consommation carburant</label>
@@ -224,10 +224,10 @@ Si vous ne savez pas, vous pouvez utiliser la valeur moyenne ([➔ sources](http
 # Le temps c'est de l'argent
 
 Ensuite, parlons du temps que vous perdez dans votre voiture : dans les bouchons, à faire le plein ou à entretenir par vous-même.
-Parce que, mine de rien, ça aussi ça compte.
+Parce que, mine de rien, ça compte aussi.
 
-Dans les bouchons, ça dépend de la ville où vous êtes.
-Soit vous estimez vous-même, ou vous pouvez retrouver la moyenne pour votre ville [➔ là](https://www.tomtom.com/traffic-index/ranking/).
+Dans les bouchons, ça dépend de la ville où vous vivez.
+Soit vous estimez vous-même, soit vous retrouvez la moyenne pour votre ville [➔ là](https://www.tomtom.com/traffic-index/ranking/?country=FR).
 
 <div class="input-group">
   <div class="input-group-prepend">
@@ -254,7 +254,7 @@ Mais après, vous pouvez faire vos calculs et modifier vous-même, comme toujour
 </div>
 
 Pour l'entretien de votre splendide automobile, par contre, je vous laisse seul juge.
-Saisissez 0 (zéro) si vous ne mettez jamais vos main dans ses parties intimes et que c'est quelqu'un d'autre qui le fait (garagiste, copain).
+Saisissez 0 (zéro) si vous ne mettez jamais vos mains dans ses parties intimes et que c'est quelqu'un d'autre qui le fait (garagiste, copain).
 
 <div class="input-group">
   <div class="input-group-prepend">
@@ -273,9 +273,9 @@ Mais ne vous en faites pas, c'est la fin.
 Ici, une dernière petite info pour la route.
 
 Nous avons compté le temps passé dans et pour la voiture et l'argent (qui sera transposé en temps) dépensé pour celle-ci également.
-Il nous reste désormais à compter l'argent que l'état, et donc indirectement nous via les impôts, dépense pour entretenir notre voierie délicate.
+Il nous reste désormais à compter l'argent que l'état, et donc indirectement nous via les impôts, dépense pour entretenir notre voirie délicate.
 
-Cela se compte en plusieurs informations (dont la source se trouve [➔ ici](https://www.senat.fr/basile/visio.do?id=qSEQ230305619), [➔ là](https://www.unionroutiere.fr/wp-content/uploads/2024/02/Faits-et-chiffes-2023.pdf) et [➔ là](https://www.onisr.securite-routiere.gouv.fr/sites/default/files/2024-09/Bilan%20SR%202023%20version%20site%20internet%2012%20septembre.pdf)) :
+Cela se compte en plusieurs informations (dont les sources se trouvent [➔ ici](https://www.senat.fr/basile/visio.do?id=qSEQ230305619), [➔ là](https://www.unionroutiere.fr/wp-content/uploads/2024/02/Faits-et-chiffes-2023.pdf) et [➔ là](https://www.onisr.securite-routiere.gouv.fr/sites/default/files/2024-09/Bilan%20SR%202023%20version%20site%20internet%2012%20septembre.pdf)) :
 
 Le budget dédié aux infrastructures routières, que nous diviserons ici par le nombre d'usagers de la route (38,7 millions en 2022), est constitué de plusieurs chiffres clés (chiffres 2023) :
 
@@ -320,7 +320,7 @@ Enfin, quelques subventions de l'état en prime (payées bien sûr par nos impô
 
 * [France 2030](https://www.economie.gouv.fr/france-2030-plan-soutien-filiere-automobile) : 1 milliard par an ;
 * [l'enveloppe budgétaire pour le bonus écologique](https://www.autoplus.fr/environnement/le-bonus-ecologique-2025-entre-deja-en-vigueur-a-quoi-faut-il-sattendre-1356927.html) : 700 millions pour 2025 (c'était le double en 2024);
-* [les autres bonus](https://www.auto-infos.fr/article/coup-de-frein-brutal-sur-le-bonus-et-malus-automobile-durci-la-double-peine-pour-2025.284201) : 300 milliond pour 2025 (pareil, ça a bien baissé) ;
+* [les autres bonus](https://www.auto-infos.fr/article/coup-de-frein-brutal-sur-le-bonus-et-malus-automobile-durci-la-double-peine-pour-2025.284201) : 300 millions pour 2025 (pareil, ça a bien baissé) ;
 * soit un total de 2 milliards.
 
 <div class="input-group">
@@ -333,18 +333,18 @@ Enfin, quelques subventions de l'état en prime (payées bien sûr par nos impô
   </div>
 </div>
 
-Peut-être pensez-vous que cela devrait être rationnalisé par rapport aux impôts que vous payez.
+Peut-être pensez-vous que cela devrait être rationalisé par rapport aux impôts que vous payez.
 Mais en pratique, on le paye tous d'une manière ou d'une autre.
 
 Néanmoins, je vous ai laissé les champs modifiables pour que vous puissiez faire des tests, comme voir ce que ça change si on met zéro.
 
 Notez d'ailleurs que ce "simulateur" n'a rien d'officiel.
-Mais il est open source et vous pouvez regarder le détail des calculs dans le code sur [github]().
+Mais il est open source et vous pouvez regarder le détail des calculs dans le code sur [github](https://github.com/OrganicEconomy/economie-organique.fr/blob/master/content/scripts/la-vitesse-relle-de-la-voiture.js).
 
 # Résultats
 
 Après toutes ces informations, nous allons enfin pouvoir passer au calcul.
-Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avoir tout sous ls yeux.
+Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avoir tout sous les yeux.
 
 ### Regroupement de tous les champs
 
@@ -513,7 +513,7 @@ Voilà, vous pouvez finalement cliquer sur *Calculer* et profiter des résultats
 </div>
 
 <div class="row justify-content-center">
-  <h5>et vous passez <code><span class="resulting-time">X</span></code> heures par jour dans/pour votre voiture</span></h5>
+  <h5>et vous passez <code><span class="resulting-time">X</span></code> heures par jour dans/pour votre voiture</h5>
 </div>
 
 ### Détails du calcul
@@ -521,7 +521,7 @@ Voilà, vous pouvez finalement cliquer sur *Calculer* et profiter des résultats
 Si vous voulez comprendre les détails du calcul :
 
 * Nous avons la distance ```d``` parcourue en un an : <code><span class="distance-d">X</span></code> km.
-* Nous calulons le temps ```t``` composé des éléments suivants :
+* Nous calculons le temps ```t``` composé des éléments suivants :
     * ```t1``` le temps passé à conduire la voiture, normal : <code><span class="time-t1">X</span></code> heures.
     * ```t2``` le temps travaillé pour payer les frais de la voiture : <code><span class="time-t2">X</span></code> heures.
     * ```t3``` le temps perdu dans et pour la voiture : <code><span class="time-t3">X</span></code> heures.
@@ -530,16 +530,31 @@ Si vous voulez comprendre les détails du calcul :
 * Les temps passés sont calculés sur votre temps horaire : <code><span class="hourly-fee">X</span></code> euros/heure.
 * Enfin, pour calculer la vitesse moyenne, il n'y a plus qu'à faire ```v = d / t``` (distance totale divisée par temps total).
 
+### Autre externalités
+
+Au passage, tant qu'à faire des maths bêtes et méchants, calculons aussi vos émissions carbone (via cette [source](https://www.tresor.economie.gouv.fr/Articles/248d6a7c-d681-4577-9fa5-886791bfc9d1/files/9651f24c-dee1-4c2d-a54f-3aa56927e139) :
+
+<div class="row justify-content-center">
+  <h5>Votre voiture émet <code><span class="resulting-CO2">...</span></code> kg de CO2 par an, bravo !</h5>
+</div>
+
+<div class="row justify-content-center">
+  <h5>Cela coûte <code><span class="resulting-CO2-cost">X</span></code> euros à la communauté.</h5>
+</div>
+
 # Aller plus loin
 
-On peut maintenant s'amuser à se poser la question suivante : si je faisais du vélo, plutôt ?
+On peut maintenant s'amuser à se poser la question : si je faisais du vélo, plutôt ?
+Parce que, comme disait Ivan Illich :
+
+> La bicyclette élargit le rayon d'action personnel sans interdire de passer où l'on ne peut rouler : il suffit alors de pousser son vélo.
 
 Pour que ce soit notable, prenons le cas extrême où l'on échange la voiture contre un vélo, pour tous vos déplacements (c'est peu réaliste dans notre société, mais on est là pour s'amuser, non ?).
 Ce qui veut dire que vous ne payez plus d'emprunt, d'assurance, d'essence ni tout ça.
-En revanche, vous payez toujours les impôts car vous êtes encore dans une société orchestrée par l'automobile.
+En revanche, vous payez quand même les impôts car vous êtes encore dans une société orchestrée par l'automobile et l'A 69 est toujours en construction.
 
 Pour faire <code><span class="distance-d">X</span></code> kilomètres, à vélo, cela vous prendrait (en roulant environ à 15 km/h) : <code><span class="bike-time">X</span></code> heures.
-Mais comme vous économiseriez <code><span class="time-notaxe">X</span></code> heures en moins pour et dans la voiture.
+Mais comme vous économiseriez <code><span class="time-notaxe">X</span></code> heures en moins pour et dans la voiture :
 
 <div class="row justify-content-center">
   <h5>Votre gain à vélo serait de <code><span class="resulting-bike-time-notaxe">X</span></code> heures</h5>.
@@ -550,16 +565,16 @@ Mais comme vous économiseriez <code><span class="time-notaxe">X</span></code> h
 </div>
 
 Notez que votre résultat peut être négatif.
-Ce qui laisse penser, dans ce cas, que votre mode de vie est totallement dépendant et inséparable du modèle tout voiture.
+Ce qui laisse penser, dans ce cas, que votre mode de vie est totalement dépendant et inséparable du modèle tout voiture.
 
 Bien sûr, tout cela est très théorique, étant donné qu'il faudra passer pas mal de temps sur le vélo.
 Et c'est sans compter la météo.
 
-Cela dit, nous ne comptons pas ici :
+Cela dit, nous avons tout de même ignoré d'autres temps :
 
-* le temps passé à faire du sport (temps moins nécessaire lorsqu'on fait du vélo quotidiennement) ;
-* le temps passé chez le médecin (parce qu'on ne faisait pas assez de sport) ;
-* le temps passé à payer ces différents coûts.
+* faire du sport (temps moins nécessaire lorsqu'on fait du vélo quotidiennement) ;
+* aller chez le médecin (parce qu'on ne faisait pas assez de sport) ;
+* travailler pour payer ces différents coûts.
 
 # Aller moins vite
 
@@ -569,7 +584,7 @@ Dans ce cas, je retire tous les impôts liés à l'automobile, évidemment.
 Mais surtout, dans une société imaginaire de laquelle aurait été retirée la voiture, on peut aisément imaginer que les distances seraient drastiquement réduites.
 
 En effet, qui accepterait de parcourir 15 bornes matin et soir à vélo juste pour aller bosser ?
-Déjà que le faire en voiture semble abhérant...
+Déjà que le faire en voiture semble aberrant...
 
 Non, selon moi, une société sans voiture est forcément installée sur un modèle économique non capitaliste.
 Pourquoi pas une [économie organique]({filename}/règles-du-jeu.md), tiens.
@@ -593,22 +608,27 @@ Encore une fois, nous ne comptons pas moult éléments :
 
 # Conclusion
 
-La plupart du temps, on voit beaucoup d'informations sur le prix de la voiture : en prenant en compte tous les coûts induits par celle-ci, cela permet de se dire "pfiouh là là, c'est vachement cher en fait."
+Cet article se veut faire réaliser que l'automobile est affublée d'une vitesse fantasmée.
+Bien sûr, à l'instant t, à fond sur l'autoroute, nous allons bel et bien à 160 km/h.
 
-D'autres articles vont vous donner la vitesse moyenne effective de la voiture, vous précisant qu'en fait, avec tous les arrêts, les bouchons et autres, on ne roule pas si vite qu'on le pense et que la vitesse n'est que ponctuelle.
+Ah merde, un radar !
 
-Enfin, une troisième catégorie plus en vogue s'inquiète du poids écologique de la voiture, en faisant des comparatifs interminables entre différents modèles pour trouver le plus "saint".
+Mais en pratique, tous les coûts mis bout à bout, on voit bien qu'à l'échelle personnelle, nous somme déjà loin du compte.
+Quant à l'échelle d'une société, c'est encore bien pire.
 
-Mais toutes ces approches ne font que nous proposer des optimisations, des moyens souvent techniques pour dépenser un peu moins, polluer un peu moins, rouler un peu moins.
-Aucune ne se permet, aucune n'ose remettre en question la véracité de l'outil automobile.
+Prendre en compte tous les facteurs de l'automobile, c'est au moins se rendre compte :
 
-Or, c'est pourtant vrai, la voiture nous immobilise, nous emprisonne.
-Elle est vendue et a été vendue comme un outil qui libère, mais c'en est au contraire un qui soumet son conducteur à passer des examens pour pouvoir la conduire ; qui le force à travailler pour la payer, payer son essence et tous les frais qui vont avec ; qui le force à respirer un air de plus en plus vicié ; qui le force à faire appels à des experts pour la fabriquer, la réparer, la mettre au rebut.
+* qu'elle est l'élément le plus dangereux au monde ;
+* qu'elle pollue l'air mais aussi le silence ;
+* qu'elle nous coûte sur tous les fronts : économie, espace, beauté du paysage, impact environnemental ;
+* qu'elle nous a retiré le plaisir du mouvement lent, au profit du goût pour la destination rapidement atteinte ;
+* qu'elle nous éloigne physiquement les uns des autres ;
+* qu'elle nous oblige à faire appel à des experts pour la fabriquer, la réparer, la détruire.
 
-Bref, maintenant vous savez quel temps votre voiture vous siphone.
+Alors, sans pour autant mettre au rebut votre titine suite à cette lecture, comprenez les chaînes qui vous lient à elle car, ainsi, une nouvelle façon de penser la mobilité émerge.
+
+Et à défaut d'accepter cela, maintenant vous savez au moins quel temps votre voiture vous siphonne.
 C'est un bon départ pour se poser de nombreuses autres questions.
-
-> La bicyclette élargit le rayon d'action personnel sans interdire de passer où l'on ne peut rouler : il suffit alors de pousser son vélo - Ivan Illich
 
 Allez, bisous !
 

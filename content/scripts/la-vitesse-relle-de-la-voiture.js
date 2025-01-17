@@ -1,4 +1,5 @@
 // Filling the 1st form
+// must be filling the 2nd form
 $("#km-per-year-1").on("keyup", function(event) {
 	$("#km-per-year-2").val($(this).val());
 });
@@ -80,12 +81,11 @@ $(".typology-campaign").on("click", function() {
 function getTimeToFill () {
 	var distance = getDistance();
 	var gaz_consumption = customRound($("#gaz-consumption-2"));
-	// Time to fill : /45 (1 fill per 45L) and /4 (1/4 hour per fill)
-	var total_liter_consumed = distance*(gaz_consumption/100);
-	return total_liter_consumed / 45 / 4;
-}
+	var total_liter_consumed = distance * gaz_consumption / 100;
 
-// Filling the 2nd form
+	// Time to fill : /45 (1 fill per 45L) and /3 (1/3 hour per fill)
+	return total_liter_consumed / 45 / 3;
+}
 
 // Clicking on calculate
 $("#calculate").on("click", function(event) {
@@ -120,6 +120,10 @@ $("#calculate").on("click", function(event) {
 	$(".resulting-time").text(((t1+t2+t3+t4) / 365).toFixed(0));
 	$(".resulting-comparison").text(getComparison(speed));
 
+	// Results CO2
+	$(".resulting-CO2").text(getResultingCO2(distance).toFixed(0));
+	$(".resulting-CO2-cost").text((distance * 0,85).toFixed(0));
+
 	// Infos about bike
 	$(".bike-time").text(getBikeTime(distance).toFixed(0));
 	$(".resulting-bike-time-notaxe").text(((t1+t2+t3) - getBikeTime(distance)).toFixed(0));
@@ -127,6 +131,12 @@ $("#calculate").on("click", function(event) {
 	$(".resulting-bike-time").text((t1+t2+t3+t4).toFixed(0));
 	$(".resulting-bike-workless").text(((t1+t2+t3+t4) / 52).toFixed(0));
 });
+
+function getResultingCO2(distance) {
+	var gaz_consumption = customRound($("#gaz-consumption-2"));
+	var total_liter_consumed = distance * gaz_consumption / 100;
+	return 3 * total_liter_consumed;
+}
 
 function getBikeTime(distance) {
 	/* basic bike speed is 15 km/h */
