@@ -6,10 +6,10 @@ Tags: Voiture, Automobile, Vitesse
 Slug: la-vitesse-reelle-de-la-voiture
 Lang: fr
 Author: Gus
-Summary: Votre puissant bolide vous paraît rapide comme l'éclair ? Et bien, si nous prenons en compte tout ce que vous coûte votre voiture, vous seriez surpris de sa vitesse réelle oO !
+Summary: Votre puissant bolide vous paraît rapide comme l'éclair ? Et bien, si nous prenons en compte tout ce que vous coûte votre voiture, vous seriez surpris de sa vitesse réelle oO !
 Status: published
 Custom_script: la-vitesse-relle-de-la-voiture.js
-Featured_image: 
+Featured_image: images/La vitesse réelle des voitures-min.jpg
 
 # Avant propos
 

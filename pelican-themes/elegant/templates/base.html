@@ -74,7 +74,7 @@
                        {% if DISPLAY_PAGES_ON_MENU %}
                        {% for p in pages %}
                        <li {% if p == page %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                            <a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+                            <a class="nav-link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
                        </li>
                        {% endfor %}
                        {% endif %}
