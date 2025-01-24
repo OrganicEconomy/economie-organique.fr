@@ -177,12 +177,8 @@ function customRound(field) {
 
 function getDistance() {
 	var km_per_year = customRound($("#km-per-year-2"));
-	var km_home_work = customRound($("#km-home-work-2"));
-	var days_home_work = customRound($("#days-home-work-2"));
 	if (km_per_year > 0) {
 		return km_per_year;
-	} else if (km_home_work > 0 && days_home_work > 0) {
-		return km_home_work * days_home_work * 52;
 	}
 	return 0;
 }

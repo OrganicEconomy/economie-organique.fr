@@ -39,8 +39,7 @@ Alors, accrochez vos ceintures et démarrons !
 
 Pour commencer, notre base sera le nombre de kilomètres que parcourt votre glorieux véhicule.
 
-Il nous faut votre kilométrage annuel (enfin, celui de votre voiture), la distance maison-travail et le nombre d'aller-retour par semaine faits entre la dite maison et le dit travail.
-Dans le doute, vous pouvez utiliser les valeurs moyennes indiquées en-dessous des champs (➔[source](https://www.statistiques.developpement-durable.gouv.fr/393-millions-de-voitures-en-circulation-en-france-au-1er-janvier-2024)).
+Dans le doute, vous pouvez utiliser la valeur moyenne indiquée en-dessous du champs (➔[source](https://www.statistiques.developpement-durable.gouv.fr/393-millions-de-voitures-en-circulation-en-france-au-1er-janvier-2024)).
 
 <form>
   <div class="form-group">
@@ -52,25 +51,6 @@ Dans le doute, vous pouvez utiliser les valeurs moyennes indiquées en-dessous d
       </div>
     </div>
     <small id="km-per-year-1-helper" class="form-text text-muted">Moyenne : 11700 km/an</small>
-  </div>
-  <div class="form-group">
-    <label for="home-work-distance-1">Distance habitat-travail</label>
-    <div class="input-group">
-      <input id="km-home-work-1" type="text" class="form-control km-home-work">
-      <div class="input-group-append">
-        <span class="input-group-text">km</span>
-      </div>
-    </div>
-    <small id="km-home-work-1-helper" class="form-text text-muted">Moyenne : 13 km</small>
-  </div>
-  <div class="form-group">
-    <label for="days-home-work-1">Nombre d'aller/retour maison-travail</label>
-    <div class="input-group">
-      <input id="days-home-work-1" type="text" class="form-control days-home-work">
-      <div class="input-group-append">
-        <span class="input-group-text">a-r/Semaine</span>
-      </div>
-    </div>
   </div>
 </form>
 
@@ -101,7 +81,7 @@ Il faut aussi connaître votre vitesse moyenne, soit elle est indiquée par votr
 Dans la suite du calcul, nous allons ajouter aux kilomètres parcourus tout le temps que vous passez pour ou dans votre véhicule.
 Tout ce temps sera ensuite converti en euro, en se basant sur votre revenu horaire.
 
-Pour calculer ce dernier, il vous faut votre revenu annuel ainsi que votre temps de travail hebdomadaire.
+Pour calculer ce dernier, il vous faut votre revenu annuel ainsi que votre temps de travail hebdomadaire (mais celui que vous faites vraiment, pas celui de votre contrat).
 
 <form>
   <div class="form-group">
@@ -357,20 +337,6 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   </div>
   
   <div class="input-group">
-    <input id="km-home-work-2" type="text" class="form-control km-home-work" placeholder="moyenne : 13">
-    <div class="input-group-append">
-      <span class="input-group-text">km maison/travail</span>
-    </div>
-  </div>
-  
-  <div class="input-group">
-    <input id="days-home-work-2" type="text" class="form-control days-home-work">
-    <div class="input-group-append">
-      <span class="input-group-text">aller-retour / semaine</span>
-    </div>
-  </div>
-
-  <div class="input-group">
     <input id="average-base-speed-2" type="text" class="form-control average-base-speed" placeholder="moyennes : 18, 26 ou 35">
     <div class="input-group-append">
       <span class="input-group-text">km/h de moyenne</span>
@@ -532,7 +498,7 @@ Si vous voulez comprendre les détails du calcul :
 
 ### Autre externalités
 
-Au passage, tant qu'à faire des maths bêtes et méchants, calculons aussi vos émissions carbone (via cette [source](https://www.tresor.economie.gouv.fr/Articles/248d6a7c-d681-4577-9fa5-886791bfc9d1/files/9651f24c-dee1-4c2d-a54f-3aa56927e139) :
+Au passage, tant qu'à faire des maths bêtes et méchants, calculons aussi vos émissions carbone (via cette [source](https://www.tresor.economie.gouv.fr/Articles/248d6a7c-d681-4577-9fa5-886791bfc9d1/files/9651f24c-dee1-4c2d-a54f-3aa56927e139)) :
 
 <div class="row justify-content-center">
   <h5>Votre voiture émet <code><span class="resulting-CO2">...</span></code> kg de CO2 par an, bravo !</h5>
