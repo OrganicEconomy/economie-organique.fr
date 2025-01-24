@@ -10,6 +10,7 @@ Summary: Votre puissant bolide vous paraît rapide comme l'éclair ? Et bien, s
 Status: published
 Custom_script: la-vitesse-relle-de-la-voiture.js
 Featured_image: images/La vitesse réelle des voitures-min.jpg
+Discord_link: https://discord.gg/aNP692rz
 
 # Avant propos
 
