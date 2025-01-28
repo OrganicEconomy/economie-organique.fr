@@ -20,14 +20,14 @@ Mais il a une caractéristique particulière : il est inaltérable !
 C'est-à-dire qu'on ne peut jamais retirer d'argent de ce livret.
 Il ne fera toujours que stagner (si rien n'y est déposé) ou grossir (la plupart du temps).
 
-Quand il est vide, il génère tout de même des intérêts : 1 unité de monnaie citoyenne et 1 unité de monnaie d'investissement par jour.
+Quand il est vide, il génère tout de même des intérêts : 1 unité de *monnaie citoyenne* et 1 unité de *monnaie d'investissement* par jour.
 C'est déjà un début.
 Disons alors que le citoyen est niveau 1, comme dans un jeu, ce sera plus parlant.
 
 À chaque fois que le citoyen reçoit de la monnaie organique (un paiement ou un salaire), il est obligé de la mettre directement sur son livret, son *expérience économique*.
 Et plus son expérience économique est grande, plus il reçoit d'intérêts chaque jour.
 
-Mais la production d'intérêts n'est pas linéairement proportionnelle à la somme sur le livret.
+Mais la production d'intérêts n'est pas linéairement proportionnelle au montant présent sur le livret.
 Au niveau 1, il suffit de recevoir 1 unité pour passer niveau 2.
 Facile !
 Et au niveau 2, un citoyen touche 2 unités de monnaie citoyenne et 2 de monnaie d'investissement par jour.
@@ -47,13 +47,22 @@ En revanche, quand les citoyens investissent dans un *écosystème*, ils disent 
 
 Ainsi, les citoyennes et citoyens agissent sur leur environnement en investissant de manière organique dans les écosystèmes qui les entourent.
 
+Donc pour résumer :
+
+* chaque citoyen a un livret d'épargne à sens unique, nommé l'*expérience économique* ;
+* en fonction du montant présent sur son livret, le citoyen touche 2 monnaies :
+    * de la *monnaie citoyenne*, pour payer la vie de tous les jours ;
+    * de la *monnaie d'investissement*, pour investir dans les écosystèmes.
+
+Il n'y a alors plus besoin de prêts ni de banques, d'impôts, de code du travail ; de même il n'y a plus *possibilité* de spéculer, de forcer quelqu'un à travailler, d'être outrageusement riche, d'être à la rue, etc.
+
 Voilà, vous savez tout sur le fonctionnement de base de l'économie organique.
 Bravo !
 
-## En pratique
+## Pour aller plus loin
 
-Maintenant, en pratique, comment est-ce que ça fonctionne ?
+Si vous voulez tout savoir dans les détails, vous pouvez lire [Les règles du jeu]({filename}/règles-du-jeu.md).
 
-Premièrement, 
-Fonctionnement mensuel
+Et pour voir un peu tout ce qu'implique l'économie organique, vous pouvez aussi lire les articles du [blog](/).
 
+Enfin, si vous voulez poser des questions ou parler un peu de tout ça, rendez-vous sur le [Discord](https://discord.gg/9hPsKqxH)

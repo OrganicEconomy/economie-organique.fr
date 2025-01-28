@@ -502,12 +502,18 @@ Si vous voulez comprendre les détails du calcul :
 Au passage, tant qu'à faire des maths bêtes et méchants, calculons aussi vos émissions carbone (via cette [source](https://www.tresor.economie.gouv.fr/Articles/248d6a7c-d681-4577-9fa5-886791bfc9d1/files/9651f24c-dee1-4c2d-a54f-3aa56927e139)) :
 
 <div class="row justify-content-center">
-  <h5>Votre voiture émet <code><span class="resulting-CO2">...</span></code> kg de CO2 par an, bravo !</h5>
+  <h6>Votre voiture émet <code><span class="resulting-CO2">...</span></code> kg de CO2 par an, bravo !</h6>
 </div>
 
 <div class="row justify-content-center">
-  <h5>Cela coûte <code><span class="resulting-CO2-cost">X</span></code> euros à la communauté.</h5>
+  <h6>Cela coûte <code><span class="resulting-CO2-cost">X</span></code> euros à la communauté.</h6>
 </div>
+
+Je ne vais pas plus loin dans cette notion d'émissions nia nia nia parce que vous pouvez déjà trouver des tests à tout bout de champs et un de plus n'apporterait rien de neuf.
+De plus, l'idée est ici de voir la problèmatique automobile sous un angle moins habituel
+
+Mais surtout, l'aspect pollution n'est jamais un levier efficace pour faire réflechir à ses propres comportements.
+> Les mêmes qui s'opposent aux voitures, en tant qu'elles polluent l'air et le silence et monopolisent la circulation, conduisent une automobile dont ils jugent le pouvoir de pollution négligeable, et n'ont aucunement le sentiment d'aliéner leur liberté lorsqu'ils sont au volant. Ivan Illich
 
 # Aller plus loin
 
@@ -600,3 +606,9 @@ C'est un bon départ pour se poser de nombreuses autres questions.
 Allez, bisous !
 
 Gus.
+
+# Biblio et liens interessants
+
+* La convivialité - Ivan Illich
+* Énergie et équité - Ivan Illich, et notamment son annexe À la recherche du temps gagné par Jean-Pierre Dupuy
+* Le travail de Vito, qui porte beaucoup sur l'automobile, ses impacts et des propositions de solution ; notamment [Utopique](https://laboucledudessin.com/produit/utopique-par-vito/) et [N°1 Hors-Série Lille mystérieuse – Le Périf ](https://laboucledudessin.com/produit/nhs1-lm-le-perif/)

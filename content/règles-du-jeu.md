@@ -52,8 +52,8 @@ Notez que contrairement à ses prédécesseurs, l'économie organique ne présen
 * Lors de la création du compte d'un citoyen, celui-ci ce voit attribué 3 comptes :
     * un compte de [monnaie citoyenne]({filename}/definitions/monnaie-citoyenne.md) ;
     * un compte de [monnaie d'investissement]({filename}/definitions/monnaie-d-investissement.md) ;
-    * et un compte d'[expérience économique]({filename}/definitions/experience-economique.md).
-* Ces trois comptes sont initialement à zéro.
+    * et un livret d'[expérience économique]({filename}/definitions/experience-economique.md).
+* Ces trois éléments sont initialement à zéro.
 * Un citoyen ne peut avoir qu'un seul compte de chaque. Pas un de plus. Et pas un de moins d'ailleurs.
 
 ## Monnaie citoyenne
@@ -88,7 +88,7 @@ Pour mieux comprendre => [Monnaie d'investissement]({filename}/definitions/monna
 * À chaque fois que le citoyen reçoit de la monnaie de la part d'un citoyen (lui-même y compris) ou d'un écosystème, il l'ajoute à son expérience économique.
 * La quantité de monnaie dans l'expérience économique d'un citoyen est inalterable. Elle ne peut pas descendre, être ponctionnée ni aliénée.
 * L'expérience économique peut stagner ou croître, mais jamais baisser.
-* La quantité de [monnaie citoyenne]({filename}/definitions/monnaie-citoyenne.md) et de [monnaie d'investissement]({filename}/definitions/monnaie-d-investissement.md) sont calculées selon la quantité de monnaie totale présente dans l'expérience économique à l'instant du calcul.
+* Les quantités de [monnaie citoyenne]({filename}/definitions/monnaie-citoyenne.md) et de [monnaie d'investissement]({filename}/definitions/monnaie-d-investissement.md) sont calculées selon la quantité de monnaie totale présente dans l'expérience économique à l'instant du calcul.
 * La formule de calcul est la suivante, pour rappel :
     * ``` Q = E^(1/3) + 1```
     * où ```Q``` est la quantité de monnaie citoyenne et de monnaie d'investissement générées quotidiennement ;
@@ -138,7 +138,7 @@ Pour mieux comprendre => [Administrateur]({filename}/definitions/administrateur.
 
 Pour mieux comprendre => [Salaire]({filename}/definitions/salaire.md)
 
-# Chapitre III - Propriété du sol
+# Chapitre IV - Propriété du sol
 
 Contrairement aux précédentes, cette partie ne peut pas être mise en place tout de suite dans notre monde capitaliste.
 À défaut de cela, elle reste une cible, une inspiration pour le moment où une bascule potentielle nous permettra de changer encore plus profondément notre société.
@@ -158,23 +158,24 @@ Contrairement aux précédentes, cette partie ne peut pas être mise en place to
 * Les loyers payés par les citoyens rattachés à un clocher vont directement dans le salaire des acteurs du clocher.
 
 La zone des clochers :
-    * Un clocher administre des parcelles physiques qui doivent toutes être contigües.
-    * Un clocher doit administrer au moins trois parcelles différentes.
-    * Un citoyen ou un groupe de citoyen dont la parcelle se trouve à la frontière de deux zones de clochers différents peut choisir de changer de clocher parmi ces deux là.
-    * La zone d'administration d'un clocher est donc mouvante : elle peut grandir et rapetisser.
-    * N'importe quel groupe de citoyens usufruitiers de trois parcelles contigües peuvent créer un nouveau clocher et y être rattaché.
-    * Si une zone de clocher devient non contigüe suite à une séparation de groupe ou si un clocher se retrouve avec seulement deux parcelles habitées, les citoyens de la zone doivent choisir entre :
-        * Créer un nouveau clocher (s'ils sont sur au moins trois parcelles contigües).
-        * Se rattacher à un des clochers dont la zone est contigüe avec leurs parcelles.
-    * Un clocher est dans l'obligation d'accepter un citoyen ou groupe de citoyen à devenir usufruitier si celui-ci en éprouve le besoin, est en capacité de payer le loyer et qu'une parcelle habitable est disponible.
 
-* Les rôles des acteurs du clocher sont les suivants :
+* Un clocher administre des parcelles physiques qui doivent toutes être contigües.
+* Un clocher doit administrer au moins trois parcelles différentes.
+* Un citoyen ou un groupe de citoyens dont la parcelle se trouve à la frontière de deux zones de clochers différents peut choisir de changer de clocher parmi ces deux là.
+* La zone d'administration d'un clocher est donc mouvante : elle peut grandir et rapetisser.
+* N'importe quel groupe de citoyens usufruitiers de trois parcelles contigües peuvent créer un nouveau clocher et y être rattaché.
+* Si une zone de clocher devient non contigüe suite à une séparation de groupe ou si un clocher se retrouve avec seulement deux parcelles habitées, les citoyens de la zone doivent choisir entre :
+    * Créer un nouveau clocher (s'ils sont sur au moins trois parcelles contigües).
+    * Se rattacher à un des clochers dont la zone est contigüe avec leurs parcelles.
+* Un clocher est dans l'obligation d'accepter un citoyen ou groupe de citoyens à devenir usufruitier si celui-ci en éprouve le besoin, qu'il est en capacité de payer le loyer et qu'une parcelle habitable est disponible.
+
+* Les missions des acteurs du clocher sont les suivantes :
     * Enregistrer les arrivées et les départs des citoyens usufruitiers.
     * Entretenir les parcelles non habitables (qui sont donc communes).
     * Organiser en toute neutralité la politique de la zone administrée.
 
 Pour mieux comprendre => [Clocher]({filename}/definitions/clocher.md)
 
-# Chapitre IV - La loi et la justice
+# Chapitre V - La loi et la justice
 
 On n'en est pas encore là. Ce sujet reste pour savoir qu'il va falloir l'approfondir.
