@@ -49,9 +49,7 @@ var shakeScene = function(engine) {
 
 	for (var i = 0; i < bodies.length; i++) {
 		var body = bodies[i];
-
 		var forceMagnitude = 0.03 * body.mass;
-
 
 		// apply the force over a single update
 		Body.applyForce(body, body.position, { 
@@ -61,8 +59,7 @@ var shakeScene = function(engine) {
 	}
 };
 
-var a = true;
-// an example of using beforeUpdate event on an engine
+// Set constant speed to circles
 Events.on(engine, 'beforeUpdate', function(event) {
 	var bodies = Composite.allBodies(engine.world);
 
@@ -71,30 +68,30 @@ Events.on(engine, 'beforeUpdate', function(event) {
 	}
 });
 
-var b = true;
-// an example of using collisionStart event on an engine
+// On each collision, make an "exchange" of money, shown by an exchange of matter
+// spender sees its size smaller while receiver sees its size bigger.
+var bSpends = true;
 Events.on(engine, 'collisionStart', function(event) {
 	var pairs = event.pairs;
 
-	// change object colours to show those starting a collision
 	for (var i = 0; i < pairs.length; i++) {
 		var pair = pairs[i];
 
 		if (! pair.bodyA.isStatic && ! pair.bodyB.isStatic) {
 			var scaleA = 2 / ( 2 * Math.PI * pair.bodyA.circleRadius);
 			var scaleB = 2 / ( 2 * Math.PI * pair.bodyB.circleRadius);
-			if (b) {
+			if (bSpends) {
 				if (pair.bodyB.circleRadius > 3) {
 					Matter.Body.scale(pair.bodyA, 1 + scaleA, 1 + scaleA);
 					Matter.Body.scale(pair.bodyB, 1 - scaleB, 1 - scaleB);
 				}
-				b = false;
+				bSpends = false;
 			} else {
 				if (pair.bodyA.circleRadius > 3) {
 					Matter.Body.scale(pair.bodyB, 1 + scaleB, 1 + scaleB);
 					Matter.Body.scale(pair.bodyA, 1 - scaleA, 1 - scaleA);
 				}
-				b = true;
+				bSpends = true;
 			}
 		}
 	}
