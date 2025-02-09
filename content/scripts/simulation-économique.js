@@ -1,6 +1,8 @@
 const SIMULATION_BACK_COLOR = "#bcaa99";
 const SIMULATION_BORDERS_COLOR = "#4d8b31";
 const SIMULATION_BALLS_COLOR = "#4d8b31";
+const COLUMNS = 8;
+const ROWS = 5;
 
 // module aliases
 var Engine = Matter.Engine,
@@ -14,9 +16,25 @@ var Engine = Matter.Engine,
     World = Matter.World,
     Bodies = Matter.Bodies;
 
+/**
+ * Simple method found on line to generate random colors
+ * for balls
+ */
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+
 function Simulation(elementId) {
     this.elementId = elementId
     this.started = false;
+    this.speeds = [];
+
     // create an engine
     this.engine = Engine.create();
     this.engine.gravity.scale = 0;
@@ -58,18 +76,20 @@ function Simulation(elementId) {
             var pair = pairs[i];
 
             if (! pair.bodyA.isStatic && ! pair.bodyB.isStatic) {
-                var scaleA = 2 / ( 2 * Math.PI * pair.bodyA.circleRadius);
-                var scaleB = 2 / ( 2 * Math.PI * pair.bodyB.circleRadius);
+                var Ra = pair.bodyA.circleRadius;
+                var Rb = pair.bodyB.circleRadius;
+                var Aa = pair.bodyA.area;
+                var Ab = pair.bodyB.area;
                 if (bSpends) {
                     if (pair.bodyB.circleRadius > 3) {
-                        Matter.Body.scale(pair.bodyA, 1 + scaleA, 1 + scaleA);
-                        Matter.Body.scale(pair.bodyB, 1 - scaleB, 1 - scaleB);
+                        Matter.Body.scale(pair.bodyA, (Ra+1)/Ra, (Ra+1)/Ra);
+                        Matter.Body.scale(pair.bodyB, (Rb-1)/Rb, (Rb-1)/Rb);
                     }
                     bSpends = false;
                 } else {
                     if (pair.bodyA.circleRadius > 3) {
-                        Matter.Body.scale(pair.bodyB, 1 + scaleB, 1 + scaleB);
-                        Matter.Body.scale(pair.bodyA, 1 - scaleA, 1 - scaleA);
+                        Matter.Body.scale(pair.bodyA, (Ra-1)/Ra, (Ra-1)/Ra);
+                        Matter.Body.scale(pair.bodyB, (Rb+1)/Rb, (Rb+1)/Rb);
                     }
                     bSpends = true;
                 }
@@ -107,17 +127,53 @@ function Simulation(elementId) {
         return this;
     }
 
+    /**
+     * Add a split bar in the middle of the scene, to have half balls on one
+     * side and the over half on the other side
+     */
+    this.addSplit = function() {
+
+        var bodyStyle = { fillStyle: SIMULATION_BORDERS_COLOR };
+
+        Composite.add(this.world, [
+            Bodies.rectangle(400, 300, 20, 600, { isStatic: true, render: bodyStyle }),
+        ]);
+        return this;
+    }
+
     /* 
      * Initialize the balls and add them to scene
      **/
-    this.addBalls = function() {
+    this.addBalls = function(options) {
+        options = options || {};
         var bodyStyle = { fillStyle: SIMULATION_BALLS_COLOR };
+        var calculateSize = function() { return 15; };
 
-        this.stack = Composites.stack(70, 100, 9, 4, 50, 50, function(x, y) {
-            return Bodies.circle(x, y, 15, { restitution: 1, render: bodyStyle });
+        if (options.size === "random") {
+            calculateSize = function() { return Common.random() * 30; }
+        }
+
+        this.stack = Composites.stack(70, 100, COLUMNS, ROWS, 50, 50, function(x, y) {
+            return Bodies.circle(x, y, calculateSize(), { restitution: 1, render: { fillStyle: getRandomColor() }});
         });
 
         Composite.add(this.world, this.stack);
+
+        var engine = this.engine;
+        var speeds = this.speeds;
+
+        Events.on(this.engine, 'beforeUpdate', function(event) {
+            var bodies = Composite.allBodies(engine.world);
+            var totalRadius = 0;
+
+            for (var i = 0; i < bodies.length; i++) {
+                Body.setSpeed(bodies[i], speeds[i]);
+                if (! isNaN(bodies[i].area)) {
+                    totalRadius += bodies[i].circleRadius;
+                }
+            }
+            // console.log("Rayon totale : ", Math.round(totalRadius));
+        });
         return this;
     }
 
@@ -140,16 +196,15 @@ function Simulation(elementId) {
         this.started = false;
     }
 
-    this.setConstantSpeed = function() {
-        // Set constant speed to circles
-        var engine = this.engine;
-        Events.on(this.engine, 'beforeUpdate', function(event) {
-            var bodies = Composite.allBodies(engine.world);
-
-            for (var i = 0; i < bodies.length; i++) {
-                Body.setSpeed(bodies[i], 5);
+    this.setBallsSpeed = function(options) {
+        options = options || {};
+        for (var i = 0; i < COLUMNS*ROWS; i++) {
+            if (options.type === "random") {
+                this.speeds[i] = Common.random() * 5;
+            } else {
+                this.speeds[i] = 5;
             }
-        });
+        }
         return this;
     }
 
@@ -182,27 +237,22 @@ simulationHander = new SimulationHandler();
 
 simulationHander.add(
     new Simulation("simulationBase")
-    .setConstantSpeed()
+    .setBallsSpeed({type: "constant"})
     .addBorders()
     .addBalls());
 
 simulationHander.add(
-    new Simulation("simulationRandomSpeed")
-    .setConstantSpeed()
-    .addBorders());
-
-simulationHander.add(
-    new Simulation("simulationRandomSizes")
-    .setConstantSpeed()
-    .addBorders());
+    new Simulation("simulationRandomSpeedAndSize")
+    .setBallsSpeed({type: "random"})
+    .addBorders()
+    .addBalls({size: "random"}));
 
 simulationHander.add(
     new Simulation("simulationWithCompanies")
-    .setConstantSpeed()
+    .setBallsSpeed()
     .addBorders());
 
 simulationHander.add(
     new Simulation("simulationWithBank")
-    .setConstantSpeed()
-    .addBorders()
-    .addBalls());
+    .setBallsSpeed()
+    .addBorders());
