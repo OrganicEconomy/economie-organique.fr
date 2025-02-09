@@ -1,8 +1,10 @@
 const SIMULATION_BACK_COLOR = "#bcaa99";
 const SIMULATION_BORDERS_COLOR = "#4d8b31";
 const SIMULATION_BALLS_COLOR = "#4d8b31";
-const COLUMNS = 7;
-const ROWS = 4;
+const COLUMNS = 8;
+const ROWS = 5;
+const AMOUNT_PAID_TO_COMPANIES = 2;
+const SALARIE_PAID_BY_COMPANIES = 3;
 
 // module aliases
 var Engine = Matter.Engine,
@@ -39,7 +41,7 @@ function spend(spender, amount) {
     if (spender.label === "Rectangle Body") {
         // Only way I found to get the rectangle's width...
         const width = Math.sqrt(spender.area);
-        if (width <= 3) { return 0; }
+        if (spender.area <= 225) { return 0; }
         ratio = (width - amount)/width;
     } else if (spender.label === "Circle Body") {
         if (spender.circleRadius <= 3) { return 0; }
@@ -86,7 +88,6 @@ function Simulation(elementId) {
             background: SIMULATION_BACK_COLOR
         }
     });
-
 
     this.shakeScene = function() {
         var bodies = Composite.allBodies(this.engine.world);
@@ -139,15 +140,19 @@ function Simulation(elementId) {
             for (var i = 0; i < pairs.length; i++) {
                 var pair = pairs[i];
 
+                if (pair.bodyA.isStatic || pair.bodyB.isStatic) {
+                    continue;
+                }
+
                 if (pair.bodyA.label === "Rectangle Body" && pair.bodyB.label === "Circle Body") {
-                    cash(pair.bodyA, spend(pair.bodyB, 1));
+                    cash(pair.bodyA, spend(pair.bodyB, AMOUNT_PAID_TO_COMPANIES));
                 } else if (pair.bodyA.label === "Circle Body" && pair.bodyB.label === "Rectangle Body") {
-                    cash(pair.bodyB, spend(pair.bodyA, 1));
+                    cash(pair.bodyB, spend(pair.bodyA, AMOUNT_PAID_TO_COMPANIES));
                 } else if (pair.bodyA.label === "Rectangle Body" && pair.bodyB.label === "Rectangle Body") {
                     if (bSpends) {
-                        cash(pair.bodyA, spend(pair.bodyB, 1));
+                        cash(pair.bodyA, spend(pair.bodyB, AMOUNT_PAID_TO_COMPANIES));
                     } else {
-                        cash(pair.bodyB, spend(pair.bodyA, 1));
+                        cash(pair.bodyB, spend(pair.bodyA, AMOUNT_PAID_TO_COMPANIES));
                     }
                     bSpends = ! bSpends;
                 }
@@ -157,7 +162,6 @@ function Simulation(elementId) {
     }
 
     this.start = function() {
-        this.engine.timing.timeScale = 1;
         if (! this.started) {
             this.render();
             this.run();
@@ -167,7 +171,7 @@ function Simulation(elementId) {
     }
 
     this.pause = function() {
-        this.engine.timing.timeScale = 0;
+        this.stop();
     }
 
     /*
@@ -222,7 +226,6 @@ function Simulation(elementId) {
 
         Composite.add(this.world, peopleStack);
         this.people = peopleStack.bodies;
-        console.log(this.people, peopleStack);
 
         var engine = this.engine;
         var speeds = this.speeds;
@@ -241,54 +244,77 @@ function Simulation(elementId) {
      */
     this.addCompanies = function(n) {
         const companyStack = Composites.stack(40, 80, 2, Math.round(n/2), 50, 50, function(x, y) {
-            return Bodies.rectangle(x, y, 15, 15, { render: { fillStyle: getRandomColor() }});
+            return Bodies.rectangle(x, y, 15, 15, { restitution: 1, render: { fillStyle: getRandomColor() }});
         });
         Composite.add(this.world, companyStack);
         this.companies = companyStack.bodies;
 
         var people = this.people;
+        var employmentIndex = 0;
 
         var getUnemployedPerson = function() {
-            for (var i = 0; i < people.length; i++) {
-                if (people[i].render.fillStyle === SIMULATION_BALLS_COLOR) {
-                    return people[i];
+            var looped = 0;
+            while (people[employmentIndex].render.fillStyle != SIMULATION_BALLS_COLOR) {
+                employmentIndex += 1;
+                looped += 1;
+                if (employmentIndex >= people.length) {
+                    employmentIndex = 0;
+                }
+                if (looped === people.length) {
+                    return null;
                 }
             }
-            return null;
+            return people[employmentIndex];
         }
 
         for (var i = 0; i < this.companies.length; i++) {
             this.companies[i].employees = [];
-            this.companies[i].fireEmployees = function() {
-                while (this.employees.length > 0 && this.area - 100 * (this.employees.length) < 225) {
-                    var fired = this.employees.pop();
-                    if (fired) { fired.render.fillStyle = SIMULATION_BALLS_COLOR; }
-                }
+            this.companies[i].fireAnEmployee = function() {
+                var fired = this.employees.pop();
+                if (fired) { fired.render.fillStyle = SIMULATION_BALLS_COLOR; }
             }
-            this.companies[i].payEmployees = function() {
-                for (var j = 0; j < this.employees.length; j++) {
-                    cash(this.employees[j], spend(this, 2));
-                }
+            this.companies[i].payEmployee = function(index, value) {
+                cash(this.employees[index], value);
             }
-            this.companies[i].recruitEmployees = function() {
-                while (this.area - 100 * (this.employees.length + 1) > 225) {
-                    var recruit = getUnemployedPerson();
-                    console.log(recruit);
-                    if (recruit) {
-                        this.employees.push(recruit);
-                        recruit.render.fillStyle = this.render.fillStyle;
+            this.companies[i].recruitAnEmployee = function() {
+                var recruit = getUnemployedPerson();
+                if (recruit) {
+                    this.employees.push(recruit);
+                    recruit.render.fillStyle = this.render.fillStyle;
+                }
+                return recruit;
+            }
+            this.companies[i].update = function() {
+                var spended = spend(this, SALARIE_PAID_BY_COMPANIES);
+                var index = 0;
+                while (spended === SALARIE_PAID_BY_COMPANIES && index <= 6) {
+                    if (this.employees.length > index + 1) {
+                        this.payEmployee(index, SALARIE_PAID_BY_COMPANIES);
+                    } else {
+                        var recruit = this.recruitAnEmployee();
+                        if (recruit) {
+                            this.payEmployee(index, SALARIE_PAID_BY_COMPANIES);
+                        } else {
+                            return;
+                        }
                     }
+                    spended = spend(this, SALARIE_PAID_BY_COMPANIES);
+                    index += 1;
+                }
+                for (var j = index; j < this.employees.length; j++) {
+                    this.fireAnEmployee();
                 }
             }
         }
 
         var companies = this.companies;
         Events.on(this.engine, 'beforeUpdate', function(event) {
+            for (var i = 0; i < companies.length; i++) {
+                Body.setSpeed(companies[i], 5);
+            }
             if (Common.now() - lastTime >= 3000) {
                 for (var i = 0; i < companies.length; i++) {
-                    companies[i].fireEmployees();
-                    companies[i].payEmployees();
-                    companies[i].recruitEmployees();
+                    companies[i].update();
                     // console.log(companyStack.bodies[i]);
                 }
                 // update last time
@@ -376,7 +402,7 @@ simulationHander.add(
     .setBallsSpeed()
     .addBorders()
     .addPeople({randomColors: false, randomSize: false})
-    .addCompanies(4)
+    .addCompanies(6)
     .setCompaniesCollision());
 
 simulationHander.add(
