@@ -105,10 +105,43 @@ Voyons voir ce que ça donne.
 Ici, on peut faire d'autres petites observations qui semblent plutôt refléter une certaine réalité.
 
 La première est que, quand on commence gros (riche), on a quand même de très grandes chances de le finir.
-Ce qui en dit long sur l'incomensurable injustice que représente l'héritage.
+Ce qui en dit long sur l'incomensurable injustice que représente notamment l'héritage.
 
 Aussi, il semblerait que les plus lents s'en sortent mieux que les plus rapides.
 Ce n'est pas vraiment surprenant, mais c'est à noter.
+
+**La conclusion de cette première partie est très importante parce qu'elle met en déroute pas mal d'idées reçues.**
+Beaucoup, qui ne se penchent jamais sur l'économie, ce qu'on comprend, sont tentés par quelques raccourcis tels que :
+
+* "*C'est parce que l'humain est mauvais*"
+* "*C'est à cause des entreprises*"
+* "*C'est à cause des politiciens*"
+* Et tout un tas d'autres phrases préconstruites du même accabit.
+
+Mais la vérité est plus simple et, pourtant, plus difficile à admettre : **une monnaie réserve de valeur** est, par construction, une monnaie capitaliste et **implique spontanément des inégalités catastrophiques**.
+
+Voilà, tout est déjà plus ou moins dit.
+Mais allons tout de même plus loin, histoire de voir si les choses s'améliorent ou empirent.
+Pas de spoilers.
+
+# La start-up nation
+
+Maintenant, complexifions un peu le tout.
+Parce que les échanges entre particuliers, c'est sympa mais pas très démonstratif.
+
+De nos jours, il est plutôt rare de faire du CtoC (terme de com' pour dire de particulier à particulier).
+En fait, tout n'est que BtoC et BtoB (les entreprises vendent aux autres entreprises et aux particuliers).
+
+Donc, sans plus attendre, ajoutons cela et modifions un peu notre simulation.
+
+Voici ce qu'il y a de neuf :
+
+* Maintenant, quand une balle en touche une autre, rien ne se passe.
+* Les carrés représentent des entreprises.
+* Quand une entreprise atteint une certaine taille, il embauche une personne au hasard (qui aura alors la même couleur que l'entreprise).
+* Quand une entreprise réduit en taille, elle licencie au hasard.
+* Chaque entreprise verse un salaire toutes les 5 secondes à chacun de ses employés.
+* Quand un individu touche une entreprise, il lui paye une valeur fixe.
 
 <button id="simulation2Start" type="button" class="btn btn-sm btn-outline-primary">Go</button>
 <button id="simulation2Pause" type="button" class="btn btn-sm btn-outline-primary">Pause</button>

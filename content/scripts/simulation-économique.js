@@ -69,34 +69,35 @@ function Simulation(elementId) {
     // On each collision, make an "exchange" of money, shown by an exchange of matter
     // spender sees its size smaller while receiver sees its size bigger.
     var bSpends = true;
-    Events.on(this.engine, 'collisionStart', function(event) {
-        var pairs = event.pairs;
 
-        for (var i = 0; i < pairs.length; i++) {
-            var pair = pairs[i];
+    this.setBallsCollision = function() {
+        Events.on(this.engine, 'collisionStart', function(event) {
+            var pairs = event.pairs;
 
-            if (! pair.bodyA.isStatic && ! pair.bodyB.isStatic) {
-                var Ra = pair.bodyA.circleRadius;
-                var Rb = pair.bodyB.circleRadius;
-                var Aa = pair.bodyA.area;
-                var Ab = pair.bodyB.area;
-                if (bSpends) {
-                    if (pair.bodyB.circleRadius > 3) {
-                        Matter.Body.scale(pair.bodyA, (Ra+1)/Ra, (Ra+1)/Ra);
-                        Matter.Body.scale(pair.bodyB, (Rb-1)/Rb, (Rb-1)/Rb);
-                    }
-                    bSpends = false;
-                } else {
-                    if (pair.bodyA.circleRadius > 3) {
-                        Matter.Body.scale(pair.bodyA, (Ra-1)/Ra, (Ra-1)/Ra);
-                        Matter.Body.scale(pair.bodyB, (Rb+1)/Rb, (Rb+1)/Rb);
-                    }
-                    bSpends = true;
+            function scaling(a, b) {
+                const Ra = a.circleRadius;
+                const Rb = b.circleRadius;
+                if (Rb > 3) {
+                    Matter.Body.scale(a, (Ra+1)/Ra, (Ra+1)/Ra);
+                    Matter.Body.scale(b, (Rb-1)/Rb, (Rb-1)/Rb);
                 }
             }
-        }
 
-    });
+            for (var i = 0; i < pairs.length; i++) {
+                var pair = pairs[i];
+
+                if (! pair.bodyA.isStatic && ! pair.bodyB.isStatic) {
+                    if (bSpends) {
+                        scaling(pair.bodyB, pair.bodyA);
+                    } else {
+                        scaling(pair.bodyA, pair.bodyB);
+                    }
+                    bSpends = ! bSpends;
+                }
+            }
+        });
+        return this;
+    }
 
     this.start = function() {
         this.engine.timing.timeScale = 1;
@@ -148,32 +149,43 @@ function Simulation(elementId) {
         options = options || {};
         var bodyStyle = { fillStyle: SIMULATION_BALLS_COLOR };
         var calculateSize = function() { return 15; };
+        var getColor = function() { return SIMULATION_BALLS_COLOR };
 
-        if (options.size === "random") {
+        if (options.randomSize === true) {
             calculateSize = function() { return Common.random() * 30; }
         }
 
-        this.stack = Composites.stack(70, 100, COLUMNS, ROWS, 50, 50, function(x, y) {
+        if (options.randomColors === true) {
+        }
+
+        const stack = Composites.stack(70, 100, COLUMNS, ROWS, 50, 50, function(x, y) {
             return Bodies.circle(x, y, calculateSize(), { restitution: 1, render: { fillStyle: getRandomColor() }});
         });
 
-        Composite.add(this.world, this.stack);
+        Composite.add(this.world, stack);
 
         var engine = this.engine;
         var speeds = this.speeds;
 
         Events.on(this.engine, 'beforeUpdate', function(event) {
             var bodies = Composite.allBodies(engine.world);
-            var totalRadius = 0;
 
             for (var i = 0; i < bodies.length; i++) {
                 Body.setSpeed(bodies[i], speeds[i]);
-                if (! isNaN(bodies[i].area)) {
-                    totalRadius += bodies[i].circleRadius;
-                }
             }
-            // console.log("Rayon totale : ", Math.round(totalRadius));
         });
+        return this;
+    }
+
+    /**
+     * Add squares representing companies
+     */
+    this.addCompanies = function(n) {
+        const companies = Composites.stack(40, 80, 2, Math.round(n/2), 50, 50, function(x, y) {
+            return Bodies.rectangle(x, y, 15, 15, { render: { fillStyle: getRandomColor() }});
+        });
+        Composite.add(this.world, companies);
+
         return this;
     }
 
@@ -196,10 +208,9 @@ function Simulation(elementId) {
         this.started = false;
     }
 
-    this.setBallsSpeed = function(options) {
-        options = options || {};
+    this.setBallsSpeed = function(randomSpeed=false) {
         for (var i = 0; i < COLUMNS*ROWS; i++) {
-            if (options.type === "random") {
+            if (randomSpeed) {
                 this.speeds[i] = Common.random() * 5;
             } else {
                 this.speeds[i] = 5;
@@ -237,22 +248,26 @@ simulationHander = new SimulationHandler();
 
 simulationHander.add(
     new Simulation("simulationBase")
-    .setBallsSpeed({type: "constant"})
+    .setBallsSpeed()
     .addBorders()
-    .addBalls());
+    .addBalls()
+    .setBallsCollision());
 
 simulationHander.add(
     new Simulation("simulationRandomSpeedAndSize")
-    .setBallsSpeed({type: "random"})
+    .setBallsSpeed(random=true)
     .addBorders()
-    .addBalls({size: "random"}));
+    .addBalls({randomSize: true})
+    .setBallsCollision());
 
 simulationHander.add(
     new Simulation("simulationWithCompanies")
     .setBallsSpeed()
-    .addBorders());
+    .addBorders()
+    .addCompanies(6)
+    .addBalls({randomColors: false, randomSize: false}));
 
 simulationHander.add(
     new Simulation("simulationWithBank")
-    .setBallsSpeed()
+    .setBallsSpeed(false)
     .addBorders());
