@@ -16,13 +16,14 @@ var Engine = Matter.Engine,
 
 function Simulation(elementId) {
     this.elementId = elementId
+    this.started = false;
     // create an engine
     this.engine = Engine.create();
     this.engine.gravity.scale = 0;
     this.world = this.engine.world;
 
     // create a renderer
-    this.render = Render.create({
+    this.renderer = Render.create({
         element: document.getElementById(this.elementId),
         engine: this.engine,
         options: {
@@ -77,11 +78,10 @@ function Simulation(elementId) {
 
     });
 
-    this.started = false;
     this.start = function() {
-        if (this.started) {
-            this.engine.timing.timeScale = 1;
-        } else {
+        this.engine.timing.timeScale = 1;
+        if (! this.started) {
+            this.render();
             this.run();
             this.shakeScene();
             this.started = true;
@@ -92,40 +92,50 @@ function Simulation(elementId) {
         this.engine.timing.timeScale = 0;
     }
 
-    this.run = function() {
-        this.engine.timing.timeScale = 1;
+    /*
+     * Initilize the borders and add them to scene
+     **/
+    this.addBorders = function() {
         var bodyStyle = { fillStyle: SIMULATION_BORDERS_COLOR };
 
-        // scene code
         Composite.add(this.world, [
             Bodies.rectangle(400, 0, 800, 50, { isStatic: true, render: bodyStyle }),
             Bodies.rectangle(400, 600, 800, 50, { isStatic: true, render: bodyStyle }),
             Bodies.rectangle(800, 300, 50, 600, { isStatic: true, render: bodyStyle }),
             Bodies.rectangle(0, 300, 50, 600, { isStatic: true, render: bodyStyle })
         ]);
+        return this;
+    }
 
-        bodyStyle = { fillStyle: SIMULATION_BALLS_COLOR };
+    /* 
+     * Initialize the balls and add them to scene
+     **/
+    this.addBalls = function() {
+        var bodyStyle = { fillStyle: SIMULATION_BALLS_COLOR };
 
         this.stack = Composites.stack(70, 100, 9, 4, 50, 50, function(x, y) {
             return Bodies.circle(x, y, 15, { restitution: 1, render: bodyStyle });
         });
 
         Composite.add(this.world, this.stack);
+        return this;
+    }
 
-        // run the renderer
-        Render.run(this.render);
-
-        // create runner
-        this.runner = Runner.create();
-
-        // run the engine
+    this.render = function() {
+        Render.run(this.renderer);
+        return this;
+    }
+    
+    this.run = function() {
+        this.runner = this.runner || Runner.create();
         Runner.run(this.runner, this.engine);
     }
 
     this.stop = function() {
-        World.clear(this.world);
-        Engine.clear(this.engine);
-        Render.stop(this.render);
+        if (! this.started) {
+            return;
+        }
+        Render.stop(this.renderer);
         Runner.stop(this.runner);
         this.started = false;
     }
@@ -140,19 +150,59 @@ function Simulation(elementId) {
                 Body.setSpeed(bodies[i], 5);
             }
         });
+        return this;
+    }
+
+}
+
+function SimulationHandler() {
+    this.simulations = [];
+    this.add = function(simulation) {
+        this.simulations.push(simulation);
+        this.bindSimulationToButtons(simulation, this.simulations.length - 1);
+    }
+
+    this.bindSimulationToButtons = function(simulation, index) {
+        var simulations = this.simulations;
+        $(`#simulation${index}Start`).on("click", function() {
+            for (var i = 0; i < simulations.length; i++) {
+                if (simulations[i] !== simulation) {
+                    simulations[i].stop();
+                }
+            }
+            simulation.start();
+        });
+        $(`#simulation${index}Pause`).on("click", function() {
+            simulation.pause();
+        });
     }
 }
 
-var simulations = [];
+simulationHander = new SimulationHandler();
 
-var s1 = new Simulation("simulationBase");
-s1.setConstantSpeed();
-simulations.push(s1);
+simulationHander.add(
+    new Simulation("simulationBase")
+    .setConstantSpeed()
+    .addBorders()
+    .addBalls());
 
-for (var i = 0; i < simulations.length; i++) {
-    console.log(i, simulations);
-    var s = simulations[i];
-    $(`#simulation${i}Start`).on("click", function() { s.start(); });
-    $(`#simulation${i}Pause`).on("click", function() { s.pause(); });
-    $(`#simulation${i}Stop`).on("click", function() { s.stop(); });
-}
+simulationHander.add(
+    new Simulation("simulationRandomSpeed")
+    .setConstantSpeed()
+    .addBorders());
+
+simulationHander.add(
+    new Simulation("simulationRandomSizes")
+    .setConstantSpeed()
+    .addBorders());
+
+simulationHander.add(
+    new Simulation("simulationWithCompanies")
+    .setConstantSpeed()
+    .addBorders());
+
+simulationHander.add(
+    new Simulation("simulationWithBank")
+    .setConstantSpeed()
+    .addBorders()
+    .addBalls());

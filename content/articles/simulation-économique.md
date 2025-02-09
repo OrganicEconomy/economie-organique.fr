@@ -50,7 +50,6 @@ Je vous laisse cliquer sur ce premier cas et regarder un peu comment ça évolue
  
 <button id="simulation0Start" type="button" class="btn btn-sm btn-outline-primary">Go</button>
 <button id="simulation0Pause" type="button" class="btn btn-sm btn-outline-primary">Pause</button>
-<button id="simulation0Stop" type="button" class="btn btn-sm btn-outline-primary">Stop</button>
 <div id="simulationBase"></div>
 
 Au début, ça ne sautera pas aux yeux, les balles bougent et rebondissent, ok.
@@ -72,7 +71,18 @@ Car j'insiste sur le côté hasardeux des paramètres de la simulation :
 * On protège quand même les plus pauvres, ici, vu qu'arrivé une certaine petite taille limite, il ne dépense plus.
 * Enfin, pour ne pas mentir, c'est l'aire de la balle qui augmente et non pas son rayon. Si j'avais fait le rayon, les inégalités auraient l'air démente (bien qu'elles le soient). Ce qui veut dire que les écarts sont visibles mais pas exacerbés.
 
+<button id="simulation1Start" type="button" class="btn btn-sm btn-outline-primary">Go</button>
+<button id="simulation1Pause" type="button" class="btn btn-sm btn-outline-primary">Pause</button>
 <div id="simulationRandomSpeed"></div>
+
+<button id="simulation2Start" type="button" class="btn btn-sm btn-outline-primary">Go</button>
+<button id="simulation2Pause" type="button" class="btn btn-sm btn-outline-primary">Pause</button>
 <div id="simulationRandomSizes"></div>
+
+<button id="simulation3Start" type="button" class="btn btn-sm btn-outline-primary">Go</button>
+<button id="simulation3Pause" type="button" class="btn btn-sm btn-outline-primary">Pause</button>
 <div id="simulationWithCompanies"></div>
+
+<button id="simulation4Start" type="button" class="btn btn-sm btn-outline-primary">Go</button>
+<button id="simulation4Pause" type="button" class="btn btn-sm btn-outline-primary">Pause</button>
 <div id="simulationWithBank"></div>
