@@ -1,8 +1,8 @@
 const SIMULATION_BACK_COLOR = "#bcaa99";
 const SIMULATION_BORDERS_COLOR = "#4d8b31";
 const SIMULATION_BALLS_COLOR = "#4d8b31";
-const COLUMNS = 8;
-const ROWS = 5;
+const COLUMNS = 7;
+const ROWS = 4;
 
 // module aliases
 var Engine = Matter.Engine,
@@ -29,8 +29,45 @@ function getRandomColor() {
     return color;
 }
 
+/**
+ * Reduce object size to represent it's money spended
+ * Return the amount of money spended.
+ * Do nothing and return 0 if spender was too poor.
+ */
+function spend(spender, amount) {
+    var ratio = 1;
+    if (spender.label === "Rectangle Body") {
+        // Only way I found to get the rectangle's width...
+        const width = Math.sqrt(spender.area);
+        if (width <= 3) { return 0; }
+        ratio = (width - amount)/width;
+    } else if (spender.label === "Circle Body") {
+        if (spender.circleRadius <= 3) { return 0; }
+        ratio = (spender.circleRadius - amount)/spender.circleRadius;
+    } else {
+        return 0;
+    }
+    Matter.Body.scale(spender, ratio, ratio);
+    return amount;
+}
+
+function cash(target, amount) {
+    var ratio = 1;
+    if (target.label === "Rectangle Body") {
+        const width = Math.sqrt(target.area);
+        ratio = (width + amount)/width;
+    } else if (target.label === "Circle Body") {
+        ratio = (target.circleRadius + amount)/target.circleRadius;
+    }
+    Matter.Body.scale(target, ratio, ratio);
+    return amount;
+}
+
 
 function Simulation(elementId) {
+    var bSpends = true;
+    var lastTime = Common.now();
+
     this.elementId = elementId
     this.started = false;
     this.speeds = [];
@@ -66,31 +103,51 @@ function Simulation(elementId) {
         }
     };
 
-    // On each collision, make an "exchange" of money, shown by an exchange of matter
-    // spender sees its size smaller while receiver sees its size bigger.
-    var bSpends = true;
-
+    /*
+     * On each collision, make a transaction from customer (circle) to customer (circle)
+     */
     this.setBallsCollision = function() {
         Events.on(this.engine, 'collisionStart', function(event) {
             var pairs = event.pairs;
 
-            function scaling(a, b) {
-                const Ra = a.circleRadius;
-                const Rb = b.circleRadius;
-                if (Rb > 3) {
-                    Matter.Body.scale(a, (Ra+1)/Ra, (Ra+1)/Ra);
-                    Matter.Body.scale(b, (Rb-1)/Rb, (Rb-1)/Rb);
+            for (var i = 0; i < pairs.length; i++) {
+                var pair = pairs[i];
+
+                if (pair.bodyA.label === "Circle Body" && pair.bodyB.label === "Circle Body") {
+                    // spended is 0 if negative spender was too poor
+                    // So, to avoid money creation, use spended to the other
+                    if (bSpends) {
+                        cash(pair.bodyA, spend(pair.bodyB, 1));
+                    } else {
+                        cash(pair.bodyB, spend(pair.bodyA, 1));
+                    }
+                    bSpends = ! bSpends;
                 }
             }
+        });
+        return this;
+    }
+
+    /*
+     * On each collision, make a transaction from customer (circle) to company (rectangle)
+     */
+    this.setCompaniesCollision = function() {
+        Events.on(this.engine, 'collisionStart', function(event) {
+            var pairs = event.pairs;
+            var spended;
 
             for (var i = 0; i < pairs.length; i++) {
                 var pair = pairs[i];
 
-                if (! pair.bodyA.isStatic && ! pair.bodyB.isStatic) {
+                if (pair.bodyA.label === "Rectangle Body" && pair.bodyB.label === "Circle Body") {
+                    cash(pair.bodyA, spend(pair.bodyB, 1));
+                } else if (pair.bodyA.label === "Circle Body" && pair.bodyB.label === "Rectangle Body") {
+                    cash(pair.bodyB, spend(pair.bodyA, 1));
+                } else if (pair.bodyA.label === "Rectangle Body" && pair.bodyB.label === "Rectangle Body") {
                     if (bSpends) {
-                        scaling(pair.bodyB, pair.bodyA);
+                        cash(pair.bodyA, spend(pair.bodyB, 1));
                     } else {
-                        scaling(pair.bodyA, pair.bodyB);
+                        cash(pair.bodyB, spend(pair.bodyA, 1));
                     }
                     bSpends = ! bSpends;
                 }
@@ -145,7 +202,7 @@ function Simulation(elementId) {
     /* 
      * Initialize the balls and add them to scene
      **/
-    this.addBalls = function(options) {
+    this.addPeople = function(options) {
         options = options || {};
         var bodyStyle = { fillStyle: SIMULATION_BALLS_COLOR };
         var calculateSize = function() { return 15; };
@@ -156,22 +213,24 @@ function Simulation(elementId) {
         }
 
         if (options.randomColors === true) {
+            getColor = getRandomColor;
         }
 
-        const stack = Composites.stack(70, 100, COLUMNS, ROWS, 50, 50, function(x, y) {
-            return Bodies.circle(x, y, calculateSize(), { restitution: 1, render: { fillStyle: getRandomColor() }});
+        const peopleStack = Composites.stack(70, 100, COLUMNS, ROWS, 50, 50, function(x, y) {
+            return Bodies.circle(x, y, calculateSize(), { restitution: 1, render: { fillStyle: getColor() }});
         });
 
-        Composite.add(this.world, stack);
+        Composite.add(this.world, peopleStack);
+        this.people = peopleStack.bodies;
+        console.log(this.people, peopleStack);
 
         var engine = this.engine;
         var speeds = this.speeds;
+        var people = this.people;
 
         Events.on(this.engine, 'beforeUpdate', function(event) {
-            var bodies = Composite.allBodies(engine.world);
-
-            for (var i = 0; i < bodies.length; i++) {
-                Body.setSpeed(bodies[i], speeds[i]);
+            for (var i = 0; i < people.length; i++) {
+                Body.setSpeed(people[i], speeds[i]);
             }
         });
         return this;
@@ -181,13 +240,65 @@ function Simulation(elementId) {
      * Add squares representing companies
      */
     this.addCompanies = function(n) {
-        const companies = Composites.stack(40, 80, 2, Math.round(n/2), 50, 50, function(x, y) {
+        const companyStack = Composites.stack(40, 80, 2, Math.round(n/2), 50, 50, function(x, y) {
             return Bodies.rectangle(x, y, 15, 15, { render: { fillStyle: getRandomColor() }});
         });
-        Composite.add(this.world, companies);
+        Composite.add(this.world, companyStack);
+        this.companies = companyStack.bodies;
+
+        var people = this.people;
+
+        var getUnemployedPerson = function() {
+            for (var i = 0; i < people.length; i++) {
+                if (people[i].render.fillStyle === SIMULATION_BALLS_COLOR) {
+                    return people[i];
+                }
+            }
+            return null;
+        }
+
+        for (var i = 0; i < this.companies.length; i++) {
+            this.companies[i].employees = [];
+            this.companies[i].fireEmployees = function() {
+                while (this.employees.length > 0 && this.area - 100 * (this.employees.length) < 225) {
+                    var fired = this.employees.pop();
+                    if (fired) { fired.render.fillStyle = SIMULATION_BALLS_COLOR; }
+                }
+            }
+            this.companies[i].payEmployees = function() {
+                for (var j = 0; j < this.employees.length; j++) {
+                    cash(this.employees[j], spend(this, 2));
+                }
+            }
+            this.companies[i].recruitEmployees = function() {
+                while (this.area - 100 * (this.employees.length + 1) > 225) {
+                    var recruit = getUnemployedPerson();
+                    console.log(recruit);
+                    if (recruit) {
+                        this.employees.push(recruit);
+                        recruit.render.fillStyle = this.render.fillStyle;
+                    }
+                }
+            }
+        }
+
+        var companies = this.companies;
+        Events.on(this.engine, 'beforeUpdate', function(event) {
+            if (Common.now() - lastTime >= 3000) {
+                for (var i = 0; i < companies.length; i++) {
+                    companies[i].fireEmployees();
+                    companies[i].payEmployees();
+                    companies[i].recruitEmployees();
+                    // console.log(companyStack.bodies[i]);
+                }
+                // update last time
+                lastTime = Common.now();
+            }
+        });
 
         return this;
     }
+
 
     this.render = function() {
         Render.run(this.renderer);
@@ -250,22 +361,23 @@ simulationHander.add(
     new Simulation("simulationBase")
     .setBallsSpeed()
     .addBorders()
-    .addBalls()
+    .addPeople({randomColors: true})
     .setBallsCollision());
 
 simulationHander.add(
     new Simulation("simulationRandomSpeedAndSize")
     .setBallsSpeed(random=true)
     .addBorders()
-    .addBalls({randomSize: true})
+    .addPeople({randomColors: true, randomSize: true})
     .setBallsCollision());
 
 simulationHander.add(
     new Simulation("simulationWithCompanies")
     .setBallsSpeed()
     .addBorders()
-    .addCompanies(6)
-    .addBalls({randomColors: false, randomSize: false}));
+    .addPeople({randomColors: false, randomSize: false})
+    .addCompanies(4)
+    .setCompaniesCollision());
 
 simulationHander.add(
     new Simulation("simulationWithBank")

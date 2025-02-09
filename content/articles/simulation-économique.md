@@ -139,8 +139,8 @@ Voici ce qu'il y a de neuf :
 * Maintenant, quand une balle en touche une autre, rien ne se passe.
 * Les carrés représentent des entreprises.
 * Quand une entreprise atteint une certaine taille, il embauche une personne au hasard (qui aura alors la même couleur que l'entreprise).
-* Quand une entreprise réduit en taille, elle licencie au hasard.
-* Chaque entreprise verse un salaire toutes les 5 secondes à chacun de ses employés.
+* Quand une entreprise réduit en taille, elle licencie le dernier arrivé.
+* Chaque entreprise verse un salaire toutes les 3 secondes à chacun de ses employés.
 * Quand un individu touche une entreprise, il lui paye une valeur fixe.
 
 <button id="simulation2Start" type="button" class="btn btn-sm btn-outline-primary">Go</button>
