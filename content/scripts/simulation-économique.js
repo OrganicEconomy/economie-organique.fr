@@ -4,9 +4,7 @@ const SIMULATION_BALLS_COLOR = "#4d8b31";
 const SIMULATION_MIN_SIZE = 6;
 const COLUMNS = 8;
 const ROWS = 5;
-const AMOUNT_PAID_TO_COMPANIES = 2;
-const SALARIE_PAID_BY_COMPANIES = 15;
-const MAX_RECRUITS_PER_COMPANIES = 14;
+const MAX_RECRUITS_PER_COMPANIES = 7;
 
 // module aliases
 var Engine = Matter.Engine,
@@ -86,14 +84,13 @@ function AdminService(aCompany, aHumanResourcesHandler) {
 	var company = aCompany;
 	var humanResourcesHandler = aHumanResourcesHandler;
 	var employees = [];
-	var baseSalary = SALARIE_PAID_BY_COMPANIES;
 	var maxEmployees = MAX_RECRUITS_PER_COMPANIES;
 
-	this.payEmployees = function() {
+	this.payEmployees = function(salary) {
 		var paid,
 			toFire = 0;
 		for (var i = 0; i < employees.length; i++) {
-			paid = company.wallet.pay(employees[i], baseSalary);
+			paid = company.wallet.pay(employees[i], salary);
 			if (paid === 0) {
 				toFire += 1;
 			}
@@ -102,7 +99,7 @@ function AdminService(aCompany, aHumanResourcesHandler) {
 			this.fireAnEmployee();
 		}
 		for (var i = employees.length; i < maxEmployees; i++) {
-			if (company.wallet.canAffordIt(baseSalary)) {
+			if (company.wallet.canAffordIt(salary)) {
 				this.recruitAnEmployee();
 			}
 		}
@@ -127,8 +124,6 @@ function Simulation(elementId) {
     this.started = false;
     this.speeds = [];
 	this.CtoCTransactionAmount = 1;
-	this.BtoBTransactionAmount = 2;
-	this.CtoBTransactionAmount = 2;
 
     // create an engine
     this.engine = Engine.create();
@@ -322,8 +317,7 @@ function Simulation(elementId) {
     /*
      * On each collision, make a transaction from people (circle) to people (circle)
      */
-    this.setPeopleTransactionsOn = function() {
-		var amount = this.CtoCTransactionAmount;
+    this.setPeopleTransactionsOn = function(ctocAmount) {
 
         Events.on(this.engine, 'collisionStart', function(event) {
             var pairs = event.pairs;
@@ -334,7 +328,7 @@ function Simulation(elementId) {
                 if (pair.bodyA.label === "Circle Body" && pair.bodyB.label === "Circle Body") {
 					var A = Common.choose([pair.bodyA, pair.bodyB]);
 					var B = A === pair.bodyA ? pair.bodyB : pair.bodyA;
-					A.wallet.pay(B, amount);
+					A.wallet.pay(B, ctocAmount);
 
 					var ratio = A.wallet.getSizingRation(A.circleRadius*2);
 					Matter.Body.scale(A, ratio, ratio);
@@ -349,9 +343,7 @@ function Simulation(elementId) {
     /*
      * On each collision, make a transaction from customer (circle) to company (rectangle)
      */
-    this.setCompaniesTransactionOn = function() {
-		var btobAmount = this.BtoBTransactionAmount;
-		var ctobAmount = this.CtoBTransactionAmount;
+    this.setCompaniesTransactionOn = function(btobAmount, ctobAmount) {
 
         Events.on(this.engine, 'collisionStart', function(event) {
             var pairs = event.pairs;
@@ -394,16 +386,13 @@ function Simulation(elementId) {
 	/**
 	 * On update, pay salaries
 	 */
-    this.setCompaniesSalariesOn = function() {
+    this.setCompaniesSalariesOn = function(salary) {
         var companies = this.companies;
 
         Events.on(this.engine, 'beforeUpdate', function(event) {
-            for (var i = 0; i < companies.length; i++) {
-                Body.setSpeed(companies[i], 5);
-            }
             if (Common.now() - lastTime >= 3000) {
                 for (var i = 0; i < companies.length; i++) {
-                    companies[i].adminService.payEmployees();
+                    companies[i].adminService.payEmployees(salary);
                 }
                 // update last time
                 lastTime = Common.now();
@@ -490,7 +479,7 @@ simulationHander.add(
 	.setPeopleColor("#FF6666")
 	.setPeopleSpeed(5)
 	.setPeopleCapital(20)
-    .setPeopleTransactionsOn()
+    .setPeopleTransactionsOn(1)
 	.init());
 
 simulationHander.add(
@@ -500,7 +489,7 @@ simulationHander.add(
 	.setPeopleColor()
 	.setPeopleSpeed(8, true)
 	.setPeopleCapital(30, true)
-    .setPeopleTransactionsOn()
+    .setPeopleTransactionsOn(1)
 	.init());
 
 simulationHander.add(
@@ -508,12 +497,13 @@ simulationHander.add(
     .addBorders()
     .addPeople()
 	.setPeopleColor(SIMULATION_BALLS_COLOR)
-	.setPeopleSpeed(8)
+	.setPeopleSpeed(5)
 	.setPeopleCapital(20)
     .addCompanies(6)
-	.setCompaniesCapital(10)
-    .setCompaniesTransactionOn()
-	.setCompaniesSalariesOn()
+	.setCompaniesCapital(0)
+	.setCompaniesSpeed(5)
+    .setCompaniesTransactionOn(5, 1)
+	.setCompaniesSalariesOn(30)
 	.init());
 
 // simulationHander.add(
