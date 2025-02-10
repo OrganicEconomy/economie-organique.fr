@@ -89,6 +89,34 @@ function Simulation(elementId) {
         }
     });
 
+    this.render = function() {
+        Render.run(this.renderer);
+        return this;
+    }
+    
+    this.run = function() {
+        this.runner = this.runner || Runner.create();
+        Runner.run(this.runner, this.engine);
+    }
+
+    this.start = function() {
+        if (! this.started) {
+            this.render();
+            this.run();
+            this.shakeScene();
+            this.started = true;
+        }
+    }
+
+    this.stop = function() {
+        if (! this.started) {
+            return;
+        }
+        Render.stop(this.renderer);
+        Runner.stop(this.runner);
+        this.started = false;
+    }
+
     this.shakeScene = function() {
         var bodies = Composite.allBodies(this.engine.world);
 
@@ -159,19 +187,6 @@ function Simulation(elementId) {
             }
         });
         return this;
-    }
-
-    this.start = function() {
-        if (! this.started) {
-            this.render();
-            this.run();
-            this.shakeScene();
-            this.started = true;
-        }
-    }
-
-    this.pause = function() {
-        this.stop();
     }
 
     /*
@@ -326,25 +341,6 @@ function Simulation(elementId) {
     }
 
 
-    this.render = function() {
-        Render.run(this.renderer);
-        return this;
-    }
-    
-    this.run = function() {
-        this.runner = this.runner || Runner.create();
-        Runner.run(this.runner, this.engine);
-    }
-
-    this.stop = function() {
-        if (! this.started) {
-            return;
-        }
-        Render.stop(this.renderer);
-        Runner.stop(this.runner);
-        this.started = false;
-    }
-
     this.setBallsSpeed = function(randomSpeed=false) {
         for (var i = 0; i < COLUMNS*ROWS; i++) {
             if (randomSpeed) {
@@ -366,8 +362,11 @@ function SimulationHandler() {
     }
 
     this.bindSimulationToButtons = function(simulation, index) {
+		$(`#simulation${index}Pause`).hide();
         var simulations = this.simulations;
         $(`#simulation${index}Start`).on("click", function() {
+			$(`#simulation${index}Start`).hide();
+			$(`#simulation${index}Pause`).show();
             for (var i = 0; i < simulations.length; i++) {
                 if (simulations[i] !== simulation) {
                     simulations[i].stop();
@@ -376,7 +375,9 @@ function SimulationHandler() {
             simulation.start();
         });
         $(`#simulation${index}Pause`).on("click", function() {
-            simulation.pause();
+			$(`#simulation${index}Start`).show();
+			$(`#simulation${index}Pause`).hide();
+            simulation.stop();
         });
     }
 }
