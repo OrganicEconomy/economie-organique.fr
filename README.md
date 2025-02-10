@@ -25,4 +25,9 @@ Then run it :
 pelican -l
 ```
 
+Or, better, both auto-regenerate and serve : 
+```
+pelican --autoreload --listen
+```
+
 now you can see the site on 127.0.0.1:8000
