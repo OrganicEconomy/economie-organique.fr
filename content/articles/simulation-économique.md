@@ -60,6 +60,8 @@ Notez que la taille de la balle indique la quantité d'argent que la personne d�
 Donc, plus elle est grosse, plus elle est riche.
 Toute ressemblance avec des personnes réelles est pure coincidence.
 
+Cette usage de la dimension a deux rôles : un esthétique (c'est parlant, visuel) et un réaliste (plus vous êtes riche, plus vous avez d'opportunités économiques).
+
 Et plus elle est petite, plus elle est pauvre.
 Il va sans dire.
 
@@ -73,10 +75,11 @@ Au début, ça ne sautera pas aux yeux, les balles bougent et rebondissent, ok.
 Mais si vous laissez tourner la simulation assez longtemps, des écarts commencent à se creuser.
 Des balles prennent une belle dimension tandis que certaines se promènent, minuscules petits pois baladés sur une piste de bowling.
 
-Ce qui est frappant avec ce premier cas, c'est qu'il y ait déjà pas mal à redire.
+Ce qui est frappant avec ce premier essai, c'est que même **dans un cas aussi simple et complètement hasardeux, des inégalités apparaissent et s'installent**.
 
-Premièrement, même **dans un cas aussi simple et complètement hasardeux, des inégalités apparaissent et s'installent**.
 Sans aucune stratégie, aucune !, des riches et des pauvres apparaissent.
+Les boules riches ne sont pourtant pas plus intelligentes ou plus fortes.
+Et symétriquement, les boules les plus pauvres ne sont ni nulles, ni faibles, ni bêtes.
 
 Notez cependant que cela prend un peu de temps et que, parfois, les inégalités se renversent.
 
