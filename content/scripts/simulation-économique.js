@@ -27,20 +27,23 @@ function getRandomColor () {
 	return res;
 }
 
-function Wallet(baseCash=0) {
+function Wallet(theOwner, baseCash=0) {
+	var owner = theOwner;
 	var cash = baseCash;
 
 	this.pay = function(target, amount) {
-		if (this.canAffordIt(amount)) {
-			cash -= amount;
-			target.wallet.income(amount);
-			return amount;
+		if (!this.canAffordIt(amount)) {
+			return 0;
 		}
-		return 0;
+		cash -= amount;
+		target.wallet.income(amount);
+		this.updateSize();
+		return amount;
 	}
 
 	this.income = function(amount) {
 		cash += amount;
+		this.updateSize();
 	}
 
 	this.canAffordIt = function(amount) {
@@ -50,6 +53,11 @@ function Wallet(baseCash=0) {
 	this.getSizingRation = function(width) {
 		const newWidth = 1.5*cash + SIMULATION_MIN_SIZE;
 		return newWidth/width;
+	}
+
+	this.updateSize = function() {
+		var ratio = this.getSizingRation(owner.getWidth());
+		Matter.Body.scale(owner, ratio, ratio);
 	}
 }
 
@@ -72,11 +80,9 @@ function HumanResourcesHandler(people) {
 		const index = busyPeople.indexOf(recruit);
 		if (index > -1) { // only splice array when item is found
 			busyPeople.splice(index, 1);
-			return 0;
+			availablePeople.unshift(recruit);
+			recruit.render.fillStyle = SIMULATION_BALLS_COLOR;
 		}
-		this.availablePeople.unshift(recruit);
-		recruit.render.fillStyle = SIMULATION_BALLS_COLOR;
-		return 1;
 	}
 }
 
@@ -87,22 +93,28 @@ function AdminService(aCompany, aHumanResourcesHandler) {
 	var maxEmployees = MAX_RECRUITS_PER_COMPANIES;
 
 	this.payEmployees = function(salary) {
+		console.group("payment");
+		console.log("have", employees.length, "employees");
 		var paid,
 			toFire = 0;
 		for (var i = 0; i < employees.length; i++) {
 			paid = company.wallet.pay(employees[i], salary);
 			if (paid === 0) {
+				console.log("couldn't pay the", i);
 				toFire += 1;
+			} else {
+				console.log("paid the", i);
 			}
 		}
 		for (var i = 0; i < toFire; i++) {
+			console.log("fire one");
 			this.fireAnEmployee();
 		}
-		for (var i = employees.length; i < maxEmployees; i++) {
-			if (company.wallet.canAffordIt(salary)) {
-				this.recruitAnEmployee();
-			}
+		if (company.wallet.canAffordIt(salary + (2 * employees.length))) {
+			console.log("recruit one");
+			const recruit = this.recruitAnEmployee();
 		}
+		console.groupEnd();
 	}
 
 	this.recruitAnEmployee = function() {
@@ -110,6 +122,7 @@ function AdminService(aCompany, aHumanResourcesHandler) {
 		if (recruit) {
 			employees.push(recruit);
 		}
+		return recruit;
 	}
 
 	this.fireAnEmployee = function() {
@@ -216,7 +229,8 @@ function Simulation(elementId) {
         Composite.add(this.world, peopleStack);
         this.people = peopleStack.bodies;
 		for (var i = 0; i < this.people.length; i++) {
-			this.people[i].wallet = new Wallet();
+			this.people[i].getWidth = function() { return this.circleRadius*2; };
+			this.people[i].wallet = new Wallet(this.people[i]);
 		}
 
         return this;
@@ -234,8 +248,9 @@ function Simulation(elementId) {
 
 		var humanResourcesHandler = new HumanResourcesHandler(this.people);
 		for (var i = 0; i < this.companies.length; i++) {
+			this.companies[i].getWidth = function() { return Math.sqrt(this.area); };
 			this.companies[i].adminService = new AdminService(this.companies[i], humanResourcesHandler);
-			this.companies[i].wallet = new Wallet();
+			this.companies[i].wallet = new Wallet(this.companies[i]);
 		}
 		return this;
 	}
@@ -253,8 +268,6 @@ function Simulation(elementId) {
 		var ratio;
 		for (var i = 0; i < this.people.length; i++) {
 			this.people[i].wallet.income(calculatedCapital());
-			ratio = this.people[i].wallet.getSizingRation(this.people[i].circleRadius*2);
-			Matter.Body.scale(this.people[i], ratio, ratio);
 		}
 
         return this;
@@ -329,11 +342,6 @@ function Simulation(elementId) {
 					var A = Common.choose([pair.bodyA, pair.bodyB]);
 					var B = A === pair.bodyA ? pair.bodyB : pair.bodyA;
 					A.wallet.pay(B, ctocAmount);
-
-					var ratio = A.wallet.getSizingRation(A.circleRadius*2);
-					Matter.Body.scale(A, ratio, ratio);
-					ratio = B.wallet.getSizingRation(B.circleRadius*2);
-					Matter.Body.scale(B, ratio, ratio);
                 }
             }
         });
@@ -359,24 +367,12 @@ function Simulation(elementId) {
 					B = pair.bodyB;
                 if (A.label === "Rectangle Body" && B.label === "Circle Body") {
 					B.wallet.pay(A, ctobAmount);
-					var ratio = A.wallet.getSizingRation(Math.sqrt(A.area));
-					Matter.Body.scale(A, ratio, ratio);
-					ratio = B.wallet.getSizingRation(B.circleRadius*2);
-					Matter.Body.scale(B, ratio, ratio);
                 } else if (A.label === "Circle Body" && B.label === "Rectangle Body") {
 					A.wallet.pay(B, ctobAmount);
-					var ratio = A.wallet.getSizingRation(A.circleRadius*2);
-					Matter.Body.scale(A, ratio, ratio);
-					ratio = B.wallet.getSizingRation(Math.sqrt(B.area));
-					Matter.Body.scale(B, ratio, ratio);
                 } else if (A.label === "Rectangle Body" && B.label === "Rectangle Body") {
 					var A2 = Common.choose([A, B]);
 					var B2 = A2 === A ? B : A;
 					A2.wallet.pay(B2, btobAmount);
-					var ratio = A.wallet.getSizingRation(Math.sqrt(A.area));
-					Matter.Body.scale(A, ratio, ratio);
-					ratio = B.wallet.getSizingRation(Math.sqrt(B.area));
-					Matter.Body.scale(B, ratio, ratio);
                 }
             }
         });
@@ -390,7 +386,7 @@ function Simulation(elementId) {
         var companies = this.companies;
 
         Events.on(this.engine, 'beforeUpdate', function(event) {
-            if (Common.now() - lastTime >= 3000) {
+            if (Common.now() - lastTime >= 5000) {
                 for (var i = 0; i < companies.length; i++) {
                     companies[i].adminService.payEmployees(salary);
                 }
@@ -434,8 +430,6 @@ function Simulation(elementId) {
 		var ratio;
 		for (var i = 0; i < this.companies.length; i++) {
 			this.companies[i].wallet.income(calculatedCapital());
-			ratio = this.companies[i].wallet.getSizingRation(Math.sqrt(this.companies[i].area));
-			Matter.Body.scale(this.companies[i], ratio, ratio);
 		}
 
         return this;
@@ -458,6 +452,8 @@ function SimulationHandler() {
             for (var i = 0; i < simulations.length; i++) {
                 if (simulations[i] !== simulation) {
                     simulations[i].stop();
+					$(`#simulation${i}Start`).show();
+					$(`#simulation${i}Pause`).hide();
                 }
             }
             simulation.start();
@@ -498,12 +494,12 @@ simulationHander.add(
     .addPeople()
 	.setPeopleColor(SIMULATION_BALLS_COLOR)
 	.setPeopleSpeed(5)
-	.setPeopleCapital(20)
+	.setPeopleCapital(10)
     .addCompanies(6)
 	.setCompaniesCapital(0)
 	.setCompaniesSpeed(5)
-    .setCompaniesTransactionOn(5, 1)
-	.setCompaniesSalariesOn(30)
+    .setCompaniesTransactionOn(2, 1)
+	.setCompaniesSalariesOn(10)
 	.init());
 
 // simulationHander.add(
