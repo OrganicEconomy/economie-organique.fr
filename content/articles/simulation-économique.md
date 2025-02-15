@@ -156,28 +156,10 @@ Voici ce qu'il y a de neuf :
 <button id="simulation2Start" type="button" class="btn btn-lg btn-outline-primary">Go</button>
 <button id="simulation2Pause" type="button" class="btn btn-lg btn-outline-primary">Pause</button>
 <div id="simulationWithCompanies"></div>
-<div class="row">
-    <div class="col">
-        <label for="SalaryControlSelect">Salaires</label>
-        <select class="form-control" id="SalaryControlSelect">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-    </div>
-    <div class="col">
-        <label for="SpendControlSelect">Dépenses</label>
-        <select class="form-control" id="SpendControlSelect">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-    </div>
-</div>
+
+En toute transparence, il a fallut pas mal jouer avec les paramètres (salaire payé par les entreprises carrées toutes les 3 secondes, dépenses faites par les personnes ronds à chaque contact, dépense des entreprises entre elles à chaque contact aussi et aussi limite du nombre d'employés par entreprise) pour obtenir une sorte d'équilibre : dans la plupart des cas, les entreprises ou une entreprise prend le dessus sur tout et devient énorme.
+
+Ce qui reste représentatif d'une certaine réalité : plus une entreprise est grosse et présente dans l'esprit des clients (citons notamment les GAFAM, par exemple), plus elle "attire" les dépenses et, donc, plus elle grossit.
 
 <button id="simulation3Start" type="button" class="btn btn-lg btn-outline-primary">Go</button>
 <button id="simulation3Pause" type="button" class="btn btn-lg btn-outline-primary">Pause</button>

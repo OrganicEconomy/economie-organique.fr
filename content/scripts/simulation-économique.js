@@ -19,115 +19,120 @@ var Engine = Matter.Engine,
     Bodies = Matter.Bodies;
 
 function getRandomColor () {
-	var letters = '0123456789ABCDEF';
-	var res = '#';
-	for (var i = 0; i < 6; i++) {
-		res += letters[Math.floor(Math.random() * 16)];
-	}
-	return res;
+    var letters = '0123456789ABCDEF';
+    var res = '#';
+    for (var i = 0; i < 6; i++) {
+        res += letters[Math.floor(Math.random() * 16)];
+    }
+    return res;
 }
 
 function Wallet(theOwner, baseCash=0) {
-	var owner = theOwner;
-	var cash = baseCash;
+    var owner = theOwner;
+    var cash = baseCash;
+    var maxSpendPercent = 100;
 
-	this.pay = function(target, amount) {
-		if (!this.canAffordIt(amount)) {
-			return 0;
-		}
-		cash -= amount;
-		target.wallet.income(amount);
-		this.updateSize();
-		return amount;
-	}
+    this.pay = function(target, amount) {
+        if (!this.canAffordIt(amount)) {
+            return 0;
+        }
+        cash -= amount;
+        target.wallet.income(amount);
+        this.updateSize();
+        return amount;
+    }
 
-	this.income = function(amount) {
-		cash += amount;
-		this.updateSize();
-	}
+    this.setMaxSpendPercent = function(max) {
+        maxSpendPercent = max;
+    }
 
-	this.canAffordIt = function(amount) {
-		return cash >= amount;
-	}
+    this.income = function(amount) {
+        cash += amount;
+        this.updateSize();
+    }
 
-	this.getSizingRation = function(width) {
-		const newWidth = 1.5*cash + SIMULATION_MIN_SIZE;
-		return newWidth/width;
-	}
+    this.canAffordIt = function(amount) {
+        return cash >= amount * maxSpendPercent/100;
+    }
 
-	this.updateSize = function() {
-		var ratio = this.getSizingRation(owner.getWidth());
-		Matter.Body.scale(owner, ratio, ratio);
-	}
+    this.getSizingRation = function(width) {
+        const newWidth = 1.5*cash + SIMULATION_MIN_SIZE;
+        return newWidth/width;
+    }
+
+    this.updateSize = function() {
+        var ratio = this.getSizingRation(owner.getWidth());
+        Matter.Body.scale(owner, ratio, ratio);
+    }
 }
 
 function HumanResourcesHandler(people) {
-	var availablePeople = people.slice();
-	var busyPeople = [];
+    var availablePeople = people.slice();
+    var busyPeople = [];
 
-	this.getRecruit = function(color) {
-		if (availablePeople.length === 0) {
-			return null;
-		}
-		const recruit = availablePeople.pop();
-		recruit.render.fillStyle = color;
-		busyPeople.push(recruit);
+    this.getRecruit = function(color) {
+        if (availablePeople.length === 0) {
+            return null;
+        }
+        const recruit = availablePeople.pop();
+        recruit.render.fillStyle = color;
+        busyPeople.push(recruit);
 
-		return recruit;
-	}
+        return recruit;
+    }
 
-	this.freeRecruit = function(recruit) {
-		const index = busyPeople.indexOf(recruit);
-		if (index > -1) { // only splice array when item is found
-			busyPeople.splice(index, 1);
-			availablePeople.unshift(recruit);
-			recruit.render.fillStyle = SIMULATION_BALLS_COLOR;
-		}
-	}
+    this.freeRecruit = function(recruit) {
+        const index = busyPeople.indexOf(recruit);
+        if (index > -1) { // only splice array when item is found
+            busyPeople.splice(index, 1);
+            availablePeople.unshift(recruit);
+            recruit.render.fillStyle = SIMULATION_BALLS_COLOR;
+        }
+    }
 }
 
 function AdminService(aCompany, aHumanResourcesHandler) {
-	var company = aCompany;
-	var humanResourcesHandler = aHumanResourcesHandler;
-	var employees = [];
-	var maxEmployees = MAX_RECRUITS_PER_COMPANIES;
+    var company = aCompany;
+    var humanResourcesHandler = aHumanResourcesHandler;
+    var employees = [];
+    var maxEmployees = MAX_RECRUITS_PER_COMPANIES;
 
-	this.payEmployees = function(salary) {
-		console.group("payment");
-		console.log("have", employees.length, "employees");
-		var paid,
-			toFire = 0;
-		for (var i = 0; i < employees.length; i++) {
-			paid = company.wallet.pay(employees[i], salary);
-			if (paid === 0) {
-				console.log("couldn't pay the", i);
-				toFire += 1;
-			} else {
-				console.log("paid the", i);
-			}
-		}
-		for (var i = 0; i < toFire; i++) {
-			console.log("fire one");
-			this.fireAnEmployee();
-		}
-		if (company.wallet.canAffordIt(salary + (2 * employees.length))) {
-			console.log("recruit one");
-			const recruit = this.recruitAnEmployee();
-		}
-		console.groupEnd();
-	}
+    this.payEmployees = function(salary) {
+        // console.group("payment");
+        // console.log("have", employees.length, "employees");
+        var paid,
+            toFire = 0;
+        for (var i = 0; i < employees.length; i++) {
+            paid = company.wallet.pay(employees[i], salary);
+            if (paid === 0) {
+                // console.log("couldn't pay the", i);
+                toFire += 1;
+            } else {
+                // console.log("paid the", i);
+            }
+        }
+        for (var i = 0; i < toFire; i++) {
+            // console.log("fire one");
+            this.fireAnEmployee();
+        }
+        if (company.wallet.canAffordIt(salary + (2 * employees.length))) {
+            // console.log("recruit one");
+            const recruit = this.recruitAnEmployee();
+        }
+        // console.groupEnd();
+    }
 
-	this.recruitAnEmployee = function() {
-		const recruit = humanResourcesHandler.getRecruit(company.render.fillStyle);
-		if (recruit) {
-			employees.push(recruit);
-		}
-		return recruit;
-	}
+    this.recruitAnEmployee = function() {
+        const recruit = humanResourcesHandler.getRecruit(company.render.fillStyle);
+        if (recruit) {
+            employees.push(recruit);
+        }
+        return recruit;
+    }
 
-	this.fireAnEmployee = function() {
-		humanResourcesHandler.freeRecruit(employees.pop());
-	}
+    this.fireAnEmployee = function() {
+        humanResourcesHandler.freeRecruit(employees.pop());
+    }
 }
 
 function Simulation(elementId) {
@@ -136,7 +141,7 @@ function Simulation(elementId) {
     this.elementId = elementId
     this.started = false;
     this.speeds = [];
-	this.CtoCTransactionAmount = 1;
+    this.CtoCTransactionAmount = 1;
 
     // create an engine
     this.engine = Engine.create();
@@ -163,21 +168,21 @@ function Simulation(elementId) {
         Runner.run(this.runner, this.engine);
     }
 
-	this.init = function() {
-		this.render();
-		this.run();
+    this.init = function() {
+        this.render();
+        this.run();
         Render.stop(this.renderer);
         Runner.stop(this.runner);
-		return this;
-	}
+        return this;
+    }
 
     this.start = function() {
         if (! this.started) {
             this.shakeScene();
             this.started = true;
         }
-		this.render();
-		this.run();
+        this.render();
+        this.run();
     }
 
     this.stop = function() {
@@ -228,10 +233,11 @@ function Simulation(elementId) {
 
         Composite.add(this.world, peopleStack);
         this.people = peopleStack.bodies;
-		for (var i = 0; i < this.people.length; i++) {
-			this.people[i].getWidth = function() { return this.circleRadius*2; };
-			this.people[i].wallet = new Wallet(this.people[i]);
-		}
+        for (var i = 0; i < this.people.length; i++) {
+            this.people[i].getWidth = function() { return this.circleRadius*2; };
+            this.people[i].wallet = new Wallet(this.people[i]);
+            this.people[i].wallet.setMaxSpendPercent(60);
+        }
 
         return this;
     }
@@ -246,56 +252,56 @@ function Simulation(elementId) {
         Composite.add(this.world, companyStack);
         this.companies = companyStack.bodies;
 
-		var humanResourcesHandler = new HumanResourcesHandler(this.people);
-		for (var i = 0; i < this.companies.length; i++) {
-			this.companies[i].getWidth = function() { return Math.sqrt(this.area); };
-			this.companies[i].adminService = new AdminService(this.companies[i], humanResourcesHandler);
-			this.companies[i].wallet = new Wallet(this.companies[i]);
-		}
-		return this;
-	}
+        var humanResourcesHandler = new HumanResourcesHandler(this.people);
+        for (var i = 0; i < this.companies.length; i++) {
+            this.companies[i].getWidth = function() { return Math.sqrt(this.area); };
+            this.companies[i].adminService = new AdminService(this.companies[i], humanResourcesHandler);
+            this.companies[i].wallet = new Wallet(this.companies[i]);
+        }
+        return this;
+    }
 
-	/**
-	 * Set the peoples capital.
-	 * If random is true, randomness is based on given capital
-	 */
-	this.setPeopleCapital = function(capital, random=false) {
-		var calculatedCapital = function() { return capital; }
+    /**
+     * Set the peoples capital.
+     * If random is true, randomness is based on given capital
+     */
+    this.setPeopleCapital = function(capital, random=false) {
+        var calculatedCapital = function() { return capital; }
         if (random) {
             calculatedCapital = function() { return Math.round(Common.random() * capital); }
         }
 
-		var ratio;
-		for (var i = 0; i < this.people.length; i++) {
-			this.people[i].wallet.income(calculatedCapital());
-		}
+        var ratio;
+        for (var i = 0; i < this.people.length; i++) {
+            this.people[i].wallet.income(calculatedCapital());
+        }
 
         return this;
-	}
+    }
 
-	/**
-	 * Set the peoples color (I bet a lot will ask for white oO).
-	 * If color is null, colors are random
-	 */
-	this.setPeopleColor = function(color=null) {
+    /**
+     * Set the peoples color (I bet a lot will ask for white oO).
+     * If color is null, colors are random
+     */
+    this.setPeopleColor = function(color=null) {
         var getColor = function() { return color; };
 
         if (!color) { getColor = getRandomColor }
 
-		for (var i = 0; i < this.people.length; i++) {
-			this.people[i].render.fillStyle = getColor();
-		}
+        for (var i = 0; i < this.people.length; i++) {
+            this.people[i].render.fillStyle = getColor();
+        }
 
         return this;
-	}
+    }
 
-	/**
-	 * Set the peoples speed.
-	 * If random is true, speed is the base for randomness
-	 */
-	this.setPeopleSpeed = function(speed, random=false) {
-		for (var i = 0; i < this.people.length; i++) {
-			this.people[i].customSpeed = speed;
+    /**
+     * Set the peoples speed.
+     * If random is true, speed is the base for randomness
+     */
+    this.setPeopleSpeed = function(speed, random=false) {
+        for (var i = 0; i < this.people.length; i++) {
+            this.people[i].customSpeed = speed;
             if (random) {
                 this.people[i].customSpeed = Common.random() * speed;
             }
@@ -310,7 +316,7 @@ function Simulation(elementId) {
             }
         });
         return this;
-	}
+    }
 
     this.shakeScene = function() {
         var bodies = Composite.allBodies(this.engine.world);
@@ -339,9 +345,9 @@ function Simulation(elementId) {
                 var pair = pairs[i];
 
                 if (pair.bodyA.label === "Circle Body" && pair.bodyB.label === "Circle Body") {
-					var A = Common.choose([pair.bodyA, pair.bodyB]);
-					var B = A === pair.bodyA ? pair.bodyB : pair.bodyA;
-					A.wallet.pay(B, ctocAmount);
+                    var A = Common.choose([pair.bodyA, pair.bodyB]);
+                    var B = A === pair.bodyA ? pair.bodyB : pair.bodyA;
+                    A.wallet.pay(B, ctocAmount);
                 }
             }
         });
@@ -363,25 +369,25 @@ function Simulation(elementId) {
                     continue;
                 }
 
-				var A = pair.bodyA,
-					B = pair.bodyB;
+                var A = pair.bodyA,
+                    B = pair.bodyB;
                 if (A.label === "Rectangle Body" && B.label === "Circle Body") {
-					B.wallet.pay(A, ctobAmount);
+                    B.wallet.pay(A, ctobAmount);
                 } else if (A.label === "Circle Body" && B.label === "Rectangle Body") {
-					A.wallet.pay(B, ctobAmount);
+                    A.wallet.pay(B, ctobAmount);
                 } else if (A.label === "Rectangle Body" && B.label === "Rectangle Body") {
-					var A2 = Common.choose([A, B]);
-					var B2 = A2 === A ? B : A;
-					A2.wallet.pay(B2, btobAmount);
+                    var A2 = Common.choose([A, B]);
+                    var B2 = A2 === A ? B : A;
+                    A2.wallet.pay(B2, btobAmount);
                 }
             }
         });
         return this;
     }
 
-	/**
-	 * On update, pay salaries
-	 */
+    /**
+     * On update, pay salaries
+     */
     this.setCompaniesSalariesOn = function(salary) {
         var companies = this.companies;
 
@@ -396,11 +402,11 @@ function Simulation(elementId) {
         });
 
         return this;
-	}
+    }
 
-	this.setCompaniesSpeed = function(speed, random=false) {
-		for (var i = 0; i < this.companies.length; i++) {
-			this.companies[i].customSpeed = speed;
+    this.setCompaniesSpeed = function(speed, random=false) {
+        for (var i = 0; i < this.companies.length; i++) {
+            this.companies[i].customSpeed = speed;
             if (random) {
                 this.companies[i].customSpeed = Common.random() * speed;
             }
@@ -415,25 +421,25 @@ function Simulation(elementId) {
             }
         });
         return this;
-	}
+    }
 
-	/**
-	 * Set the companies capital.
-	 * If random is true, randomness is based on given capital
-	 */
-	this.setCompaniesCapital = function(capital, random=false) {
-		var calculatedCapital = function() { return capital; }
+    /**
+     * Set the companies capital.
+     * If random is true, randomness is based on given capital
+     */
+    this.setCompaniesCapital = function(capital, random=false) {
+        var calculatedCapital = function() { return capital; }
         if (random) {
             calculatedCapital = function() { return Math.round(Common.random() * capital); }
         }
 
-		var ratio;
-		for (var i = 0; i < this.companies.length; i++) {
-			this.companies[i].wallet.income(calculatedCapital());
-		}
+        var ratio;
+        for (var i = 0; i < this.companies.length; i++) {
+            this.companies[i].wallet.income(calculatedCapital());
+        }
 
         return this;
-	}
+    }
 }
 
 function SimulationHandler() {
@@ -444,23 +450,23 @@ function SimulationHandler() {
     }
 
     this.bindSimulationToButtons = function(simulation, index) {
-		$(`#simulation${index}Pause`).hide();
+        $(`#simulation${index}Pause`).hide();
         var simulations = this.simulations;
         $(`#simulation${index}Start`).on("click", function() {
-			$(`#simulation${index}Start`).hide();
-			$(`#simulation${index}Pause`).show();
+            $(`#simulation${index}Start`).hide();
+            $(`#simulation${index}Pause`).show();
             for (var i = 0; i < simulations.length; i++) {
                 if (simulations[i] !== simulation) {
                     simulations[i].stop();
-					$(`#simulation${i}Start`).show();
-					$(`#simulation${i}Pause`).hide();
+                    $(`#simulation${i}Start`).show();
+                    $(`#simulation${i}Pause`).hide();
                 }
             }
             simulation.start();
         });
         $(`#simulation${index}Pause`).on("click", function() {
-			$(`#simulation${index}Start`).show();
-			$(`#simulation${index}Pause`).hide();
+            $(`#simulation${index}Start`).show();
+            $(`#simulation${index}Pause`).hide();
             simulation.stop();
         });
     }
@@ -472,35 +478,35 @@ simulationHander.add(
     new Simulation("simulationBase")
     .addBorders()
     .addPeople()
-	.setPeopleColor("#FF6666")
-	.setPeopleSpeed(5)
-	.setPeopleCapital(20)
+    .setPeopleColor("#FF6666")
+    .setPeopleSpeed(5)
+    .setPeopleCapital(20)
     .setPeopleTransactionsOn(1)
-	.init());
+    .init());
 
 simulationHander.add(
     new Simulation("simulationRandomSpeedAndSize")
     .addBorders()
     .addPeople()
-	.setPeopleColor()
-	.setPeopleSpeed(8, true)
-	.setPeopleCapital(30, true)
+    .setPeopleColor()
+    .setPeopleSpeed(8, true)
+    .setPeopleCapital(30, true)
     .setPeopleTransactionsOn(1)
-	.init());
+    .init());
 
 simulationHander.add(
     new Simulation("simulationWithCompanies")
     .addBorders()
     .addPeople()
-	.setPeopleColor(SIMULATION_BALLS_COLOR)
-	.setPeopleSpeed(5)
-	.setPeopleCapital(10)
+    .setPeopleColor(SIMULATION_BALLS_COLOR)
+    .setPeopleSpeed(5)
+    .setPeopleCapital(10)
     .addCompanies(6)
-	.setCompaniesCapital(0)
-	.setCompaniesSpeed(5)
+    .setCompaniesCapital(0)
+    .setCompaniesSpeed(5)
     .setCompaniesTransactionOn(2, 1)
-	.setCompaniesSalariesOn(10)
-	.init());
+    .setCompaniesSalariesOn(5)
+    .init());
 
 // simulationHander.add(
 //     new Simulation("simulationWithBank")
