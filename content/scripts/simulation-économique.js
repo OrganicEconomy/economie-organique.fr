@@ -28,41 +28,46 @@ function getRandomColor () {
 }
 
 function Wallet(theOwner, baseCash=0) {
-    var owner = theOwner;
-    var cash = baseCash;
-    var maxSpendPercent = 100;
+    this.owner = theOwner;
+    this.cash = baseCash;
+    this.maxSpendPercent = 100;
+
+	this.getCashAmount = function() {
+		return this.cash;
+	}
 
     this.pay = function(target, amount) {
         if (!this.canAffordIt(amount)) {
             return 0;
         }
-        cash -= amount;
+        this.cash -= amount;
         target.wallet.income(amount);
         this.updateSize();
         return amount;
     }
 
     this.setMaxSpendPercent = function(max) {
-        maxSpendPercent = max;
+        this.maxSpendPercent = max;
     }
 
     this.income = function(amount) {
-        cash += amount;
+		var x = this.cash;
+        this.cash += amount;
         this.updateSize();
     }
 
     this.canAffordIt = function(amount) {
-        return cash >= amount * maxSpendPercent/100;
+        return this.cash * this.maxSpendPercent/100 >= amount;
     }
 
     this.getSizingRation = function(width) {
-        const newWidth = 1.5*cash + SIMULATION_MIN_SIZE;
+        const newWidth = 1.5 * this.cash + SIMULATION_MIN_SIZE;
         return newWidth/width;
     }
 
     this.updateSize = function() {
-        var ratio = this.getSizingRation(owner.getWidth());
-        Matter.Body.scale(owner, ratio, ratio);
+        var ratio = this.getSizingRation(this.owner.getWidth());
+        Matter.Body.scale(this.owner, ratio, ratio);
     }
 }
 
@@ -115,7 +120,7 @@ function AdminService(aCompany, aHumanResourcesHandler) {
             // console.log("fire one");
             this.fireAnEmployee();
         }
-        if (company.wallet.canAffordIt(salary + (2 * employees.length))) {
+        if (company.wallet.canAffordIt(salary + (2 * employees.length)) && employees.length < maxEmployees) {
             // console.log("recruit one");
             const recruit = this.recruitAnEmployee();
         }
@@ -183,6 +188,7 @@ function Simulation(elementId) {
         }
         this.render();
         this.run();
+		this.logTotalCashInSimulation();
     }
 
     this.stop = function() {
@@ -365,21 +371,20 @@ function Simulation(elementId) {
             for (var i = 0; i < pairs.length; i++) {
                 var pair = pairs[i];
 
-                if (pair.bodyA.isStatic || pair.bodyB.isStatic) {
-                    continue;
-                }
-
                 var A = pair.bodyA,
                     B = pair.bodyB;
-                if (A.label === "Rectangle Body" && B.label === "Circle Body") {
-                    B.wallet.pay(A, ctobAmount);
-                } else if (A.label === "Circle Body" && B.label === "Rectangle Body") {
-                    A.wallet.pay(B, ctobAmount);
-                } else if (A.label === "Rectangle Body" && B.label === "Rectangle Body") {
-                    var A2 = Common.choose([A, B]);
-                    var B2 = A2 === A ? B : A;
-                    A2.wallet.pay(B2, btobAmount);
-                }
+
+				if (! A.isStatic && ! B.isStatic) {
+					if (A.label === "Rectangle Body" && B.label === "Circle Body") {
+						B.wallet.pay(A, ctobAmount);
+					} else if (A.label === "Circle Body" && B.label === "Rectangle Body") {
+						A.wallet.pay(B, ctobAmount);
+					} else if (A.label === "Rectangle Body" && B.label === "Rectangle Body") {
+						var A2 = Common.choose([A, B]);
+						var B2 = A2 === A ? B : A;
+						A2.wallet.pay(B2, btobAmount);
+					}
+				}
             }
         });
         return this;
@@ -390,9 +395,11 @@ function Simulation(elementId) {
      */
     this.setCompaniesSalariesOn = function(salary) {
         var companies = this.companies;
+		var simulation = this;
 
         Events.on(this.engine, 'beforeUpdate', function(event) {
             if (Common.now() - lastTime >= 5000) {
+				simulation.logTotalCashInSimulation();
                 for (var i = 0; i < companies.length; i++) {
                     companies[i].adminService.payEmployees(salary);
                 }
@@ -440,6 +447,22 @@ function Simulation(elementId) {
 
         return this;
     }
+	this.logTotalCashInSimulation = function() {
+        console.group("counting cash");
+		console.log(this.people.length, "people")
+		console.log(this.companies.length, "companies")
+		var result = 0;
+		for (var i = 0; i < this.people.length; i++) {
+			result += this.people[i].wallet.getCashAmount();
+		}
+		for (var i = 0; i < this.companies.length; i++) {
+			result += this.companies[i].wallet.getCashAmount();
+		}
+		console.log(result);
+        console.groupEnd();
+		return result;
+	}
+
 }
 
 function SimulationHandler() {

@@ -150,14 +150,14 @@ Voici ce qu'il y a de neuf :
 * Les carrés représentent des entreprises.
 * Quand une entreprise atteint une certaine taille, il embauche une personne au hasard (qui aura alors la même couleur que l'entreprise).
 * Quand une entreprise réduit en taille, elle licencie le dernier arrivé.
-* Chaque entreprise verse un salaire toutes les 3 secondes à chacun de ses employés.
+* Chaque entreprise verse un salaire toutes les 5 secondes à chacun de ses employés.
 * Quand un individu touche une entreprise, il lui paye une valeur fixe.
 
 <button id="simulation2Start" type="button" class="btn btn-lg btn-outline-primary">Go</button>
 <button id="simulation2Pause" type="button" class="btn btn-lg btn-outline-primary">Pause</button>
 <div id="simulationWithCompanies"></div>
 
-En toute transparence, il a fallut pas mal jouer avec les paramètres (salaire payé par les entreprises carrées toutes les 3 secondes, dépenses faites par les personnes ronds à chaque contact, dépense des entreprises entre elles à chaque contact aussi et aussi limite du nombre d'employés par entreprise) pour obtenir une sorte d'équilibre : dans la plupart des cas, les entreprises ou une entreprise prend le dessus sur tout et devient énorme.
+Même en modifiant les paramètres (salaire payé par les entreprises toutes les 5 secondes, dépenses faites par les personnes à chaque contact, dépense des entreprises entre elles à chaque contact et aussi limite du nombre d'employés par entreprise) : dans tous des cas, les entreprises ou une entreprise spécifique prend le dessus sur tout et devient énorme.
 
 Ce qui reste représentatif d'une certaine réalité : plus une entreprise est grosse et présente dans l'esprit des clients (citons notamment les GAFAM, par exemple), plus elle "attire" les dépenses et, donc, plus elle grossit.
 
