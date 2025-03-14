@@ -1,6 +1,7 @@
 const SIMULATION_BACK_COLOR = "#bcaa99";
 const SIMULATION_BORDERS_COLOR = "#4d8b31";
 const SIMULATION_BALLS_COLOR = "#4d8b31";
+const SIMULATION_BANKS_COLOR = "#666666";
 const SIMULATION_MIN_SIZE = 6;
 const COLUMNS = 8;
 const ROWS = 5;
@@ -42,7 +43,7 @@ function Wallet(theOwner, baseCash=0) {
         }
         this.cash -= amount;
         target.wallet.income(amount);
-        this.updateSize();
+        this.updateSize(-amount);
         return amount;
     }
 
@@ -53,20 +54,15 @@ function Wallet(theOwner, baseCash=0) {
     this.income = function(amount) {
 		var x = this.cash;
         this.cash += amount;
-        this.updateSize();
+        this.updateSize(amount);
     }
 
     this.canAffordIt = function(amount) {
         return this.cash * this.maxSpendPercent/100 >= amount;
     }
 
-    this.getSizingRation = function(width) {
-        const newWidth = 1.5 * this.cash + SIMULATION_MIN_SIZE;
-        return newWidth/width;
-    }
-
-    this.updateSize = function() {
-        var ratio = this.getSizingRation(this.owner.getWidth());
+    this.updateSize = function(amount) {
+		var ratio = (1.2 * this.cash + SIMULATION_MIN_SIZE) / (1.2 * (this.cash - amount) + SIMULATION_MIN_SIZE)
         Matter.Body.scale(this.owner, ratio, ratio);
     }
 }
@@ -147,6 +143,7 @@ function Simulation(elementId) {
     this.started = false;
     this.speeds = [];
     this.CtoCTransactionAmount = 1;
+	this.humanResourcesHandler = null;
 
     // create an engine
     this.engine = Engine.create();
@@ -240,10 +237,10 @@ function Simulation(elementId) {
         Composite.add(this.world, peopleStack);
         this.people = peopleStack.bodies;
         for (var i = 0; i < this.people.length; i++) {
-            this.people[i].getWidth = function() { return this.circleRadius*2; };
             this.people[i].wallet = new Wallet(this.people[i]);
             this.people[i].wallet.setMaxSpendPercent(60);
         }
+		this.humanResourcesHandler = new HumanResourcesHandler(this.people)
 
         return this;
     }
@@ -258,10 +255,8 @@ function Simulation(elementId) {
         Composite.add(this.world, companyStack);
         this.companies = companyStack.bodies;
 
-        var humanResourcesHandler = new HumanResourcesHandler(this.people);
         for (var i = 0; i < this.companies.length; i++) {
-            this.companies[i].getWidth = function() { return Math.sqrt(this.area); };
-            this.companies[i].adminService = new AdminService(this.companies[i], humanResourcesHandler);
+            this.companies[i].adminService = new AdminService(this.companies[i], this.humanResourcesHandler);
             this.companies[i].wallet = new Wallet(this.companies[i]);
         }
         return this;
@@ -364,7 +359,6 @@ function Simulation(elementId) {
      * On each collision, make a transaction from customer (circle) to company (rectangle)
      */
     this.setCompaniesTransactionOn = function(btobAmount, ctobAmount) {
-
         Events.on(this.engine, 'collisionStart', function(event) {
             var pairs = event.pairs;
 
@@ -447,6 +441,7 @@ function Simulation(elementId) {
 
         return this;
     }
+
 	this.logTotalCashInSimulation = function() {
         console.group("counting cash");
 		console.log(this.people.length, "people")
@@ -463,6 +458,115 @@ function Simulation(elementId) {
 		return result;
 	}
 
+	/***********************************************************************
+	 *                                BANKS
+	 **********************************************************************/
+    /**
+     * Add triangles representing companies
+     */
+    this.addBanks = function(n) {
+        const bankStack = Composites.stack(500, 200, 2, Math.round(n/2), 50, 50, function(x, y) {
+            return Bodies.polygon(x, y, 3, 15, { restitution: 1, render: { fillStyle: SIMULATION_BANKS_COLOR }});
+        });
+        Composite.add(this.world, bankStack);
+        this.banks = bankStack.bodies;
+
+        for (var i = 0; i < this.banks.length; i++) {
+            this.banks[i].wallet = new Wallet(this.banks[i]);
+        }
+        return this;
+    }
+
+	/**
+	 * Set the probability to make a loan at the bank
+	 */
+	this.setBanksLoanOn = function(odds) {
+        Events.on(this.engine, 'collisionStart', function(event) {
+            var pairs = event.pairs;
+
+            for (var i = 0; i < pairs.length; i++) {
+                var pair = pairs[i];
+
+                var A = pair.bodyA,
+                    B = pair.bodyB;
+
+				if (! A.isStatic && ! B.isStatic && (A.label === "Polygon Body" || B.label === "Polygon Body")) {
+					console.log(A, B)
+					// TODO : make a loan :
+					// - Give to A (or B) some money
+					// - Register A (or B) to an event that will make it cashback with some interests (+1)
+					// every 2 seconds
+				}
+            }
+        });
+        return this;
+	}
+
+	this.setBanksColor = function(color=null) {
+        var getColor = function() { return color; };
+
+        if (!color) { getColor = getRandomColor }
+
+        for (var i = 0; i < this.banks.length; i++) {
+            this.banks[i].render.fillStyle = getColor();
+        }
+
+        return this;
+	}
+
+	this.setBanksSpeed = function(speed, random=false) {
+        for (var i = 0; i < this.banks.length; i++) {
+            this.banks[i].customSpeed = speed;
+            if (random) {
+                this.banks[i].customSpeed = Common.random() * speed;
+            }
+        }
+
+        var engine = this.engine;
+        var banks = this.banks;
+
+        Events.on(this.engine, 'beforeUpdate', function(event) {
+            for (var i = 0; i < banks.length; i++) {
+                Body.setSpeed(banks[i], banks[i].customSpeed);
+            }
+        });
+        return this;
+	}
+
+	this.setBanksCapital = function(capital, random=false) {
+        var calculatedCapital = function() { return capital; }
+        if (random) {
+            calculatedCapital = function() { return Math.round(Common.random() * capital); }
+        }
+
+        var ratio;
+        for (var i = 0; i < this.banks.length; i++) {
+            this.banks[i].adminService = new AdminService(this.banks[i], this.humanResourcesHandler);
+            this.banks[i].wallet.income(calculatedCapital());
+        }
+
+		return this;
+	}
+
+    /**
+     * On update, pay salaries
+     */
+    this.setBanksSalariesOn = function(salary) {
+        var banks = this.banks;
+		var simulation = this;
+
+        Events.on(this.engine, 'beforeUpdate', function(event) {
+            if (Common.now() - lastTime >= 5000) {
+                for (var i = 0; i < banks.length; i++) {
+                    banks[i].adminService.payEmployees(salary);
+                }
+                // update last time
+                lastTime = Common.now();
+            }
+        });
+
+        return this;
+    }
 }
 
 function SimulationHandler() {
@@ -501,7 +605,7 @@ simulationHander.add(
     new Simulation("simulationBase")
     .addBorders()
     .addPeople()
-    .setPeopleColor("#FF6666")
+    .setPeopleColor()
     .setPeopleSpeed(5)
     .setPeopleCapital(20)
     .setPeopleTransactionsOn(1)
@@ -531,6 +635,22 @@ simulationHander.add(
     .setCompaniesSalariesOn(5)
     .init());
 
-// simulationHander.add(
-//     new Simulation("simulationWithBank")
-//     .addBorders());
+simulationHander.add(
+    new Simulation("simulationWithBanks")
+    .addBorders()
+    .addPeople()
+    .setPeopleColor(SIMULATION_BALLS_COLOR)
+    .setPeopleSpeed(5)
+    .setPeopleCapital(10)
+    .addCompanies(6)
+    .setCompaniesCapital(0)
+    .setCompaniesSpeed(5)
+    .setCompaniesTransactionOn(2, 1)
+    .setCompaniesSalariesOn(5)
+	.addBanks(4)
+	.setBanksColor(SIMULATION_BANKS_COLOR)
+	.setBanksSpeed(1.1)
+	.setBanksCapital(0)
+    .setBanksSalariesOn(8)
+	.setBanksLoanOn(100)
+    .init());

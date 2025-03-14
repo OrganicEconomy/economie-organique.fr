@@ -16,7 +16,7 @@ Featured_image: images/petites-simulations-economiques-min.jpg
 Afin d'affirmer ou d'infirmer ce postulat, nous allons nous adonner dans cet article à plusieurs mises en situation.
 Pour cela, nous allons faire des simulations graphiques, à base de balles rebondissantes, afin de voir un peu les implications d'une monnaie capitaliste.
 
-Ensuite, nous testerons la même chose avec, en comparaison, l'économie organique. 
+Dans un prochain article, nous testerons la même chose avec, en comparaison, l'économie organique. 
 
 Et vous allez voir que les résultats sont à la fois prévisibles et surprenants.
 
@@ -59,11 +59,10 @@ C'est beau !
 Notez que la taille de la balle indique la quantité d'argent que la personne détient.
 Donc, plus elle est grosse, plus elle est riche.
 Toute ressemblance avec des personnes réelles est pure coincidence.
-
-Cette usage de la dimension a deux rôles : un esthétique (c'est parlant, visuel) et un réaliste (plus vous êtes riche, plus vous avez d'opportunités économiques).
-
 Et plus elle est petite, plus elle est pauvre.
 Il va sans dire.
+
+Cette usage de la dimension a deux rôles : un esthétique (c'est parlant, visuel) et un réaliste (plus vous êtes riche, plus vous avez d'opportunités économiques).
 
 Je vous laisse cliquer sur ce premier cas et regarder un peu comment ça évolue.
  
@@ -73,15 +72,15 @@ Je vous laisse cliquer sur ce premier cas et regarder un peu comment ça évolue
 
 Au début, ça ne sautera pas aux yeux, les balles bougent et rebondissent, ok.
 Mais si vous laissez tourner la simulation assez longtemps, des écarts commencent à se creuser.
-Des balles prennent une belle dimension tandis que certaines se promènent, minuscules petits pois baladés sur une piste de bowling.
+Des balles prennent une belle dimension tandis que certaines se promènent, minuscules petits pois sur une piste de bowling.
 
 Ce qui est frappant avec ce premier essai, c'est que même **dans un cas aussi simple et complètement hasardeux, des inégalités apparaissent et s'installent**.
 
-Sans aucune stratégie, aucune !, des riches et des pauvres apparaissent.
-Les boules riches ne sont pourtant pas plus intelligentes ou plus fortes.
+Sans aucune stratégie, aucune !, des riches et des pauvres durables apparaissent.
+Les boules riches ne sont pourtant pas plus intelligentes ni plus fortes.
 Et symétriquement, les boules les plus pauvres ne sont ni nulles, ni faibles, ni bêtes.
 
-Notez cependant que cela prend un peu de temps et que, parfois, les inégalités se renversent.
+Notez cependant que cela prend un peu de temps et que, parfois, les inégalités peuvent se renversent.
 
 Cette simulation, aussi limitée soit-elle, pourrait déjà suffire à démontrer que la monnaie capitaliste (à savoir qui se conserve en temps et en quantité) crée spontanément et mécaniquement des riches et des pauvres.
 
@@ -121,6 +120,7 @@ Ce qui en dit long sur l'incomensurable injustice que représente notamment l'h�
 Aussi, il semblerait que la vitesse n'ait pas vraiment d'importance, du moins comparée au capital de départ.
 
 **La conclusion de cette première partie est très importante parce qu'elle met en déroute pas mal d'idées reçues.**
+
 Beaucoup, qui ne se penchent jamais sur l'économie, ce qu'on comprend, sont tentés par quelques raccourcis tels que :
 
 * "*C'est parce que l'humain est mauvais*"
@@ -139,19 +139,19 @@ Pas de spoilers.
 Maintenant, complexifions un peu le tout.
 Parce que les échanges entre particuliers, c'est sympa mais pas très réaliste.
 
-De nos jours, il est plutôt rare de faire du CtoC (terme de com' pour dire de particulier à particulier).
+De nos jours, il est plutôt rare de faire du CtoC (terme de com' pour dire de particulier à particulier: "Customer to Customer").
 En fait, tout n'est que BtoC et BtoB (les entreprises vendent aux autres entreprises et aux particuliers).
 
 Donc, sans plus attendre, ajoutons cela et modifions un peu notre simulation.
 
-Voici ce qu'il y a de neuf :
+Voici ce qu'il y a de neuf:
 
 * Maintenant, quand une balle en touche une autre, rien ne se passe.
 * Les carrés représentent des entreprises.
-* Quand une entreprise atteint une certaine taille, il embauche une personne au hasard (qui aura alors la même couleur que l'entreprise).
+* Quand une entreprise atteint une certaine taille, elle embauche une personne au hasard (qui aura alors la même couleur que l'entreprise).
 * Quand une entreprise réduit en taille, elle licencie le dernier arrivé.
 * Chaque entreprise verse un salaire toutes les 5 secondes à chacun de ses employés.
-* Quand un individu touche une entreprise, il lui paye une valeur fixe.
+* Quand un individu touche une entreprise, il lui paye une valeur fixe, comme si un achat était fait.
 
 <button id="simulation2Start" type="button" class="btn btn-lg btn-outline-primary">Go</button>
 <button id="simulation2Pause" type="button" class="btn btn-lg btn-outline-primary">Pause</button>
@@ -159,8 +159,8 @@ Voici ce qu'il y a de neuf :
 
 Même en modifiant les paramètres (salaire payé par les entreprises toutes les 5 secondes, dépenses faites par les personnes à chaque contact, dépense des entreprises entre elles à chaque contact et aussi limite du nombre d'employés par entreprise) : dans tous des cas, les entreprises ou une entreprise spécifique prend le dessus sur tout et devient énorme.
 
-Ce qui reste représentatif d'une certaine réalité : plus une entreprise est grosse et présente dans l'esprit des clients (citons notamment les GAFAM, par exemple), plus elle "attire" les dépenses et, donc, plus elle grossit.
+Ce qui reste représentatif d'une certaine réalité : plus une entreprise est grosse et présente dans l'esprit des clients (Google, Amazon, Facebook, Apple, Microsoft, par exemples), plus elle "attire" les dépenses et, donc, plus elle grossit.
 
 <button id="simulation3Start" type="button" class="btn btn-lg btn-outline-primary">Go</button>
 <button id="simulation3Pause" type="button" class="btn btn-lg btn-outline-primary">Pause</button>
-<div id="simulationWithBank"></div>
+<div id="simulationWithBanks"></div>
