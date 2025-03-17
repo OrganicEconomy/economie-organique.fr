@@ -3,6 +3,7 @@ Slug: do-it
 Lang: fr
 Author: Gus
 Summary: Allez-y, lancez-vous dans l'économie organique et créez de suite votre clocher.
+Status: draft
 
 # Actions
 

@@ -1,4 +1,4 @@
-const SIMULATION_BACK_COLOR = "#bcaa99";
+const SIMULATION_BACK_COLOR = 'transaparent'; //"#bcaa99";
 const SIMULATION_BORDERS_COLOR = "#4d8b31";
 const SIMULATION_BALLS_COLOR = "#4d8b31";
 const SIMULATION_BANKS_COLOR = "#666666";
@@ -35,6 +35,12 @@ function Wallet(theOwner, baseCash=0) {
 
 	this.getCashAmount = function() {
 		return this.cash;
+	}
+
+	this.destroyMoney = function(amount) {
+		if (this.canAffordIt(amount)) {
+			this.cash -= amount;
+		}
 	}
 
     this.pay = function(target, amount) {
@@ -144,6 +150,7 @@ function Simulation(elementId) {
     this.speeds = [];
     this.CtoCTransactionAmount = 1;
 	this.humanResourcesHandler = null;
+	this.counter = 0;
 
     // create an engine
     this.engine = Engine.create();
@@ -151,14 +158,31 @@ function Simulation(elementId) {
     this.world = this.engine.world;
 
     // create a renderer
+	var element = document.getElementById(this.elementId);
     this.renderer = Render.create({
-        element: document.getElementById(this.elementId),
+        element,
         engine: this.engine,
         options: {
             wireframes: false,
-            background: SIMULATION_BACK_COLOR
+            background: SIMULATION_BACK_COLOR,
         }
     });
+
+	let render = this.renderer;
+	let engine = this.engine;
+	var handleWindowResize = function() {
+        // get the current window size
+        var width = element.clientWidth,
+            height = element.clientHeight;
+		console.log(element, width, height);
+
+		render.canvas.style.width = `${width}px`;
+		render.canvas.style.height = `${width*2/3}px`;
+    };
+
+	handleWindowResize();
+
+	window.addEventListener('resize', handleWindowResize);
 
     this.render = function() {
         Render.run(this.renderer);
@@ -481,8 +505,11 @@ function Simulation(elementId) {
 	 * Set the probability to make a loan at the bank
 	 */
 	this.setBanksLoanOn = function(odds) {
-        Events.on(this.engine, 'collisionStart', function(event) {
+		let counter = this.counter;
+		const engine = this.engine;
+        Events.on(engine, 'collisionStart', function(event) {
             var pairs = event.pairs;
+			let lastSecond = Common.now();
 
             for (var i = 0; i < pairs.length; i++) {
                 var pair = pairs[i];
@@ -490,12 +517,34 @@ function Simulation(elementId) {
                 var A = pair.bodyA,
                     B = pair.bodyB;
 
-				if (! A.isStatic && ! B.isStatic && (A.label === "Polygon Body" || B.label === "Polygon Body")) {
-					console.log(A, B)
-					// TODO : make a loan :
-					// - Give to A (or B) some money
-					// - Register A (or B) to an event that will make it cashback with some interests (+1)
-					// every 2 seconds
+				if (A.label === "Polygon Body" || B.label === "Polygon Body") {
+					counter += 1;
+				}
+
+				if (! A.isStatic && ! B.isStatic && (A.label === "Polygon Body" || B.label === "Polygon Body") && counter >= odds) {
+					const bank = A.label === "Polygon Body" ? A : B;
+					const target = A.label === "Polygon Body" ? B : A;
+					if (target.loan && target.loan > 0) {
+						return;
+					}
+					counter = 0;
+					target.wallet.income(10);
+					target.loan = 11;
+					console.log(bank.label, "making loan to", target.label)
+
+					Events.on(engine, 'beforeUpdate', function(event) {
+						if (Common.now() - lastSecond >= 2000) {
+							if (target.loan > 0) {
+								if (target.loan === 11) {
+									target.wallet.pay(bank, 1);
+								}
+								target.loan -= 1;
+								target.wallet.destroyMoney(1);
+							}
+							// update last second
+							lastSecond = Common.now();
+						}
+					});
 				}
             }
         });
@@ -631,7 +680,7 @@ simulationHander.add(
     .addCompanies(6)
     .setCompaniesCapital(0)
     .setCompaniesSpeed(5)
-    .setCompaniesTransactionOn(2, 1)
+    .setCompaniesTransactionOn(1, 0.5)
     .setCompaniesSalariesOn(5)
     .init());
 
@@ -642,15 +691,15 @@ simulationHander.add(
     .setPeopleColor(SIMULATION_BALLS_COLOR)
     .setPeopleSpeed(5)
     .setPeopleCapital(10)
-    .addCompanies(6)
+    .addCompanies(4)
     .setCompaniesCapital(0)
     .setCompaniesSpeed(5)
-    .setCompaniesTransactionOn(2, 1)
-    .setCompaniesSalariesOn(5)
-	.addBanks(4)
+    .setCompaniesTransactionOn(0, 0.1)
+    .setCompaniesSalariesOn(10)
+	.addBanks(1)
 	.setBanksColor(SIMULATION_BANKS_COLOR)
 	.setBanksSpeed(1.1)
 	.setBanksCapital(0)
     .setBanksSalariesOn(8)
-	.setBanksLoanOn(100)
+	.setBanksLoanOn(10)
     .init());

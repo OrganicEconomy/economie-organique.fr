@@ -11,7 +11,7 @@ Status: published
 Custom_scripts: matter.min.js, simulation-économique.js
 Featured_image: images/petites-simulations-economiques-min.jpg
 
-> Le capitalisme est un jeu de dés : soit vous avez de la chance ou vous trichez, et vous gagnez ; soit vous êtes intègre et malchanceux, et vous perdez.
+> Le capitalisme est un jeu de dés : si vous avez de la chance ou que vous trichez, vous gagnez ; si vous êtes intègre et malchanceux, vous perdez.
 
 Afin d'affirmer ou d'infirmer ce postulat, nous allons nous adonner dans cet article à plusieurs mises en situation.
 Pour cela, nous allons faire des simulations graphiques, à base de balles rebondissantes, afin de voir un peu les implications d'une monnaie capitaliste.
@@ -26,7 +26,7 @@ Avant tout, il est pertinent de préciser qu'une simulation reste quoi qu'il arr
 En tout cas, c'est ce que me dit ma femme.
 
 Ce que je veux dire c'est qu'il n'est et ne sera jamais possible de simuler la vraie vie.
-Et de toute façon ça ne servirait à rien vu qu'une simulation est justement sensée simplifier pour nous permettre de comprendre un peu.
+Et de toute façon ça ne servirait à rien vu qu'une simulation est justement sensée simplifier un élément du monde pour nous permettre de mieux le comprendre (le monde).
 
 Nous allons donc faire quelques hypothèses simplificatrices pour avoir un aperçu de la réalité.
 
@@ -62,7 +62,7 @@ Toute ressemblance avec des personnes réelles est pure coincidence.
 Et plus elle est petite, plus elle est pauvre.
 Il va sans dire.
 
-Cette usage de la dimension a deux rôles : un esthétique (c'est parlant, visuel) et un réaliste (plus vous êtes riche, plus vous avez d'opportunités économiques).
+Cet usage de la dimension a deux rôles : un esthétique (c'est parlant, visuel) et un réaliste (plus vous êtes riche, plus vous avez d'opportunités économiques).
 
 Je vous laisse cliquer sur ce premier cas et regarder un peu comment ça évolue.
  
@@ -157,10 +157,81 @@ Voici ce qu'il y a de neuf:
 <button id="simulation2Pause" type="button" class="btn btn-lg btn-outline-primary">Pause</button>
 <div id="simulationWithCompanies"></div>
 
-Même en modifiant les paramètres (salaire payé par les entreprises toutes les 5 secondes, dépenses faites par les personnes à chaque contact, dépense des entreprises entre elles à chaque contact et aussi limite du nombre d'employés par entreprise) : dans tous des cas, les entreprises ou une entreprise spécifique prend le dessus sur tout et devient énorme.
+Même en modifiant les paramètres (salaire payé par les entreprises toutes les 5 secondes, dépenses faites par les personnes à chaque contact, etc) : dans la plupart des cas, les entreprises ou une entreprise spécifique prend le dessus sur tout et devient énorme.
 
-Ce qui reste représentatif d'une certaine réalité : plus une entreprise est grosse et présente dans l'esprit des clients (Google, Amazon, Facebook, Apple, Microsoft, par exemples), plus elle "attire" les dépenses et, donc, plus elle grossit.
+Ce qui reste représentatif d'une certaine réalité : plus une entreprise est grosse et présente dans l'esprit des clients (Google, Amazon, Facebook, Apple, Microsoft, par exemples), plus elle "attire" les dépenses et, donc, plus elle grossit encore.
+
+Mais, au-delà de cet aspect explosif de la dimension des entreprises, on peut surtout observer que les citoyens et citoyennes (les ronds) sont majoritairement pauvres.
+En fait, ceux qui ont accès à l'emploi s'en sortent (tant qu'ils conservent cet emploi) et tous ceux qui en sont exclus sont dans une pauvreté immense.
+Ainsi, contrairement à ce que l'on pourrait croire **le salariat est encore plus appauvrissant et clivant** : il génère des inégalités plus nombreuses et plus grandes.
+
+Et pourtant, encore une fois, tout n'est ici que hasard !
+
+Ce qui ajoute grandement à la remise en question de la notion de "mérite".
+Ici, une entreprise qui réussit et qui écrase les autres, c'est juste du bol.
+Ce n'est pas une innovation disruptive ou révolutionnaire qui lui fait prendre de l'ampleur, ce n'est que concours de circonstance.
+
+Bien sûr, je sais que, dans le monde réel, les innovations, les performances de communications et autres éléments de triche et de manipulation des clients ont aussi un impact sur la "réussite" d'une entreprise.
+Mais ces simulations sont là pour nous rappeler que, même sans tous ces outils, de toute manière, les inégalités seraient les mêmes.
+
+# Soyons "bankables"
+
+Enfin, une petite dernière pour la route, et pas des moindres.
+
+Nous avons des gens, nous avons des entreprises, mais il nous manque un élément central dans la structure de notre société : la banque !
+
+Alors ajoutons en de suite à notre simulation pour y ajouter encore une touche de réalisme.
+Voici le fonctionnement des banques, représentées par des triangles :
+
+* Quand un citoyen (rond) ou une entreprise (carré) la touche, il y a une chance sur 10 pour que la banque lui fasse un prêt.
+* Dans ce cas, elle lui donne 10€.
+* Ensuite, toutes les 2 secondes, l'emprunteur rembourse 1€ jusqu'à un total de 11 (oui, il y a des intérêts bien sûr).
+
+Voyons voir ce qui se passe alors.
 
 <button id="simulation3Start" type="button" class="btn btn-lg btn-outline-primary">Go</button>
 <button id="simulation3Pause" type="button" class="btn btn-lg btn-outline-primary">Pause</button>
 <div id="simulationWithBanks"></div>
+
+Alors cette fois, c'est du lourd.
+
+Au début, tout parait normal, chacun fait son bout de chemin et la vie est belle.
+Enfin, même si les inégalités se creusent déjà tout naturellement, bien sûr.
+
+Mais au bout d'un moment, tout part en vrille, la banque et les entreprises, mais aussi certaines personnes deviennent énormes !
+Elles écrasent tout et le système s'emballe dans une explosion complètement insensée.
+
+Je vous le dit tout de suite : ce n'est pas un bug.
+La simulation n'est pas mal foutue.
+Ce que vous voyez n'est autre qu'une meilleure représentation de la réalité du capitalisme.
+
+Et oui, les banques faisant leurs petits prêts, elles créent de la monnaie.
+Il y en a alors de plus en plus dans le système.
+Et plus il y a d'argent en jeu, plus les inégalités se creusent, plus les gros deviennent gros et plus ils en attirent encore et encore et encore.
+
+**Le système capitaliste** qu'est le nôtre (et à peu prêt partout sur terre) **est exponentiel**.
+Il y est obligé !
+Ce n'est pas évitable car, s'il n'y a pas de plus en plus de monnaie, alors il ne peut pas y avoir de croissance.
+Et s'il n'y a pas de croissance, le capitalisme s'effondre.
+Et à ce moment là, ce n'est pas beau à voir, je vous assure.
+
+# Conclusion
+
+J'insiste une fois de plus sur le fait que ces simulations ne sont que cela.
+Qui plus est, elles ne sont pas réalisées dans un contexte extrêmement savant par des experts de l'économie, de la recherche ou que sais-je encore.
+
+Cela dit, leur simplicité nous permet tout de même de nous questionner:
+
+* L'humain est-il vraiment mauvais ? Et ainsi la cause de tous nos maux ?
+* Le mérite, les compétences, la capacité à prendre des risques sont-ils vraiment des éléments différenciants ?
+* Tout ce qui a été ajouté au-dessus de la "monnaie réserve de valeur" (entreprises, banques, etc) a-t-il pour but de rééquilibrer la balance ?
+
+Ici, on peut être tenté de répondre non, non et non.
+
+**L'humain peut être aussi bon ou mauvais qu'il le veut, l'outil économique fondamental qu'il utilise** (la monnaie réserve de valeur, je rabache) **le poussera quoi qu'il arrive vers une situation d'inégalités complètement hasardeuses et incorrigibles.**
+
+**C'est le hasard avant tout qui positionne les richesses**, que ce soit par l'héritage, par le "bon endroit au bon moment", par les rencontres que l'on fait, par les opportunités qui se présentent.
+Et nos facultés (prise de risque, capacité à comprendre, à se projeter, à cerner les besoins, etc) jouent seulement une toute petite part dans nos résultats.
+
+Enfin, **tout ce qui fait la structure complexe de nos sociétés** (entreprises, banques, prêts avec intérêts, banques centrales, systèmes financiers, héritage, propriété, etc) **n'a pour fonction que de favoriser encore plus les inégalités**.
+
