@@ -19,6 +19,9 @@ Dans un prochain article, nous testerons la même chose avec, en comparaison, l'
 
 Et vous allez voir que les résultats sont à la fois prévisibles et surprenants.
 
+Vous pouvez aussi regarder la vidéo où on parle de cet article :
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M-CC_0t3CH0?si=2DiiFRe1iB0KmGnG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 # La base
 
 Avant tout, il est pertinent de préciser qu'une simulation reste quoi qu'il arrive une simulation.
