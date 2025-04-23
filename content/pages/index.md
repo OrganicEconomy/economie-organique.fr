@@ -2,7 +2,7 @@ Title: Accueil
 Lang: fr
 Author: Gus
 Save_as: index.html
-Slug: index
+Url: ""
 
 
 test

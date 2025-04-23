@@ -1,114 +1,104 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        {% if CLAIM_GOOGLE %}
-        {% include '_includes/claim_google.html' with context %}
-        {% endif %}
-        {% if CLAIM_BING %}
-        {% include '_includes/claim_bing.html' with context %}
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		{% if CLAIM_GOOGLE %}
+		{% include '_includes/claim_google.html' with context %}
+		{% endif %}
+		{% if CLAIM_BING %}
+		{% include '_includes/claim_bing.html' with context %}
 
-        {% endif %}
-        {% if article and article.author %}
-        <meta name="author" content="{{ article.author }}" />
-        {% elif page and page.author %}
-        <meta name="author" content="{{ page.author }}" />
-        {% else %}
-        <meta name="author" content="{{ AUTHOR }}" />
-        {% endif %}
+		{% endif %}
+		{% if article and article.author %}
+		<meta name="author" content="{{ article.author }}" />
+		{% elif page and page.author %}
+		<meta name="author" content="{{ page.author }}" />
+		{% else %}
+		<meta name="author" content="{{ AUTHOR }}" />
+		{% endif %}
 
-        {% from '_includes/_defaults.html' import SITE_DESCRIPTION with context %}
-        {% if SITE_DESCRIPTION %}
-        <meta name="description" content="{% block head_description %}{{ SITE_DESCRIPTION|e }}{% endblock head_description %}" />
-        {% endif %}
-        {% block meta_tags_in_head %}
-        {% from '_includes/_defaults.html' import TWITTER_USERNAME with context %}
-        {%if TWITTER_USERNAME %}
-        <meta name="twitter:creator" content="@{{TWITTER_USERNAME}}">
-        {% endif %}
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary">
-        {% endblock meta_tags_in_head %}
-        <title>{% block title %}{{ SITENAME|striptags|e }}{% endblock title %}</title>
-        {% block head_links %}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        {% if 'assets' in PLUGINS %}
-        {% include '_includes/minify_css.html' with context %}
-        {% else %}
-        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/elegant.prod.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/custom.css" media="screen">
-        {% endif %}
-        {% endblock head_links %}
-        {% include '_includes/favicon_links.html' %}
-        {% block feed_links %}
-        {% include '_includes/feeds.html' %}
-        {% endblock feed_links %}
-        {% include '_includes/analytics.html' %}
-    </head>
-    <body>
-       {% from '_includes/_defaults.html' import TAGS_URL, CATEGORIES_URL, ARCHIVES_URL, SEARCH_URL with context %}
-        <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="{{ SITEURL }}/">{{ SITENAME }}</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                       <li {% if page_name == 'index' %} class="nav-item active"{% else %} class="nav-item" {% endif %}>
-                           <a class="nav-link"
-                              href=
-                              {% if SITEURL %}
-                              {{ SITEURL }}
-                              {% else %}
-                              "/"
-                              {% endif %}
-                           >Accueil</a>
-                       </li>
-                       <li {% if page_name == 'categories' %} class="nav-item active"{% else %} class="nav-item" {% endif %}>
-                               <a class="nav-link" href="{{ SITEURL }}/{{ CATEGORIES_URL }}">Categories</a>
-                       </li>
+		{% from '_includes/_defaults.html' import SITE_DESCRIPTION with context %}
+		{% if SITE_DESCRIPTION %}
+		<meta name="description" content="{% block head_description %}{{ SITE_DESCRIPTION|e }}{% endblock head_description %}" />
+		{% endif %}
+		{% block meta_tags_in_head %}
+		{% from '_includes/_defaults.html' import TWITTER_USERNAME with context %}
+		{%if TWITTER_USERNAME %}
+		<meta name="twitter:creator" content="@{{TWITTER_USERNAME}}">
+		{% endif %}
+		<meta property="og:type" content="article" />
+		<meta name="twitter:card" content="summary">
+		{% endblock meta_tags_in_head %}
+		<title>{% block title %}{{ SITENAME|striptags|e }}{% endblock title %}</title>
+		{% block head_links %}
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		{% if 'assets' in PLUGINS %}
+		{% include '_includes/minify_css.html' with context %}
+		{% else %}
+		<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/elegant.prod.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/custom.css" media="screen">
+		{% endif %}
+		{% endblock head_links %}
+		{% include '_includes/favicon_links.html' %}
+		{% block feed_links %}
+		{% include '_includes/feeds.html' %}
+		{% endblock feed_links %}
+		{% include '_includes/analytics.html' %}
+	</head>
+	<body>
+		{% from '_includes/_defaults.html' import TAGS_URL, CATEGORIES_URL, ARCHIVES_URL, SEARCH_URL with context %}
+		<div id="content">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" href="{{ SITEURL }}/">{{ SITENAME }}</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li {% if page_name == 'categories' %} class="nav-item active"{% else %} class="nav-item" {% endif %}>
+							<a class="nav-link" href="{{ SITEURL }}/{{ CATEGORIES_URL }}">Categories</a>
+						</li>
 
-                       {% if DISPLAY_PAGES_ON_MENU %}
-                       {% for p in pages %}
-                       <li {% if p == page %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                            <a class="nav-link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
-                       </li>
-                       {% endfor %}
-                       {% endif %}
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0" action="{{ SITEURL }}/{{ SEARCH_URL }}" onsubmit="return validateForm(this.elements['q'].value);">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search" name="q" id="tipue_search_input">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go !</button>
-                    </form>
-                </div>
-            </nav>
-            <div class="container-fluid">
-                <div class="row-fluid">
-                    <div class="col-10 offset-1">
-                        {% block content %}
-                        {% endblock content %}
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% include '_includes/footer.html' %}
-        {% block script %}
-        {% if AMAZON_BESTAZON %}
-            {% include '_includes/bestazon.html' %}
-        {% endif %}
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script>
-            function validateForm(query)
-            {
-                return (query.length > 0);
-            }
-        </script>
+						{% if DISPLAY_PAGES_ON_MENU %}
+						{% for p in pages %}
+						<li {% if p == page %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+							<a class="nav-link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+						</li>
+						{% endfor %}
+						{% endif %}
+					</ul>
+					<form class="form-inline my-2 my-lg-0" action="{{ SITEURL }}/{{ SEARCH_URL }}" onsubmit="return validateForm(this.elements['q'].value);">
+						<input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search" name="q" id="tipue_search_input">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go !</button>
+					</form>
+				</div>
+			</nav>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="col-10 offset-1">
+						{% block content %}
+						{% endblock content %}
+					</div>
+				</div>
+			</div>
+		</div>
+		{% include '_includes/footer.html' %}
+		{% block script %}
+		{% if AMAZON_BESTAZON %}
+		{% include '_includes/bestazon.html' %}
+		{% endif %}
+		<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script>
+			function validateForm(query)
+			{
+				return (query.length > 0);
+			}
+		</script>
 		<script>
 			(function (s, e, n, d, er) {
 				s['Sender'] = er;
@@ -123,9 +113,9 @@
 			})(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
 			sender('9c84870f164227')
 		</script>
-        {% endblock script %}
-        {% include '_includes/stat_counter.html' %}
-    </body>
-    <!-- Theme: Elegant built for Pelican
-        License : MIT -->
+		{% endblock script %}
+		{% include '_includes/stat_counter.html' %}
+	</body>
+	<!-- Theme: Elegant built for Pelican
+		License : MIT -->
 </html>
