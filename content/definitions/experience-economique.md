@@ -8,8 +8,6 @@ Author: Gus
 Summary: La définition de l'expérience économique
 Status: hidden
 
-# L'expérience économique
-
 L'expérience économique est l'un des éléments les plus révolutionnaires de l'économie organique.
 C'est son existence même qui fait tout son fonctionnement.
 Un truc de dingue, j'vous jure !
@@ -17,7 +15,7 @@ Un truc de dingue, j'vous jure !
 Pour le dire en terme capitalistiques standards que tout le monde comprend à peu près, l'expérience économique est une sorte de livret d'épargne.
 Mais pas n'importe quel livret, un livret à sens unique.
 C'est-à-dire que vous pouvez déposer de l'argent sur le livret, mais jamais en retirer.
-Une fois l'argent sur le livret, celui-ci est condamné pour l'éternité sur celui-ci.
+Une fois l'argent sur le livret, il est condamné pour l'éternité à y rester.
 
 Ça semble être une hérésie, et c'est bien pour cela qu'il est si révolutionnaire !
 Mais en fait, ça veut simplement dire qu'on touche les dividendes (toujours dans notre métaphore capitaliste) et puis c'est tout.
@@ -39,13 +37,13 @@ Mais en fait, ça veut simplement dire qu'on touche les dividendes (toujours dan
 Si vous vous posiez la question : Oui. C'est exactement comme si tout le monde devenait rentier.
 Une sorte de nivellement par le haut.
 Mais voyez ça d'un bon oeil, car ce n'est pas du tout une mauvaise chose, pour la simple et bonne raison que nous ne sommes pas dans le capitalisme vorace et consumériste.
-Dans un contexte organique, un monde de rentier, c'est bien.
+Dans un contexte organique, un monde de rentiers, c'est bien.
 
 La grosse différence ici est notamment que personne ne profite de personne.
 Chaque citoyenne, chaque citoyen, est libre de tout chantage économique.
-Ainsi aucun rentier ne vit sur le dos des autres, contrairement à un monde capitaliste où l'argent qui revient aux une est forcément retiré à d'autres.
+Ainsi aucun rentier ne vit sur le dos des autres, contrairement à un monde capitaliste où l'argent qui revient aux unes est forcément retiré à d'autres.
 
-Ce petit ```+1``` n'est pas anodin : il fait qu'une personne n'ayant aucune expérience économique produit quand même une petite unité de monnaie citoyenne et une petite unité de monnaie d'investissement.
+Autre détail, ce petit ```+1``` dans le calcul n'est pas anodin : il fait qu'une personne n'ayant aucune expérience économique produit quand même chaque jour une petite unité de monnaie citoyenne et une petite unité de monnaie d'investissement.
 C'est déjà un bon début !
 
 Enfin, la formule de calcul ne vous a peut-être pas ému, mais notez bien qu'elle est d'une forme logarithmique.

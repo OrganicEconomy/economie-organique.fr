@@ -8,8 +8,6 @@ Author: Gus
 Summary: La définition de la monnaie d'investissement
 Status: hidden
 
-# La monnaie d'investissement
-
 La monnaie d'investissement et l'[expérience économique]({filename}/definitions/experience-economique.md) sont les deux pilliers de l'économie organique.
 Ils représentent les innovations majeures de ce système.
 Alors, mieux vaut bien les comprendre, ça vaut le coup !

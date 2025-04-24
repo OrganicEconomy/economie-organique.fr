@@ -8,8 +8,6 @@ Author: Gus
 Summary: La définition détaillée du salaire en économie-organique.
 Status: hidden
 
-# Le Salaire
-
 Chaque acteur d'un [écosystème]({filename}/definitions/ecosysteme.md) touche un salaire d'une manière tout à fait différente d'une structure capitaliste.
 En effet, un écosystème ne "promet" aucun salaire récurrent, car c'est impossible.
 En revanche, un écosystème ne peut pas conserver de monnaie citoyenne reçue de la part de citoyennes et citoyens.

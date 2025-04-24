@@ -8,8 +8,6 @@ Author: Gus
 Summary: La définition du droit de pioche.
 Status: hidden
 
-# Le Droit de pioche
-
 Aux vues du fonctionnement des monnaies en économie-organique, il parait compliqué d'avoir des prestataires...
 Alors bien sûr, on pourrait idéaliser une société où tout se fait en direct et où jamais aucune sous-traitance n'a lieu.
 Mais cela semble soit fantasque, soit hatif.

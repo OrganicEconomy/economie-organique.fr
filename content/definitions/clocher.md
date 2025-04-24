@@ -8,8 +8,6 @@ Author: Gus
 Summary: La définition du clocher.
 Status: hidden
 
-# Le clocher
-
 Le clocher, c'est l'[écosystème]({filename}/definitions/ecosysteme.md) qui administre les terres.
 Mais attention, on est en économie organique ici, alors pas question qu'il y ait un mega écosystème qui régisse les biens de tous les citoyens du pays ou du monde.
 Ce serait un outil de coercition certain et catastrophique.

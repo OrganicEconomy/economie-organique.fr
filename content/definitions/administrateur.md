@@ -8,8 +8,6 @@ Author: Gus
 Summary: La définition du rôle d'un administrateur dans un écosystème.
 Status: hidden
 
-# L'administrateur
-
 L'administrateur, pour le dire en terme capitalistiques que tout le monde comprend à peu près, c'est plus ou moins l'équivalent du gars des ressources humaines.
 C'est lui (ou elle hein!) qui "recrute".
 Sauf qu'en économie-organique, ça n'a pas la même violence qu'en société classique.

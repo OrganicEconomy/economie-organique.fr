@@ -8,8 +8,6 @@ Author: Gus
 Summary: La définition de l'usufruit.
 Status: hidden
 
-# L'usufruit
-
 En économie organique, il n'est pas question d'être propriétaire terrien, même si Burt Reynolds est votre grand-père !
 Non, à la place tout le monde est locataire.
 Enfin, pas vraiment locataire : en vérité, chaque citoyen est usufruitier.

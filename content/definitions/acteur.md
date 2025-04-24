@@ -8,8 +8,6 @@ Author: Gus
 Summary: La définition du rôle d'un acteur dans un écosystème.
 Status: hidden
 
-# L'acteur
-
 L'acteur, pour le dire en terme capitalistiques que tout le monde comprend à peu près, c'est plus ou moins l'équivalent du salarié d'une entreprise ou d'une association.
 Cela veut dire qu'il y est lié, dans son action.
 C'est un peu comme si c'était son emploi, sauf que dans une société organique, il n'est pas dans le besoin d'un emploi ni d'un salaire, donc la comparaison s'arrête là.

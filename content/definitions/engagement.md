@@ -8,8 +8,6 @@ Author: Gus
 Summary: La définition de l'engagement
 Status: hidden
 
-# L'engagement
-
 L'engagement, pour le dire en terme capitalistiques, est d'assez loin l'équivalent du prêt banquaire.
 Je dis "d'assez loin" parce que ça n'a, en pratique, vraiment rien à voir.
 Mais au moins, ça permet de se projeter.

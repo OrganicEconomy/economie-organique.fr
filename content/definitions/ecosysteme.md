@@ -8,8 +8,6 @@ Author: Gus
 Summary: La définition détaillée de ce qu'est un écosystème en économie-organique.
 Status: hidden
 
-# L'écosystème
-
 Associations, entreprises, structures étatiques.
 Tout cela est d'un compliqué, avec des règles spécifiques et des systèmes d'imposition à s'en faire des trous dans le cerveau.
 Nous avons tous mieux à faire que de nous torturer l'esprit avec des complexités inutiles.
