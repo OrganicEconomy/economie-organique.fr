@@ -235,5 +235,9 @@ Ici, on peut être tenté de répondre non, non et non.
 **C'est le hasard avant tout qui positionne les richesses**, que ce soit par l'héritage, par le "bon endroit au bon moment", par les rencontres que l'on fait, par les opportunités qui se présentent.
 Et nos facultés (prise de risque, capacité à comprendre, à se projeter, à cerner les besoins, etc) jouent seulement une toute petite part dans nos résultats.
 
-Enfin, **tout ce qui fait la structure complexe de nos sociétés** (entreprises, banques, prêts avec intérêts, banques centrales, systèmes financiers, héritage, propriété, etc) **n'a pour fonction que de favoriser encore plus les inégalités**.
+Enfin, **tout ce qui fait la structure complexe de nos sociétés** (entreprises, banques, prêts avec intérêts, banques centrales, systèmes financiers, héritage, propriété, etc) **semble n'avoir pour fonction que de creuser encore plus les inégalités**.
 
+Tout cela est porteur d'espoir, si si !
+Parce que, sachant cela, on comprend qu'en quittant la monnaie réserve de valeur, nous irons vers des société moins inégales, plus justes et surement plus simples.
+
+Finalement, je vous invite à poursuivre votre lecture, pour continer à simuler comme des frustrés, en lisant la seconde partie de cet article : [les mêmes simulations, mais dans l'économie organique](/simulations-organiques) cette fois.

@@ -4,6 +4,7 @@ Author: Gus
 Save_as: index.html
 Url: ""
 Summary: Qu'est-ce que l'économie organique ? Vous allez vite comprendre !
+Status: hidden
 
 ## Avant tout, de l'espoir dans l'avenir
 
@@ -178,8 +179,8 @@ Il est donc possible de mettre l'économie organique en place dès maintenant, e
 Ensuite, en grandissant, la monnaie organique sera éprouvée, sûrement améliorée et, surtout, assimilée par le plus grand nombre.
 Elle pourra ainsi prendre une place de plus en plus grande dans les échanges économique, faisant perdre petit à petit son importance à l'euro (ou à d'autres monnaies, voyons grand).
 
-Arrivé à un certain point de bascule, dont nous sommes encore bien loin, il y aura peut être un peu de grabuge car les accros au profits ne vont pas trop se laisser faire.
-Mais avec un peu de chance, une grande quantité de citoyen(ne)s acquis et confiants, l'économie organique pourrait devenir l'économie principale.
+Arrivé à un certain point de bascule, dont nous sommes encore bien loin, il y aura peut être un peu de grabuge car les accros au profit ne vont pas trop se laisser faire.
+Mais avec un peu de chance et surtout une grande quantité de citoyen(ne)s acquis et confiants, l'économie organique pourrait devenir l'économie principale.
 
 Car **l'économie organique est faite pour durer** :
 
@@ -215,6 +216,6 @@ Bravo !
 Si vous voulez tout savoir dans les détails, vous pouvez lire [Les règles du jeu](/regles-du-jeu).
 C'est fastidieux, mais c'est complet.
 
-Et pour voir un peu tout ce qu'implique l'économie organique, vous pouvez aussi lire les articles du [blog](/pages/blog).
+Pour comprendre tout ce qu'implique l'économie organique, vous pouvez aussi lire les articles du [blog](/pages/blog).
 
 Enfin, si vous voulez poser des questions ou parler un peu de tout ça, rendez-vous sur le [Discord](https://discord.gg/9hPsKqxH)
