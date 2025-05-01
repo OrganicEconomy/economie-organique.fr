@@ -19,3 +19,16 @@ simulationHandler.add("simulationOrgaInegal",
 	.setPeopleSpeed(5)
 	.setPeopleTransactionsOn(1)
 	.init());
+
+simulationHandler.add("simulationOrgaCompanies",
+	 	new economicSimulator.OrganicSimulation("simulationOrgaCompanies")
+	 	.addBorders()
+	 	.addPeople(7, 5)
+	 	.setPeopleColor("#4d8b31")
+	 	.setPeopleSpeed(5)
+	 	.addCompanies(10)
+	 	.setCompaniesColor()
+	 	.setCompaniesSpeed(3)
+	 	.setCompaniesTransactionOn(1, 1)
+	 	.setCompaniesInvestsOn()
+	 	.init());
