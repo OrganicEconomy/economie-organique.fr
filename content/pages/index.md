@@ -6,6 +6,13 @@ Url: ""
 Summary: Qu'est-ce que l'économie organique ? Vous allez vite comprendre !
 Status: hidden
 
+Bienvenue dans l'économie organique !
+
+Je me demande bien comment vous êtes arrivé ici, et vous aussi peut-être, mais ne vous en faites pas, vous êtes au bon endroit.
+Un endroit où on remet pas mal de choses en question; où l'on change les règles du jeu plutôt que de critiquer les joueurs; où l'on propose une solution concrète plutôt que de raler sur ce qui ne va pas et sur notre impuissance.
+
+Et ça, c'est déjà encourageant.
+
 ## Avant tout, de l'espoir dans l'avenir
 
 On ne compte plus les initiatives qui tentent de nous sortir de tout ce bazar que nous vivons (guerres, sixième extinction, dérèglement climatique, épuisement des ressources, etc.).
