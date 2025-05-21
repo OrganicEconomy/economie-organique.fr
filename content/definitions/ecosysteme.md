@@ -12,7 +12,7 @@ Associations, entreprises, structures étatiques.
 Tout cela est d'un compliqué, avec des règles spécifiques et des systèmes d'imposition à s'en faire des trous dans le cerveau.
 Nous avons tous mieux à faire que de nous torturer l'esprit avec des complexités inutiles.
 
-Ainsi, en économie-organique, toutes ces entités sont replacées par une et une seule forme : l'écosystème.
+Ainsi, en économie-organique, toutes ces entités sont remplacées par une et une seule forme : l'écosystème.
 Donc, si vous apportez votre aide aux populations en difficulté, si vous vendez du pain ou si vous êtes instituteur, vous ferez parti d'un écosystème en économie-organique.
 
 ## Définition

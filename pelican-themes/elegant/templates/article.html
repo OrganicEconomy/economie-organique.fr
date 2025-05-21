@@ -59,6 +59,11 @@
 				{% endif %}
 				{% import '_includes/translations.html' as translations with context %}
 				{{ translations.translations_for(article) }}
+
+				{% if article.featured_image %}
+				<img src="{{ SITEURL }}/{{ article.featured_image }}" class="img-fluid" alt="Image d'illustration de l'article">
+				{% endif %}
+
 				{{ article.content }}
 
 				{% if article.photo_gallery %}

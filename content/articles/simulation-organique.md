@@ -147,7 +147,7 @@ Revenons à nos balles et ajoutons du réalisme à notre simulation.
 Dans la vraie vie, il est plutôt rare que les citoyens se payent entre eux: les transactions leboncoin et les braderies ne sont pas la norme.
 
 En économie organique, entreprises, associations et services publics sont tous homogénéisés en une seule forme: [l'écosystème]({filename}/definitions/ecosysteme.md).
-Cette simulation sera donc la dernière, impliquand citoyens et écosystèmes.
+Cette simulation sera donc la dernière, impliquant citoyens et écosystèmes.
 
 C'est la dernière parce qu'il n'y a rien à ajouter: ni banques, ni état, ni rien du tout.
 
