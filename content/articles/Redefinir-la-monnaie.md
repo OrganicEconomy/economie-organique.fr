@@ -7,7 +7,7 @@ Slug: redefinir-la-monnaie
 Lang: fr
 Author: Gus
 Summary: Et si on changeait la définition de la monnaie ? La connaissez-vous d'ailleurs ?
-Status: published
+Status: draft
 Featured_image: images/redefinir-la-monnaie.jpg
 
 En lisant des livres d'économie, et j'en lis pas mal, on se forme à comprendre l'économie et, franchement, je trouve que c'est pas ouf...

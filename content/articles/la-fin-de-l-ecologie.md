@@ -7,8 +7,8 @@ Slug: la-fin-de-l-ecologie
 Lang: fr
 Author: Gus
 Summary: Et si on arrêtait l'écologie ? - Quoi ? - Oui, j'ai bien dit ça.
-Status: draft
-Featured_image: images/la-fin-de-l-ecologie.jpg
+Status: published
+Featured_image: images/la-fin-de-l-ecologie-min.jpg
 
 
 En mai, le parlement a voté la fin des Zones à Faibles Émissions, les fameuses ZFE.
