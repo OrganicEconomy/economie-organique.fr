@@ -2,15 +2,15 @@ Title: Redéfinir la monnaie
 Date: 2025-05-30 15:00
 Modified: 2025-05-30 15:00
 Category: Blog
-Tags: Monnaie, Blog, humeur
+Tags: Monnaie, Humeur
 Slug: redefinir-la-monnaie
 Lang: fr
 Author: Gus
 Summary: Et si on changeait la définition de la monnaie ? La connaissez-vous d'ailleurs ?
-Status: draft
+Status: published
 Featured_image: images/redefinir-la-monnaie.jpg
 
-En lisant des livres d'économie, et j'avoue en lire souvent, on se forme à comprendre l'économie et, franchement, c'est pas ouf...
+En lisant des livres d'économie, et j'en lis pas mal, on se forme à comprendre l'économie et, franchement, je trouve que c'est pas ouf...
 
 Ce n'est pas contre les économistes, mais souvent les phrases sont... difficiles.
 
@@ -35,7 +35,7 @@ Cette troisième règle va nous emmener loin!
 
 Cette définition, l'air de rien, est très éclairante.
 
-Premièrement, elle nosu permet de comprendre pourquoi les économistes ne peuvent pas spontanément conceptualiser une économie telle que l'économie organique.
+Premièrement, elle nous permet de comprendre pourquoi les économistes ne peuvent pas spontanément conceptualiser une économie telle que l'économie organique.
 Tout simplement parce qu'elle ne rentre pas dans la définition.
 
 En effet, si vous avez appris qu'une monnaie se définit par trois éléments, à quel moment pourriez-vous vous dire "tiens je vais essayer de supprimer un des éléments de la définition".
@@ -45,17 +45,17 @@ De mon point de vue, **les économistes sont enfermés dans un contexte** qui ne
 Par exemple, là, je viens de finir de lire *Le futur de la monnaie* de Michel Aglietta et Natacha Valla.
 Et bien accrochez-vous bien: rien de neuf sous le soleil.
 
-C'est un peu comme *On n'a pas tout essayé* de Gilles Ravaud ou *Une monnaie écologique* d'Alain Grandjean et Nicolas Dufrêne.
+C'est un peu comme *On n'a pas tout essayé* de Gilles Raveaud ou *Une monnaie écologique* d'Alain Grandjean et Nicolas Dufrêne.
 Un titre alléchant qui me fait penser "Oh, chouette ! Enfin un grand renouveau dans l'économie".
 
-Certes, ils font une analyse très poussée, voire complète, emplie de vocabulaire un peu perché (disons spécifique) pour expliquer en toute clairevoyance la complexité du monde économique.
+Certes, ils font une analyse très poussée, voire complète, emplie de vocabulaire un peu perché (disons spécifique) pour expliquer en toute clairvoyance la complexité du monde économique.
 Mais à la fin, les propositions me laissent toujours pantois, dans l'ordre des livres cités:
 
 * "Il faut que la finance soit redirigée vers des investissements pour la transition écologique".
 * "Avec un gouvernement de gauche, le monde serait beau".
 * "Ah bin il suffirait que l'écologie soit la priorité des états".
 
-Ça me met un peu en rogne parce que je met des plombes à lire ces bouquins (je lis lentement, surtout quand c'est écris de manière un peu alambiquée) pour, à la fin, avoir une conclusion de miss France.
+Ça me met un peu en rogne parce que je mets des plombes à lire ces bouquins (je lis lentement, surtout quand c'est écris de manière un peu alambiquée) pour, à la fin, avoir une conclusion de Miss France.
 
 ## La réserve, c'est détestable
 
@@ -73,7 +73,7 @@ Or, cela a des conséquences incommensurables quand on sait que, toujours dans l
 
 > Nous avons voulu faire ce livre pour souligner la place centrale de la monnaie dans nos vies et sa puissance comme outil pour dessiner les contours que nous choisirons pour l'économie et la société de demain. Pour notre futur.
 
-C'est littéralement leurs premières phrases, et pas pour rien: c'est la plus importantes car elle nous rappelle que c'est la forme de la monnaie qui définit la forme de nos sociétés.
+C'est littéralement leurs premières phrases, et pas pour rien: c'est la plus importante car elle nous rappelle que c'est la forme de la monnaie qui définit la forme de nos sociétés.
 
 Donc, si je met tout cela bout à bout:
 
@@ -111,7 +111,7 @@ Ce que je veux dire, c'est qu'**il n'y a pas besoin que tout le monde accepte un
 Les monnaies locales sont des monnaies, mais pourtant elles ne sont pas universellement acquises.
 
 De même, les monnaies nationales ou la monnaie européenne ne sont pas tout à fait universelles.
-Ce sont les bureaux de change qui assure le passage de l'une à l'autre, parce que ces bureaux là y attribuent une confiance.
+Ce sont les bureaux de change qui assurent le passage de l'une à l'autre, parce que ces bureaux là y attribuent une confiance.
 
 Une preuve en est que, lorsqu'on lance une monnaie locale alternative dans une localité (un village par exemple), le plus difficile n'est pas de mettre en place la monnaie, techniquement, mais d'infuser la confiance des habitants dans celle-ci.
 
@@ -139,7 +139,7 @@ Une pièce de 2€ de 1999 vaut toujours 2€ aujourd'hui, un quart de siècle p
 
 Dans la nature, comme je disais, aucun élément n'est à la fois conservable en temps infini et en quantité illimité sans contrainte d'entretien et/ou de manutention.
 
-En fait cette règle, outre ses conséquences extrêmement néfastes vues plus haut, me parait maladroite.
+En fait cette règle, outre ses conséquences extrêmement néfastes vues plus haut, me paraît maladroite.
 **Si la première règle est respectée et que la monnaie fait étalon de valeur, pourquoi en faire une réserve de valeur?**
 
 ## Changer de définition pour changer de monde
@@ -156,7 +156,7 @@ Et c'est tout.
 Ainsi, sans être réserve de valeur, elle reste une référence d'échanges économiques.
 Et si en plus elle devient universellement appropriée, c'est un bonus.
 
-Et on peut frimer en citant allegrement Antoine de Saint-Exupéry:
+Et on peut frimer en citant allègrement Antoine de Saint-Exupéry:
 
 > La perfection est atteinte, non pas lorsqu'il n'y a plus rien à ajouter, mais lorsqu'il n'y a plus rien à retirer.
 

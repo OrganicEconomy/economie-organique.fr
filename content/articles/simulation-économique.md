@@ -132,6 +132,12 @@ Beaucoup, qui ne se penchent jamais sur l'économie, ce qu'on comprend, sont ten
 
 Mais la vérité est plus simple et, pourtant, plus difficile à admettre : **une monnaie réserve de valeur** est, par construction, une monnaie capitaliste et **implique spontanément des inégalités catastrophiques**.
 
+Peut-être n'êtes vous pas comme moi émoustillé par cette "découverte", mais est-ce que vous vous rendez compte de ce que ça implique ?
+Cette simple simulation nous déculpabilise: si vous avez des gros problèmes économiques, c'est surement en grande partie la faute à pas de bol (sauf si vous êtes un panier percé, éventuellement).
+Et, symétriquement, si vous êtes riche, ne faites pas le fanfaron qui "mérite", qui est trop fort et a su nianiania, nan ! Que dale, c'est juste (majoritairement) de la chatte.
+
+Tout ça fait relativiser, à mon goût.
+
 Voilà, tout est déjà plus ou moins dit.
 Mais allons tout de même plus loin, histoire de voir si les choses s'améliorent ou empirent.
 Pas de spoilers.
