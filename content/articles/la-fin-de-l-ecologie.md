@@ -11,14 +11,14 @@ Status: published
 Featured_image: images/la-fin-de-l-ecologie-min.jpg
 
 
-En mai, le parlement a voté la fin des Zones à Faibles Émissions, les fameuses ZFE.
+En mai, le parlement fait ce qui lui plait et a voté la fin des Zones à Faibles Émissions, les fameuses ZFE.
 Et ça a l'air de choquer pas mal de monde.
 
 D'ailleurs, depuis un bon moment, on a l'impression que l'écologie ne fait que reculer :
 
 * la construction de l'A69 a repris;
 * les pesticides reviennent en force;
-* la montée de climato scepticisme est criante;
+* la montée du climato scepticisme est criante;
 * la croyance dans le nucléaire remonte;
 * j'en passe et j'en passe.
 
@@ -45,10 +45,10 @@ Et là où l'autruche était le plus courant il y a une décennie, il semblerait
 Or, les concernés sont les personnes qui s'emparent de leurs rames et, dans un geste timide, commencent à légèrement ramer à contresens.
 Cela ne fait que les ralentir un peu, mais c'est déjà ça.
 
-À côté, les personnes engagées sont soit celles qui rament frénétiquement contre le courant, soit celles qui hurlent dans un porte-voix pour que tout le monde puisse entendre ses cris d'alarme, des cris de peur d'ailleurs.
+À côté, les personnes engagées sont soit celles qui rament frénétiquement contre le courant, soit celles qui hurlent dans un porte-voix pour que tout le monde puisse entendre leurs cris d'alarme, des cris de peur au passage.
 
-Mais ramer à contre courant, ça va un moment, mais la finalité est que chacune et chacun finit fatalement par se lasser ou par s'épuiser.
-Car vous pouvez ramer autant que vous voudrez, vous serez toujours entraînés par le courant; entraînés par les autres qui rament pour accélérer; et entraînés par l'inertie de tout cela qui ne fait que s'accroître.
+Ramer à contre courant, ça va un moment, mais la finalité est que chacune et chacun finit fatalement par se lasser ou par s'épuiser.
+Car vous pouvez ramer autant que vous voudrez, vous serez toujours entraînés par le courant ; entraînés par les autres qui rament pour accélérer ; et entraînés par l'inertie du système qui ne fait que s'accroître.
 
 <img class="rounded mx-auto d-block" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGM0dDBwMDgyb3A4YnljdHd2NWFzZDU5cGliZjRxbDRvcXpiemFjcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OPU6wzx8JrHna/giphy.gif" alt="Patrick l'étoile de mer est triste que la fin du monde approche">
 
@@ -89,11 +89,11 @@ C'est-à-dire que quitter l'écologie, c'est quitter la colère, se libérer des
 Deuxièmement, en quittant l'écologie des mathématiques, on arrête de compter le carbone de chaque action et on arrête alors de se juger soi-même.
 Ce n'est plus une liste de principes que l'on doit respecter, mais une morale globale qui nous guide (ça sonne secte, j'adore).
 
-Ainsi, on a le droit, de temps en temps, de :
+Ainsi, on a le droit de :
 
-* Prendre sa voiture pour faire un petit trajet juste parce qu'il pleut;
-* Allumer le chauffage en mai, parce qu'il fait un peu humide;
-* Prendre l'avion, même si c'est pas ouf;
+* Prendre sa voiture pour faire un petit trajet parce là, il pleut averse;
+* Allumer le chauffage en mai, parce qu'il fait humide et qu'on se caille les miches;
+* Prendre une longue douche après une grosse journée de chantier et pourquoi pas faire pipi dedans;
 * Etc.
 
 Et oui, Greta Thumberg n'est qu'une jeune fille pleine de principes mathématiques, ce qui implique qu'elle ne peut QUE juger les autres et elle-même.
@@ -109,7 +109,7 @@ Simple.
 Basique.
 Les écolos n'ayant généralement pas des fortunes, ils n'ont aucune chance face à des structures telles que l'État ou les grosses corporations qui, elles, sans surprise, ont de la thunasse jusqu'au bord des oreilles.
 
-Donc, quand on cesse d'être dans l'écologie, on se libère de toute cette charge (mentale aussi d'ailleurs), mais bien sûr ce n'est pas pour ne rien faire à la place et tous redevenir des autruches ou des sceptiques.
+Donc, quand on cesse d'être dans l'écologie, **on se libère de toute cette charge** (mentale aussi d'ailleurs), mais bien sûr ce n'est pas pour ne rien faire à la place et tous redevenir des autruches ou des sceptiques.
 
 <img class="rounded mx-auto d-block" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmQ4bWFkenFyNHV4NTU3cjN5cTlndHNxZ3Y0a2xvZm9rY2xwd2lkeiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/6901DbEbbm4o0/giphy.gif" alt="On s'arrête !">
 
