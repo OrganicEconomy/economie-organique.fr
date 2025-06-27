@@ -10,6 +10,7 @@ apt install python3.12-venv
 source venv/bin/activate
 pip3 install pelican
 pip3 install "pelican[markdown]"
+pip3 install "pelican-share-post"
 ```
 
 ## Run it

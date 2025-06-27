@@ -22,14 +22,14 @@ Je...
 
 Mais bon, outre ces phrases absconses selon moi, il y a quand même des informations qui valent le détour.
 
-La définition de la monnaie en est  une.
+La définition de la monnaie en est une.
 Car, le saviez-vous, la monnaie chez les économiste se caractérise par trois éléments:
 
 * elle est unité de compte, c'est-à-dire qu'elle mesure la valeur des biens et, même si cela reste discutable, elle est sensée être stable;
 * elle est moyen de paiement universellement reconnu, ce qui signifie que tout le monde "croit" en cette monnaie et, donc, l'accepte comme paiement;
 * et surtout **elle est réserve de valeur**.
 
-Cette troisième règle va nous emmener loin!
+Cette troisième règle va nous emmener loin !
 
 ## Les limites des économistes
 
@@ -82,6 +82,8 @@ Donc, si je met tout cela bout à bout:
 1. Enfin, la monnaie est au cœur de nos vies, dans nos échanges; et elle définit la forme de notre société.
 
 Tout cela signifie que **les économistes ont placé dans la définition même de l'élément au centre du monde, la monnaie, la caractéristique qui pousse chaque humain à être un putain de capitaliste égoïste.**
+
+CQFD comme on dit...
 
 C'est chaud non ?
 
@@ -145,7 +147,7 @@ En fait cette règle, outre ses conséquences extrêmement néfastes vues plus h
 ## Changer de définition pour changer de monde
 
 D'abord, conservons la définition précédente mais attribuons la à la monnaie capitaliste.
-Comme ça, on la garde au chaud dans un coin pour faire plaisir aux banquiers qui veulent la conserver.
+Comme ça, on la garde au chaud dans un coin pour faire plaisir aux banquiers qui veulent la conserver, tout autant que leur monnaie de merde.
 
 Ensuite, voilà la nouvelle définition, plus globale, de la monnaie:
 

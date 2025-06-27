@@ -11,6 +11,8 @@ Status: published
 Custom_scripts: la-vitesse-relle-de-la-voiture.js
 Featured_image: images/La vitesse réelle des voitures-min.jpg
 Discord_link: https://discord.gg/aNP692rz
+Music_url: https://www.youtube.com/watch?v=3ThMpe0ABBE
+Music_name: D'essence - Shaka Ponk
 
 # Avant propos
 
@@ -24,6 +26,8 @@ Notez également que cet article est une page web statique.
 Cela signifie qu'aucune des informations que vous entrez ici ne sera envoyée ni collectée où que ce soit.
 Votre calcul est et reste chez vous, sur votre ordinateur dans votre petit explorateur internet.
 Néanmoins, je vous invite grandement à partager votre résultat, histoire qu'on voit ce que ça donne.
+
+Dernière info, je l'ai mis à jour avec les infos de 2023 issues de l'étude bien détaillée : [Combien coûte le système voiture en France](https://forumviesmobiles.org/recherches/16378/combien-coute-le-systeme-voiture-en-france) de Florent Laroche. Beaucoup d'infos là-dedans !
 
 # Introduction
 
@@ -51,7 +55,7 @@ Dans le doute, vous pouvez utiliser la valeur moyenne indiquée en-dessous du ch
         <span class="input-group-text">km/an</span>
       </div>
     </div>
-    <small id="km-per-year-1-helper" class="form-text text-muted">Moyenne : 11700 km/an</small>
+    <small id="km-per-year-1-helper" class="form-text text-muted">Moyenne : 11700 km/an</small>
   </div>
 </form>
 
@@ -68,7 +72,7 @@ Il faut aussi connaître votre vitesse moyenne, soit elle est indiquée par votr
       </div>
     </div>
     <small id="average-base-speed-1-helper" class="form-text text-muted">
-    Moyennes :
+    Moyennes :
     <button type="button" class="btn btn-sm btn-outline-primary typology-city">Grande ville (18)</button>
     <button type="button" class="btn btn-sm btn-outline-primary typology-medium">Ville moyenne (26)</button>
     <button type="button" class="btn btn-sm btn-outline-primary typology-campaign">Campagne (35)</button>
@@ -128,7 +132,7 @@ Si vous ne savez pas, vous pouvez utiliser la valeur moyenne ([➔ sources](http
         <span class="input-group-text">€</span>
       </div>
     </div>
-    <small id="permis-price-1-helper" class="form-text text-muted">Moyenne : 1204 euros</small>
+    <small id="permis-price-1-helper" class="form-text text-muted">Moyenne : 1204 euros</small>
   </div>
   <div class="form-group">
     <label for="gaz-price-per-liter-1">Prix du carburant </label>
@@ -157,7 +161,7 @@ Si vous ne savez pas, vous pouvez utiliser la valeur moyenne ([➔ sources](http
         <span class="input-group-text">€/an</span>
       </div>
     </div>
-    <small id="insurance-price-per-year-1-helper" class="form-text text-muted">Moyenne : 610 €/an</small>
+    <small id="insurance-price-per-year-1-helper" class="form-text text-muted">Moyenne : 610 €/an</small>
   </div>
   <div class="form-group">
     <label for="maintenance-price-per-year-1">Entretien</label>
@@ -167,7 +171,7 @@ Si vous ne savez pas, vous pouvez utiliser la valeur moyenne ([➔ sources](http
         <span class="input-group-text">€/an</span>
       </div>
     </div>
-    <small id="maintenance-price-per-year-1-helper" class="form-text text-muted">Moyenne : 1000 €/an</small>
+    <small id="maintenance-price-per-year-1-helper" class="form-text text-muted">Moyenne : 1000 €/an</small>
   </div>
   <div class="form-group">
     <label for="parking-price-per-year-1">Parking</label>
@@ -177,7 +181,7 @@ Si vous ne savez pas, vous pouvez utiliser la valeur moyenne ([➔ sources](http
         <span class="input-group-text">€/an</span>
       </div>
     </div>
-    <small id="parking-price-per-year-1-helper" class="form-text text-muted">Moyenne : 100 €/an</small>
+    <small id="parking-price-per-year-1-helper" class="form-text text-muted">Moyenne : 100 €/an</small>
   </div>
   <div class="form-group">
     <label for="control-price-per-year-1">PV/Amendes</label>
@@ -187,7 +191,7 @@ Si vous ne savez pas, vous pouvez utiliser la valeur moyenne ([➔ sources](http
         <span class="input-group-text">€/an</span>
       </div>
     </div>
-    <small id="control-price-per-year-1-helper" class="form-text text-muted">Moyenne : 46 €/an</small>
+    <small id="control-price-per-year-1-helper" class="form-text text-muted">Moyenne : 46 €/an</small>
   </div>
   <div class="form-group">
     <label for="wash-price-per-year-1">Lavage</label>
@@ -197,7 +201,7 @@ Si vous ne savez pas, vous pouvez utiliser la valeur moyenne ([➔ sources](http
         <span class="input-group-text">€/an</span>
       </div>
     </div>
-    <small id="wash-price-per-year-1-helper" class="form-text text-muted">Moyenne : 60 €/an</small>
+    <small id="wash-price-per-year-1-helper" class="form-text text-muted">Moyenne : 60 €/an</small>
   </div>
 </form>
 
@@ -258,12 +262,12 @@ Il nous reste désormais à compter l'argent que l'état, et donc indirectement 
 
 Cela se compte en plusieurs informations (dont les sources se trouvent [➔ ici](https://www.senat.fr/basile/visio.do?id=qSEQ230305619), [➔ là](https://www.unionroutiere.fr/wp-content/uploads/2024/02/Faits-et-chiffes-2023.pdf) et [➔ là](https://www.onisr.securite-routiere.gouv.fr/sites/default/files/2024-09/Bilan%20SR%202023%20version%20site%20internet%2012%20septembre.pdf)) :
 
-Le budget dédié aux infrastructures routières, que nous diviserons ici par le nombre d'usagers de la route (38,7 millions en 2022), est constitué de plusieurs chiffres clés (chiffres 2023) :
+Le budget dédié aux infrastructures routières, que nous diviserons ici par le nombre d'usagers de la route (`38,7` millions en 2022), est constitué de plusieurs chiffres clés (chiffres 2023) :
 
-* la maintenance des routes : 910 millions d'euros ;
-* la création et maintenance des ouvrages d'art : 123 millions ;
-* la maintenance de la chaussée : 320 millions ;
-* soit un total de : 1,353 milliards d'euros
+* la maintenance des routes : `910` millions d'euros ;
+* la création et maintenance des ouvrages d'art : `123` millions ;
+* la maintenance de la chaussée : `320` millions ;
+* soit un total de : `1,353` milliards d'euros
 
 <div class="input-group">
   <div class="input-group-prepend">
@@ -276,13 +280,13 @@ Le budget dédié aux infrastructures routières, que nous diviserons ici par le
 </div>
 
 Mais ce n'est pas tout, ça va même empirer.
-Ajoutons à cela le prix que nous payons pour les accidents liés à l'automobile :
+Ajoutons à cela le prix que nous payons pour les accidents liés à l'automobile :
 
-* les morts : 12,7 milliards ;
-* les hospitalisations : 24 milliards ;
-* les victimes légères : 3,7 milliards ;
-* les dégâts matériels : 11,2 milliards ;
-* soit un total de 51,6 milliards (oui, là on parle de milliards).
+* les morts : `12,7` milliards ;
+* les hospitalisations : `24` milliards ;
+* les victimes légères : `3,7` milliards ;
+* les dégâts matériels : `11,2` milliards ;
+* soit un total de `51,6` milliards (oui, là on parle de milliards).
 
 <div class="input-group">
   <div class="input-group-prepend">
@@ -297,18 +301,23 @@ Ajoutons à cela le prix que nous payons pour les accidents liés à l'automobil
 J'imagine que ça fait beaucoup, mais sachez que certaines estimations donnent un résultat double.
 Alors restons sur une estimation "basse" pour ne pas fausser nos calculs.
 
-Enfin, quelques subventions de l'état en prime (payées bien sûr par nos impôts, hein) :
+Enfin, quelques subventions de l'état en prime (payées bien sûr par nos impôts, hein)  :
 
-* [France 2030](https://www.economie.gouv.fr/france-2030-plan-soutien-filiere-automobile) : 1 milliard par an ;
-* [l'enveloppe budgétaire pour le bonus écologique](https://www.autoplus.fr/environnement/le-bonus-ecologique-2025-entre-deja-en-vigueur-a-quoi-faut-il-sattendre-1356927.html) : 700 millions pour 2025 (c'était le double en 2024);
-* [les autres bonus](https://www.auto-infos.fr/article/coup-de-frein-brutal-sur-le-bonus-et-malus-automobile-durci-la-double-peine-pour-2025.284201) : 300 millions pour 2025 (pareil, ça a bien baissé) ;
-* soit un total de 2 milliards.
+* Bonus écologique : `1 500` millions.
+* Prime à la conversion : `250` millions.
+* Prime au rétrofit : `0,7` millions.
+* Prime au covoiturage : `150` millions.
+* Aides à l'installation de chargeur : `300` millions.
+* Chèques carburant : `430` millions.
+* Le barème kilomètrique : `3 100` millions
+
+Pour un total de `5 700` millions (5,7 milliards). [➔ sources](https://forumviesmobiles.org/recherches/16378/combien-coute-le-systeme-voiture-en-france)
 
 <div class="input-group">
   <div class="input-group-prepend">
     <span class="input-group-text">Budget automobile</span>
   </div>
-  <input id="auto-budget-year-1" type="text" class="form-control auto-budget-year" placeholder="2000" value="2000">
+  <input id="auto-budget-year-1" type="text" class="form-control auto-budget-year" placeholder="5700" value="5700">
   <div class="input-group-append">
     <span class="input-group-text">Millions d'euros/an</span>
   </div>
@@ -331,14 +340,14 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
 
 <form>
   <div class="input-group">
-    <input id="km-per-year-2" type="text" class="form-control km-per-year" placeholder="moyenne : 11700">
+    <input id="km-per-year-2" type="text" class="form-control km-per-year" placeholder="moyenne : 11700">
     <div class="input-group-append">
       <span class="input-group-text">km/an parcourus</span>
     </div>
   </div>
   
   <div class="input-group">
-    <input id="average-base-speed-2" type="text" class="form-control average-base-speed" placeholder="moyennes : 18, 26 ou 35">
+    <input id="average-base-speed-2" type="text" class="form-control average-base-speed" placeholder="moyennes : 18, 26 ou 35">
     <div class="input-group-append">
       <span class="input-group-text">km/h de moyenne</span>
     </div>
@@ -366,7 +375,7 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   </div>
 
   <div class="input-group">
-    <input id="permis-price-2" type="text" class="form-control permis-price" placeholder="Moyenne : 1204">
+    <input id="permis-price-2" type="text" class="form-control permis-price" placeholder="Moyenne : 1204">
     <div class="input-group-append">
       <span class="input-group-text">€ pour le permis</span>
     </div>
@@ -457,7 +466,7 @@ Et puis allez, je suis pas salaud, je vous regroupe tous les champs ici pour avo
   </div>
 
   <div class="input-group">
-    <input id="auto-budget-year-2" type="text" class="form-control auto-budget-year" placeholder="2000" value="2000">
+    <input id="auto-budget-year-2" type="text" class="form-control auto-budget-year" placeholder="5700" value="5700">
     <div class="input-group-append">
       <span class="input-group-text">Millions d'euros/an</span>
     </div>
@@ -485,21 +494,21 @@ Voilà, vous pouvez finalement cliquer sur *Calculer* et profiter des résultats
 
 ### Détails du calcul
 
-Si vous voulez comprendre les détails du calcul :
+Si vous voulez comprendre les détails du calcul :
 
-* Nous avons la distance ```d``` parcourue en un an : <code><span class="distance-d">X</span></code> km.
-* Nous calculons le temps ```t``` composé des éléments suivants :
-    * ```t1``` le temps passé à conduire la voiture, normal : <code><span class="time-t1">X</span></code> heures.
-    * ```t2``` le temps travaillé pour payer les frais de la voiture : <code><span class="time-t2">X</span></code> heures.
-    * ```t3``` le temps perdu dans et pour la voiture : <code><span class="time-t3">X</span></code> heures.
-    * ```t4``` le temps travaillé pour payer les impôts qui financent les routes : <code><span class="time-t4">X</span></code> heures.
+* Nous avons la distance ```d``` parcourue en un an : <code><span class="distance-d">X</span></code> km.
+* Nous calculons le temps ```t``` composé des éléments suivants :
+    * ```t1``` le temps passé à conduire la voiture, normal : <code><span class="time-t1">X</span></code> heures.
+    * ```t2``` le temps travaillé pour payer les frais de la voiture : <code><span class="time-t2">X</span></code> heures.
+    * ```t3``` le temps perdu dans et pour la voiture : <code><span class="time-t3">X</span></code> heures.
+    * ```t4``` le temps travaillé pour payer les impôts qui financent les routes : <code><span class="time-t4">X</span></code> heures.
     * Soit ```t = t1 + t2 + t3 + t4``` = <code><span class="time-t">X</span></code> heures.
-* Les temps passés sont calculés sur votre temps horaire : <code><span class="hourly-fee">X</span></code> euros/heure.
+* Les temps passés sont calculés sur votre temps horaire : <code><span class="hourly-fee">X</span></code> euros/heure.
 * Enfin, pour calculer la vitesse moyenne, il n'y a plus qu'à faire ```v = d / t``` (distance totale divisée par temps total).
 
 ### Autre externalités
 
-Au passage, tant qu'à faire des maths bêtes et méchants, calculons aussi vos émissions carbone (via cette [source](https://www.tresor.economie.gouv.fr/Articles/248d6a7c-d681-4577-9fa5-886791bfc9d1/files/9651f24c-dee1-4c2d-a54f-3aa56927e139)) :
+Au passage, tant qu'à faire des maths bêtes et méchants, calculons aussi vos émissions carbone (via cette [source](https://www.tresor.economie.gouv.fr/Articles/248d6a7c-d681-4577-9fa5-886791bfc9d1/files/9651f24c-dee1-4c2d-a54f-3aa56927e139)) :
 
 <div class="row justify-content-center">
   <h6>Votre voiture émet <code><span class="resulting-CO2">...</span></code> kg de CO2 par an, bravo !</h6>
@@ -517,17 +526,17 @@ Mais surtout, l'aspect pollution n'est jamais un levier efficace pour faire réf
 
 # Aller plus loin
 
-On peut maintenant s'amuser à se poser la question : si je faisais du vélo, plutôt ?
-Parce que, comme disait Ivan Illich :
+On peut maintenant s'amuser à se poser la question : si je faisais du vélo, plutôt ?
+Parce que, comme disait Ivan Illich :
 
-> La bicyclette élargit le rayon d'action personnel sans interdire de passer où l'on ne peut rouler : il suffit alors de pousser son vélo.
+> La bicyclette élargit le rayon d'action personnel sans interdire de passer où l'on ne peut rouler : il suffit alors de pousser son vélo.
 
 Pour que ce soit notable, prenons le cas extrême où l'on échange la voiture contre un vélo, pour tous vos déplacements (c'est peu réaliste dans notre société, mais on est là pour s'amuser, non ?).
 Ce qui veut dire que vous ne payez plus d'emprunt, d'assurance, d'essence ni tout ça.
 En revanche, vous payez quand même les impôts car vous êtes encore dans une société orchestrée par l'automobile et l'A 69 est toujours en construction.
 
-Pour faire <code><span class="distance-d">X</span></code> kilomètres, à vélo, cela vous prendrait (en roulant environ à 15 km/h) : <code><span class="bike-time">X</span></code> heures.
-Mais comme vous économiseriez <code><span class="time-notaxe">X</span></code> heures en moins pour et dans la voiture :
+Pour faire <code><span class="distance-d">X</span></code> kilomètres, à vélo, cela vous prendrait (en roulant environ à 15 km/h) : <code><span class="bike-time">X</span></code> heures.
+Mais comme vous économiseriez <code><span class="time-notaxe">X</span></code> heures en moins pour et dans la voiture :
 
 <div class="row justify-content-center">
   <h5>Votre gain à vélo serait de <code><span class="resulting-bike-time-notaxe">X</span></code> heures</h5>.
@@ -543,7 +552,7 @@ Ce qui laisse penser, dans ce cas, que votre mode de vie est totalement dépenda
 Bien sûr, tout cela est très théorique, étant donné qu'il faudra passer pas mal de temps sur le vélo.
 Et c'est sans compter la météo.
 
-Cela dit, nous avons tout de même ignoré d'autres temps :
+Cela dit, nous avons tout de même ignoré d'autres temps :
 
 * faire du sport (temps moins nécessaire lorsqu'on fait du vélo quotidiennement) ;
 * aller chez le médecin (parce qu'on ne faisait pas assez de sport) ;
@@ -573,7 +582,7 @@ Bref, en tout cas, dans ce cadre, les économies seraient drastiques.
   <h5>Et vous pourriez donc travailler <code><span class="resulting-bike-workless">X</span></code> heures de moins par semaine</h5>.
 </div>
 
-Encore une fois, nous ne comptons pas moult éléments :
+Encore une fois, nous ne comptons pas moult éléments :
 
 * la santé de la population (+ de sport, - de pollution, - d'accidents, etc) ;
 * l'état de la planète (- de béton, + d'arbres, - de pollution encore, etc) ;
@@ -589,11 +598,11 @@ Ah merde, un radar !
 Mais en pratique, tous les coûts mis bout à bout, on voit bien qu'à l'échelle personnelle, nous somme déjà loin du compte.
 Quant à l'échelle d'une société, c'est encore bien pire.
 
-Prendre en compte tous les facteurs de l'automobile, c'est au moins se rendre compte :
+Prendre en compte tous les facteurs de l'automobile, c'est au moins se rendre compte :
 
 * qu'elle est l'élément le plus dangereux au monde ;
 * qu'elle pollue l'air mais aussi le silence ;
-* qu'elle nous coûte sur tous les fronts : économie, espace, beauté du paysage, impact environnemental ;
+* qu'elle nous coûte sur tous les fronts : économie, espace, beauté du paysage, impact environnemental ;
 * qu'elle nous a retiré le plaisir du mouvement lent, au profit du goût pour la destination rapidement atteinte ;
 * qu'elle nous éloigne physiquement les uns des autres ;
 * qu'elle nous oblige à faire appel à des experts pour la fabriquer, la réparer, la détruire.
@@ -612,3 +621,4 @@ Gus.
 * La convivialité - Ivan Illich
 * Énergie et équité - Ivan Illich, et notamment son annexe À la recherche du temps gagné par Jean-Pierre Dupuy
 * Le travail de Vito, qui porte beaucoup sur l'automobile, ses impacts et des propositions de solution ; notamment [Utopique](https://laboucledudessin.com/produit/utopique-par-vito/) et [N°1 Hors-Série Lille mystérieuse – Le Périf ](https://laboucledudessin.com/produit/nhs1-lm-le-perif/)
+* [Combien coûte le système voiture en France](https://forumviesmobiles.org/recherches/16378/combien-coute-le-systeme-voiture-en-france)

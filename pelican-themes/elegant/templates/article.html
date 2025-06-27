@@ -64,6 +64,10 @@
 				<img src="{{ SITEURL }}/{{ article.featured_image }}" class="img-fluid" alt="Image d'illustration de l'article">
 				{% endif %}
 
+				{% if article.music_url %}
+				À écouter pendant la lecture : <a href="{{ article.music_url }}">{{ article.music_name }}</a>
+				{% endif %}
+
 				{{ article.content }}
 
 				{% if article.photo_gallery %}

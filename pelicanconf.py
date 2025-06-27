@@ -27,9 +27,13 @@ LINKS = (
 
 # Social widget
 SOCIAL = (
-    ("You can add links in your config file", "#"),
+    ('X/Twitter (@HommesPropres)', 'https://x.com/HommesPropres'),
     ("Another social link", "#"),
 )
+
+PLUGINS = ['share_post']
+
+SHARE_LINKS = [ ('twitter', 'Twitter'), ('facebook', 'Facebook'), ('email', 'Email') ]
 
 DEFAULT_PAGINATION = 10
 
