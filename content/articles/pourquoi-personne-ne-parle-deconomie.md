@@ -6,7 +6,7 @@ Slug: personne-ne-parle-d-economie
 Lang: fr
 Author: Gus
 Summary: Mais pourquoi personne ne parle ni ne pense à l'économie ? Cet outil qui représente pourtant la base de notre système humain semble être complètement ignoré, comme s'il était imuable, une fatalité. Alors qu'en fait, y'a moyen !
-Status: published
+Status: draft
 Featured_image: images/Personne-ne-parle-d-economie-min.jpg
 
 # C'est surement une erreur
