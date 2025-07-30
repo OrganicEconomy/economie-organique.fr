@@ -22,7 +22,7 @@ const groupCreationInit = function() {
 		});
 		const blobUrl = URL.createObjectURL(blob)
 		$('#download-link').prop("href", blobUrl)
-		$('#download-link').prop("download", moneyName + ".js")
+		$('#download-link').prop("download", moneyName + ".json")
 	})
 
 	$('#money-name').on('input', function() {
@@ -45,23 +45,26 @@ const groupCreationInit = function() {
 
 /******************** LOADING (TODO) ************************/
 const loadfile = function() {
+	let filecontent = null
+
+	$("#load-group").on("click", function() {
+		$("#file-import").click()
+	})
+
 	const changeStatus = (status) => {
-		document.getElementById('status').innerHTML = status;
+		$('#status').html(status);
 	}
 
 	const setProgress = (e) => {
 		const fr = e.target;
-		const loadingPercentage = 100 * e.loaded / e.total;
+		const loadingPercentage = Math.round(100 * e.loaded / e.total);
 
-		$('#progress-bar').prop("aria-valuenow", loadingPercentage);
+		$('#progress-bar').prop("style", "width: " + loadingPercentage + "%");
 	}
 
 	const loaded = (e) => {
 		const fr = e.target;
-		var result = fr.result;
-
-		changeStatus('Finished Loading!');
-		console.log('Result:', result);
+		OrganicManager(JSON.parse(fr.result))
 	}
 
 	const errorHandler = (e) => {
@@ -71,7 +74,7 @@ const loadfile = function() {
 	function processFile(file) {
 		const fr = new FileReader();
 
-		fr.readAsDataURL(file);
+		fr.readAsText(file);
 		fr.addEventListener('loadstart', changeStatus('Start Loading'));
 		fr.addEventListener('load', changeStatus('Loaded'));
 		fr.addEventListener('loadend', loaded);
@@ -80,9 +83,12 @@ const loadfile = function() {
 		fr.addEventListener('abort', changeStatus('Interrupted'));
 	}
 
-	document.querySelector("#folder-import").addEventListener("change", (event) => {
-		const file = document.querySelector("#file-import");
+	$("#file-import").on("change", (event) => {
+		const file = event.target.files[0]
 		processFile(file)
 	});
+}()
 
+const OrganicManager = function(jsonData) {
+	const data = jsonData
 }

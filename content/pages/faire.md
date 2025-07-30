@@ -126,13 +126,14 @@ Custom_scripts: organic-money.js, faire.js
   </div>
 </div>
 
-<button id="load-instance" type="button" class="btn btn-lg btn-outline-primary btn-block">
+<button id="load-group" type="button" class="btn btn-lg btn-outline-primary btn-block">
     <div class="pull-left" style="text-align:center;width:calc(100% - 30px);white-space:normal;overflow:hidden;">
         Charger mon groupe
     </div>
 </button>
 
-<input id="file-import" type="file">
+<input id="file-import" type="file" hidden>
+
 <div class="progress">
   <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
