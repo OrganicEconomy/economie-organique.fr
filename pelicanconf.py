@@ -37,7 +37,7 @@ SHARE_LINKS = [ ('twitter', 'Twitter'), ('facebook', 'Facebook'), ('email', 'Ema
 
 DEFAULT_PAGINATION = 10
 
-STATIC_PATHS = ['images', 'scripts']
+STATIC_PATHS = ['images', 'scripts', 'css']
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True

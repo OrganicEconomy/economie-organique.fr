@@ -23,7 +23,7 @@
 {% block content %}
 <article class="container-fluid">
 	<div class="row">
-		<header class="page-header span10 offset2">
+		<header class="page-header col-10 offset-2">
 			<h1><a href="{{ SITEURL }}/{{ page.url }}"> {{ page.title }} {%if page.subtitle %} <small> {{ page.subtitle }} </small> {% endif %} </a></h1>
 		</header>
 	</div>
@@ -54,10 +54,4 @@
 {% from '_includes/comments.html' import comments_script with context %}
 {{ comments_script() }}
 
-{% if page.custom_scripts %}
-{% set jsScripts = page.custom_scripts.split(', ') %}
-{% for jsScript in jsScripts %}
-<script src="/scripts/{{ jsScript }}" type="text/javascript"></script>
-{% endfor %}
-{% endif %}
 {% endblock script %}

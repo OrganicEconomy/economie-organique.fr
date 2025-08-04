@@ -1,7 +1,10 @@
+new DataTable('#citizen-list');
+
 /******************** GROUP CREATION ************************/
 
 const groupCreationInit = function() {
-	$('#carousel-creation').carousel('pause')
+	var carousel = new bootstrap.Carousel($('#carousel-creation'));
+	carousel.pause()
 
 	$('#intro-3-valid').on('click', async function () {
 		let moneyName = $('#money-name').val()

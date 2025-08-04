@@ -169,10 +169,4 @@
 {{ comments_script() }}
 {% include '_includes/photos_footer.html' %}
 
-{% if article.custom_scripts %}
-{% set jsScripts = article.custom_scripts.split(', ') %}
-{% for jsScript in jsScripts %}
-<script src="scripts/{{ jsScript }}" type="text/javascript"></script>
-{% endfor %}
-{% endif %}
 {% endblock script %}
