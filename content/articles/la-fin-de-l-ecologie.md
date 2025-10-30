@@ -22,11 +22,16 @@ D'ailleurs, depuis un bon moment, on a l'impression que l'écologie ne fait que 
 * la croyance dans le nucléaire remonte;
 * j'en passe et j'en passe.
 
+On peut même se demander si elle n'a jamais avancé oO.
+
 Bref, d'aucun dirait que c'est terrible, alors qu'en fait, **c'est normal** !
 
 ## La fin inévitable
 
 En fait, l'écologie dans un monde capitaliste, c'est un peu comme si chacun de nous était dans une petite embarcation, un tout petit bateau qui glisse le long d'une rivière.
+
+Comme c'est pittoresque !
+
 Chacun se laisse guider par le courant, l'inertie nous emmenant bon gré mal gré vers l'avant.
 C'est l'*inconscience confortable*.
 
