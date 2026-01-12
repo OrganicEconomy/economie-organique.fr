@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/gus/Documents/economie-organique.fr/venv
+set -gx VIRTUAL_ENV '/media/gus/Gus Partout/Gus/Economie organique/economie-organique.fr/venv'
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH

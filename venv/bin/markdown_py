@@ -1,4 +1,6 @@
-#!/home/gus/Documents/economie-organique.fr/venv/bin/python3
+#!/bin/sh
+'''exec' "/media/gus/Gus Partout/Gus/Economie organique/economie-organique.fr/venv/bin/python3" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys
