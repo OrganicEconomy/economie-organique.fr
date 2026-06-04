@@ -4,7 +4,7 @@ Lang: fr
 Author: Gus
 Summary: Allez-y, lancez-vous dans l'économie organique et créez de suite votre clocher.
 Status: draft
-Custom_scripts: dataTables.js, organic-money.js, localforage.nopromises.min.js, faire.js
+Custom_scripts: jquery-3.7.1.js, dataTables.js, organic-money.js, localforage.nopromises.min.js, faire.js
 Custom_css: dataTables.css
 
 <div class="d-grid gap-2">

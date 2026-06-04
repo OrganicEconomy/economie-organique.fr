@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ SITENAME|striptags|e }}{% endblock %}
+
+{% block content %}
+<section>
+  <h1>Articles récents</h1>
+  {% if articles %}
+  <div class="articles-grid">
+    {% for article in articles[:9] %}
+    {% if article.status != 'draft' %}
+    <a href="{{ SITEURL }}/{{ article.url }}" class="article-card" rel="bookmark">
+      {% if article.featured_image %}
+      <img src="{{ SITEURL }}/{{ article.featured_image }}"
+           alt="{{ article.title|striptags }}"
+           class="article-card-img"
+           loading="lazy">
+      {% else %}
+      <div class="article-card-img-placeholder" aria-hidden="true"></div>
+      {% endif %}
+      <div class="article-card-body">
+        <h3>{{ article.title }}</h3>
+        {% if article.summary %}
+        <p>{{ article.summary|striptags|truncate(110) }}</p>
+        {% endif %}
+        <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+      </div>
+    </a>
+    {% endif %}
+    {% endfor %}
+  </div>
+  <p style="margin-top: 1.5rem">
+    <a href="{{ SITEURL }}/blog.html">Tous les articles →</a>
+  </p>
+  {% endif %}
+</section>
+{% endblock %}

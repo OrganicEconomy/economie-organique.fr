@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Page introuvable · {{ SITENAME|striptags|e }}{% endblock %}
+
+{% block content %}
+<article style="text-align: center; padding: 4rem 1rem;">
+  <h1>404</h1>
+  <p>Cette page n'existe pas (ou plus).</p>
+  <a href="{{ SITEURL }}/">← Retour à l'accueil</a>
+</article>
+{% endblock %}

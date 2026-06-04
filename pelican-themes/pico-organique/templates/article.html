@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ article.title|striptags|e }} · {{ SITENAME|striptags|e }}{% endblock %}
+
+{% block meta %}
+{% if article.summary %}<meta name="description" content="{{ article.summary|striptags|e }}">{% endif %}
+<meta property="og:title" content="{{ article.title|striptags|e }}">
+<meta property="og:url" content="{{ SITEURL }}/{{ article.url }}">
+<meta property="og:type" content="article">
+{% if article.summary %}<meta property="og:description" content="{{ article.summary|striptags|e }}">{% endif %}
+{% if article.featured_image %}<meta property="og:image" content="{{ SITEURL }}/{{ article.featured_image }}">{% endif %}
+<meta property="og:site_name" content="{{ SITENAME|striptags|e }}">
+{% if article.tags or article.category %}
+<meta name="keywords" content="{{ [article.tags|join(', '), article.category]|join(', ') }}">
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<article>
+  {% if article.featured_image %}
+  <img src="{{ SITEURL }}/{{ article.featured_image }}"
+       alt="Image d'illustration : {{ article.title|striptags }}"
+       class="article-featured-img">
+  {% endif %}
+
+  <header>
+    <h1>{{ article.title }}</h1>
+    <p class="article-meta">
+      {% if article.date %}
+      <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+      {% endif %}
+      {% if article.category %}
+       · <a href="{{ SITEURL }}/category/{{ article.category.slug }}.html">{{ article.category }}</a>
+      {% endif %}
+    </p>
+  </header>
+
+  <div class="article-content clearfix">
+    {{ article.content }}
+  </div>
+
+  {% if article.share_post and article.status != 'draft' %}
+  <div class="share-links">
+    Partager :
+    <a href="{{ article.share_post['twitter'] }}" target="_blank" rel="nofollow noopener noreferrer">Twitter&nbsp;/&nbsp;X</a>
+    <a href="{{ article.share_post['facebook'] }}" target="_blank" rel="nofollow noopener noreferrer">Facebook</a>
+    <a href="{{ article.share_post['email'] }}" target="_blank" rel="nofollow noopener noreferrer">E-mail</a>
+  </div>
+  {% endif %}
+
+  <div class="discord-cta">
+    Pour réagir à cet article, rendez-vous sur
+    {% if article.discord_link %}
+    <a href="{{ article.discord_link }}" target="_blank" rel="noopener noreferrer">Discord</a>.
+    {% else %}
+    <a href="https://discord.gg/EjRfWnVnWF" target="_blank" rel="noopener noreferrer">Discord</a>.
+    {% endif %}
+  </div>
+
+  <div class="newsletter-widget">
+    <div class="sender-form-field" data-sender-form-id="m69gy7psaad1g9bcvba"></div>
+  </div>
+
+  {% if article.prev_article or article.next_article %}
+  <nav class="article-nav" aria-label="Articles précédent et suivant">
+    <div>
+      {% if article.prev_article %}
+      ← <a href="{{ SITEURL }}/{{ article.prev_article.url }}" title="{{ article.prev_article.title|striptags }}">{{ article.prev_article.title }}</a>
+      {% endif %}
+    </div>
+    <div style="text-align: right">
+      {% if article.next_article %}
+      <a href="{{ SITEURL }}/{{ article.next_article.url }}" title="{{ article.next_article.title|striptags }}">{{ article.next_article.title }}</a> →
+      {% endif %}
+    </div>
+  </nav>
+  {% endif %}
+</article>
+{% endblock %}

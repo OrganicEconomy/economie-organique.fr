@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if article and article.author %}<meta name="author" content="{{ article.author }}">
+  {% elif page and page.author %}<meta name="author" content="{{ page.author }}">
+  {% else %}<meta name="author" content="{{ AUTHOR }}">{% endif %}
+  {% block meta %}{% endblock %}
+  <title>{% block title %}{{ SITENAME|striptags|e }}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pico.min.css">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/theme.css">
+  {% if page and page.custom_css %}{% set cssLinks = page.custom_css.split(', ') %}{% elif article and article.custom_css %}{% set cssLinks = article.custom_css.split(', ') %}{% else %}{% set cssLinks = [] %}{% endif %}
+  {% for css in cssLinks %}<link rel="stylesheet" href="{{ SITEURL }}/css/{{ css }}">{% endfor %}
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{{ SITEURL }}/" id="site-title">{{ SITENAME }}</a></li>
+      </ul>
+      <ul>
+        {% for p in pages|sort(attribute='title') %}
+        <li><a href="{{ SITEURL }}/{{ p.url }}"{% if p == page %} aria-current="page"{% endif %}>{{ p.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <small>
+      Propulsé par <a href="https://getpelican.com/" target="_blank" rel="noopener noreferrer">Pelican</a>
+      · <a href="https://x.com/HommesPropres" target="_blank" rel="noopener noreferrer">@HommesPropres sur X</a>
+      · <a href="{{ SITEURL }}/contact.html">Contact</a>
+    </small>
+  </footer>
+
+  {% if page and page.custom_scripts %}{% set jsScripts = page.custom_scripts.split(', ') %}
+  {% elif article and article.custom_scripts %}{% set jsScripts = article.custom_scripts.split(', ') %}
+  {% else %}{% set jsScripts = [] %}{% endif %}
+  {% for js in jsScripts %}<script src="{{ SITEURL }}/scripts/{{ js }}"></script>{% endfor %}
+
+  <script>(function(s,e,n,d,er){s['Sender']=er;s[er]=s[er]||function(){(s[er].q=s[er].q||[]).push(arguments)},s[er].l=1*new Date();var a=e.createElement(n),m=e.getElementsByTagName(n)[0];a.async=1;a.src=d;m.parentNode.insertBefore(a,m)})(window,document,'script','https://cdn.sender.net/accounts_resources/universal.js','sender');sender('9c84870f164227');</script>
+</body>
+</html>

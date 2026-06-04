@@ -1,0 +1,364 @@
+/*
+ * Thème : économie organique
+ * Palette :
+ *   #ddc2a5  sable chaud
+ *   #666843  kaki olive
+ *   #a44a3f  terracotta (primaire)
+ *   #090302  noir encre
+ *   #0b2027  bleu nuit (nav / footer)
+ */
+
+/* ============================================================
+   Variables Pico CSS
+   ============================================================ */
+:root {
+  --pico-font-size: 106.25%;
+  --pico-line-height: 1.7;
+
+  --pico-background-color: #faf7f3;
+  --pico-color: #090302;
+
+  /* Primaire : terracotta */
+  --pico-primary:         #a44a3f;
+  --pico-primary-hover:   #8c3f35;
+  --pico-primary-focus:   rgba(164, 74, 63, 0.2);
+  --pico-primary-inverse: #faf7f3;
+
+  /* Secondaire : olive */
+  --pico-secondary:         #666843;
+  --pico-secondary-hover:   #555637;
+  --pico-secondary-focus:   rgba(102, 104, 67, 0.2);
+  --pico-secondary-inverse: #faf7f3;
+
+  /* Contraste */
+  --pico-contrast:         #090302;
+  --pico-contrast-hover:   #000;
+  --pico-contrast-inverse: #faf7f3;
+
+  /* Textes atténués et bordures */
+  --pico-muted-color:        #7a6e65;
+  --pico-muted-border-color: #e0d2c4;
+
+  /* Titres */
+  --pico-h1-color: #a44a3f;
+  --pico-h2-color: #0b2027;
+  --pico-h3-color: #0b2027;
+  --pico-h4-color: #090302;
+  --pico-h5-color: #090302;
+  --pico-h6-color: #090302;
+
+  /* Cartes */
+  --pico-card-background-color:            #ffffff;
+  --pico-card-border-color:                #ebe1d8;
+  --pico-card-box-shadow:                  0 1px 3px rgba(9, 3, 2, 0.06), 0 1px 8px rgba(9, 3, 2, 0.04);
+  --pico-card-sectioning-background-color: #faf7f3;
+
+  /* Code */
+  --pico-code-color:              #666843;
+  --pico-code-background-color:   #f3ede6;
+  --pico-code-kbd-background-color: #0b2027;
+  --pico-code-kbd-color:          #ddc2a5;
+
+  --pico-border-radius: 0.375rem;
+}
+
+/* ============================================================
+   Layout – largeur max centrée
+   ============================================================ */
+body > header,
+body > main,
+body > footer {
+  box-sizing: border-box;
+}
+
+body > main {
+  max-width: 62rem;
+  margin-inline: auto;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+/* ============================================================
+   Header / Nav
+   ============================================================ */
+body > header {
+  background-color: #0b2027;
+  border-bottom: none;
+  padding-block: 0;
+  width: 100%;
+}
+
+body > header > nav {
+  max-width: 62rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  --pico-nav-element-spacing-vertical: 0.9rem;
+}
+
+body > header nav a,
+body > header nav a:visited {
+  color: #ddc2a5;
+  text-decoration: none;
+}
+
+body > header nav a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#site-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: #ffffff !important;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+body > footer {
+  background-color: #0b2027;
+  color: rgba(221, 194, 165, 0.75);
+  margin-top: 0;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+body > footer a,
+body > footer a:visited {
+  color: #ddc2a5;
+  text-decoration: none;
+}
+
+body > footer a:hover {
+  color: #ffffff;
+}
+
+/* ============================================================
+   Grille d'articles (blog.html)
+   ============================================================ */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--pico-card-border-color);
+  border-radius: var(--pico-border-radius);
+  overflow: hidden;
+  background: var(--pico-card-background-color);
+  box-shadow: var(--pico-card-box-shadow);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.article-card:hover {
+  box-shadow: 0 4px 20px rgba(9, 3, 2, 0.13);
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: inherit;
+}
+
+.article-card-img {
+  width: 100%;
+  height: 172px;
+  object-fit: cover;
+  display: block;
+}
+
+.article-card-img-placeholder {
+  width: 100%;
+  height: 172px;
+  background: linear-gradient(135deg, #ddc2a5 0%, #c5a882 100%);
+  flex-shrink: 0;
+}
+
+.article-card-body {
+  padding: 1rem 1.25rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-card h3 {
+  font-size: 1rem;
+  color: #0b2027;
+  margin-bottom: 0.4rem;
+  margin-top: 0;
+  line-height: 1.35;
+}
+
+.article-card p {
+  font-size: 0.875rem;
+  color: var(--pico-muted-color);
+  flex: 1;
+  margin-bottom: 0.75rem;
+  margin-top: 0;
+  line-height: 1.5;
+}
+
+.article-card time {
+  font-size: 0.78rem;
+  color: var(--pico-muted-color);
+}
+
+/* ============================================================
+   Article et page – contenu
+   ============================================================ */
+.article-featured-img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: var(--pico-border-radius);
+  margin-bottom: 1.75rem;
+  display: block;
+}
+
+.article-meta {
+  font-size: 0.875rem;
+  color: var(--pico-muted-color);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--pico-muted-border-color);
+}
+
+.article-meta a {
+  color: var(--pico-muted-color);
+}
+
+.article-content {
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.article-content img {
+  max-width: 100%;
+  border-radius: 0.25rem;
+}
+
+.article-content img.float-right {
+  float: right;
+  margin: 0.25rem 0 1.25rem 2rem;
+  max-width: 38%;
+  border-radius: 0.5rem;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 600px) {
+  .article-content img.float-right {
+    float: none;
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+/* ============================================================
+   Partage et Discord
+   ============================================================ */
+.share-links {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--pico-muted-border-color);
+  font-size: 0.875rem;
+  color: var(--pico-muted-color);
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.share-links a {
+  margin-right: 1.25rem;
+  color: var(--pico-primary);
+}
+
+.discord-cta {
+  margin-top: 1.5rem;
+  padding: 0.875rem 1.25rem;
+  background: rgba(221, 194, 165, 0.18);
+  border-left: 3px solid #a44a3f;
+  border-radius: 0 var(--pico-border-radius) var(--pico-border-radius) 0;
+  font-size: 0.9rem;
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+/* ============================================================
+   Newsletter Sender.net
+   ============================================================ */
+.newsletter-widget {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--pico-muted-border-color);
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+/* ============================================================
+   Navigation article précédent / suivant
+   ============================================================ */
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--pico-muted-border-color);
+  font-size: 0.875rem;
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.article-nav a {
+  color: var(--pico-primary);
+}
+
+/* ============================================================
+   Page d'accueil – contenu riche avec images flottantes
+   ============================================================ */
+.page-content {
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.page-content img {
+  max-width: 100%;
+  border-radius: 0.375rem;
+}
+
+.page-content img.float-right {
+  float: right;
+  margin: 0.25rem 0 1.25rem 2rem;
+  max-width: 38%;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .page-content img.float-right {
+    float: none;
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+/* ============================================================
+   Responsive nav – très petits écrans
+   ============================================================ */
+@media (max-width: 480px) {
+  body > header > nav > ul:last-child {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  body > header > nav > ul:last-child li a {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.5rem;
+  }
+}

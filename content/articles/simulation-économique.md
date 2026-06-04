@@ -7,7 +7,7 @@ Lang: fr
 Author: Gus
 Summary: Tous nos maux viendraient-ils de l'humain "défectueux" ? Je n'y crois pas. Faisons quelques simulations pour vérifier plutôt où nous mène en fait systématiquement une économie capitaliste.
 Status: published
-Custom_scripts: matter.min.js, simulation-économique.js
+Custom_scripts: jquery-3.7.1.js, matter.min.js, simulation-économique.js
 Featured_image: images/petites-simulations-economiques-min.jpg
 
 > Le capitalisme est un jeu de dés : si vous avez de la chance ou que vous trichez, vous gagnez ; si vous êtes intègre et malchanceux, vous perdez.
