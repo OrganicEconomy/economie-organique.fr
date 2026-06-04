@@ -31,9 +31,7 @@ SOCIAL = (
     ("Another social link", "#"),
 )
 
-PLUGINS = ['share_post']
-
-SHARE_LINKS = [ ('twitter', 'Twitter'), ('facebook', 'Facebook'), ('email', 'Email') ]
+PLUGINS = []
 
 DEFAULT_PAGINATION = 10
 

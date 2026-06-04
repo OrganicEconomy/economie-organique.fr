@@ -17,7 +17,7 @@
   <header>
     <nav>
       <ul>
-        <li><a href="{{ SITEURL }}/" id="site-title">{{ SITENAME }}</a></li>
+        <li><a href="{{ SITEURL }}/" id="site-logo" aria-label="Économie Organique — Accueil"><img src="{{ SITEURL }}/images/E.png" alt="" class="logo-letter">C<img src="{{ SITEURL }}/images/O.png" alt="" class="logo-letter">NOMIE <img src="{{ SITEURL }}/images/O.png" alt="" class="logo-letter">RGANIQUE</a></li>
       </ul>
       <ul>
         {% for p in pages|sort(attribute='title') %}
@@ -33,8 +33,8 @@
 
   <footer>
     <small>
-      Propulsé par <a href="https://getpelican.com/" target="_blank" rel="noopener noreferrer">Pelican</a>
-      · <a href="https://x.com/HommesPropres" target="_blank" rel="noopener noreferrer">@HommesPropres sur X</a>
+      Site fait avec <a href="https://getpelican.com/" target="_blank" rel="noopener noreferrer">Pelican</a>
+      · <a href="https://www.instagram.com/gus_economie_organique/" target="_blank" rel="noopener noreferrer">@gus_economie_organique sur Instagram</a>
       · <a href="{{ SITEURL }}/contact.html">Contact</a>
     </small>
   </footer>

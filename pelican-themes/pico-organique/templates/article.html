@@ -39,15 +39,6 @@
     {{ article.content }}
   </div>
 
-  {% if article.share_post and article.status != 'draft' %}
-  <div class="share-links">
-    Partager :
-    <a href="{{ article.share_post['twitter'] }}" target="_blank" rel="nofollow noopener noreferrer">Twitter&nbsp;/&nbsp;X</a>
-    <a href="{{ article.share_post['facebook'] }}" target="_blank" rel="nofollow noopener noreferrer">Facebook</a>
-    <a href="{{ article.share_post['email'] }}" target="_blank" rel="nofollow noopener noreferrer">E-mail</a>
-  </div>
-  {% endif %}
-
   <div class="discord-cta">
     Pour réagir à cet article, rendez-vous sur
     {% if article.discord_link %}
