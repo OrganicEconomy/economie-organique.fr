@@ -31,3 +31,10 @@ pelican --autoreload --listen
 ```
 
 now you can see the site on 127.0.0.1:8000
+
+## Windows
+
+Under windows, I do :
+```
+python3 -m pelican --autoreload --listen
+```
