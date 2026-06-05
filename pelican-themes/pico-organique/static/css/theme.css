@@ -707,10 +707,33 @@ body.is-home > main {
 
 .home-block {
   padding: 5rem 2rem;
+  margin: 0;
 }
 
 .home-block--alt {
   background-color: #f3ece3;
+}
+
+.home-block--dark {
+  background-color: #152d37;
+}
+
+.home-block--dark .home-block__text h2 {
+  color: #ddc2a5;
+}
+
+.home-block--dark .home-block__text p {
+  color: rgba(250, 247, 243, 0.85);
+}
+
+.home-block--dark .home-block__text strong {
+  background-image: none;
+  font-weight: 600;
+  color: #faf7f3;
+}
+
+.home-block--flush-top {
+  padding-top: 0;
 }
 
 .home-block__inner {
@@ -726,6 +749,22 @@ body.is-home > main {
   width: 100%;
   aspect-ratio: 5 / 4;
   border-radius: 0.5rem;
+}
+
+.home-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  outline: none;
+}
+
+.home-img--blend {
+  mix-blend-mode: multiply;
+}
+
+.home-block__image--top {
+  align-self: start;
 }
 
 .home-placeholder--sand  { background: linear-gradient(135deg, #ddc2a5 0%, #c9a882 100%); }
