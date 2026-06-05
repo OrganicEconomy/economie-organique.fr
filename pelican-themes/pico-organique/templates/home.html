@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ SITENAME|striptags|e }}{% endblock %}
+
+{% block meta %}
+<meta name="description" content="L'économie organique : une proposition concrète et positive pour un système économique plus juste.">
+<meta property="og:title" content="{{ SITENAME|striptags|e }}">
+<meta property="og:url" content="{{ SITEURL }}/">
+<meta property="og:site_name" content="{{ SITENAME|striptags|e }}">
+<meta property="og:type" content="website">
+{% endblock %}
+
+{% block body_class %} class="is-home"{% endblock %}
+
+{% block content %}
+
+<section class="home-block">
+  <div class="home-block__inner">
+    <div class="home-block__image">
+      <div class="home-placeholder home-placeholder--sand" role="img" aria-label="Image à venir"></div>
+    </div>
+    <div class="home-block__text">
+      <h2>Et si l'économie pouvait fonctionner pour tout le monde&nbsp;?</h2>
+      <p>L'économie organique, c'est une proposition simple et concrète&nbsp;: repenser la création monétaire pour qu'elle serve les individus directement, sans dette ni inflation incontrôlée.</p>
+      <p>Pas d'utopie&nbsp;— une mécanique claire, juste, et qui tient la route. <strong>La solution existe.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="home-block home-block--alt">
+  <div class="home-block__inner home-block__inner--reverse">
+    <div class="home-block__text">
+      <h2>Comprendre le principe en quelques minutes</h2>
+      <p>Comment cette économie fonctionnerait-elle concrètement&nbsp;? Qui crée la monnaie&nbsp;? Comment sont rémunérés les individus, les entreprises, les services publics&nbsp;?</p>
+      <p>Les réponses sont accessibles, logiques, et elles tiennent la route.</p>
+      <a href="{{ SITEURL }}/en-savoir-plus.html" class="home-btn">Découvrir l'économie organique →</a>
+    </div>
+    <div class="home-block__image">
+      <div class="home-placeholder home-placeholder--olive" role="img" aria-label="Image à venir"></div>
+    </div>
+  </div>
+</section>
+
+<section class="home-block">
+  <div class="home-block__inner">
+    <div class="home-block__image">
+      <div class="home-placeholder home-placeholder--night" role="img" aria-label="Image à venir"></div>
+    </div>
+    <div class="home-block__text">
+      <h2>Le livret à télécharger</h2>
+      <p>Retrouve les bases de l'économie organique dans un format compact et clair. Pour le lire tranquillement, le relire, ou l'expliquer à quelqu'un qui se pose les mêmes questions.</p>
+      <a href="{{ SITEURL }}/downloads/livret-economie-organique.pdf" class="home-btn home-btn--outline" download>Télécharger le livret ↓</a>
+    </div>
+  </div>
+</section>
+
+{% if articles %}
+<section class="home-articles">
+  <div class="home-articles__inner">
+    <h2>Derniers articles</h2>
+    <div class="articles-grid">
+      {% for article in articles[:3] %}
+      <a href="{{ SITEURL }}/{{ article.url }}" class="article-card article-card--home" rel="bookmark">
+        {% if article.featured_image %}
+        <img src="{{ SITEURL }}/{{ article.featured_image }}" alt="{{ article.title|striptags }}" class="article-card-img" loading="lazy">
+        {% else %}
+        <div class="article-card-img-placeholder" aria-hidden="true"></div>
+        {% endif %}
+        <div class="article-card-body">
+          <h3>{{ article.title }}</h3>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="home-articles__more"><a href="{{ SITEURL }}/blog.html" class="home-btn">Tous les articles →</a></p>
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}

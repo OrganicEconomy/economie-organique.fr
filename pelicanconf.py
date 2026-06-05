@@ -1,5 +1,5 @@
-AUTHOR = 'Suipotryot'
-SITENAME = "L'économie organique"
+﻿AUTHOR = 'Suipotryot'
+SITENAME = "L'Ã©conomie organique"
 SITEURL = ""
 
 PATH = "content"
@@ -35,7 +35,8 @@ PLUGINS = []
 
 DEFAULT_PAGINATION = 10
 
-STATIC_PATHS = ['images', 'scripts', 'css']
+STATIC_PATHS = ['images', 'scripts', 'css', 'downloads']
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
+

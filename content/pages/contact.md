@@ -13,40 +13,45 @@ Elle n'est pas écrite directement pour éviter les spams et avoir moins de trav
 Et puis ça fait de ce contact une démarche réelle qui nécessite un (tout) petit effort.
 J'aime le principe.
 
-Sinon, tu peux aller sur les réseaux
+Sinon, tu peux aller sur les réseaux:
+
+<div class="social-links">
+  <a href="https://www.instagram.com/gus_economie_organique/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg> @gus_economie_organique</a>
+  <a href="https://www.youtube.com/@gus_economie_organique" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg> @gus_economie_organique</a>
+  <a href="https://www.tiktok.com/@gus_economie_organique" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg> @gus_economie_organique</a>
+</div>
 
 # Qui suis-je ?
 
 Au fait, moi c'est Gus !
-Je vais vous parler un peu de moi, pour que vous compreniez comment je peux proposer un nouveau système économique sans être économiste.
+Je vais te parler un peu de moi, pour que tu comprennes comment je peux proposer un nouveau système économique sans être économiste.
 
-D'ailleurs, sans vouloir spoiler, je suis convaincu qu'une proposition telle que l'économie organique ne pourrait émerger d'un cerveau d'économiste, naturellement contraint par sa formation.
+D'ailleurs je suis convaincu que cette proposition ne pouvait pas émerger d'un cerveau d'économiste, naturellement contraint par sa formation.
 
 # L'informatique
 
-J'ai fait quelques détours dans mes études : j'avais le luxe de pouvoir hésiter.
-Mais surtout parce qu'en pratique, tout me plait !
-J'ai toujours été impressionné par ces gens qui s'énamourachent d'un sujet bien précis et en deviennent une éminence à leur niveau sans jamais voir faillir leur passion.
+J'ai fait quelques détours dans mes études notamment parce que j'avais le luxe de pouvoir hésiter.
+Mais surtout parce qu'*en pratique, tout me plait* !
+J'ai toujours été impressionné par ces gens qui s'énamourachent d'un sujet bien précis et en deviennent une éminence sans jamais voir faillir leur passion.
 C'est quelque chose qui m'épate car j'en suis incapable.
 
-Ainsi, si je devais me résumer en une phrase : je suis cinquième en tout.
+Ainsi, si je devais me résumer en une phrase : je suis cinquième en presque tout.
 Jamais premier, mais jamais trop mauvais non plus.
 J'ai longtemps vécu ça comme un handicap puis, finalement, comme une force.
 
 Bref, après tours et détours, je part dans le monde (pas si) mystérieux des ordinateurs.
 
-J'avais du retard : entrer directement en 3ème année, par le biais des équivalences, ça vous met un train dans la vue.
-J'ai donc bossé puis suis arrivé deuxième de promo (comme toujours, la première place ne me sied guère).
+J'avais du retard en entrant directement en 3ème année (par le biais des équivalences), donc j'ai bossé comme un fou et suis arrivé deuxième de promo (comme toujours, la première place ne me sied guère).
 
 Puis je suis entré dans le monde du travail en tant que développeur.
-Dans ce domaine en tension, j'avais le choix des entreprises, alors j'ai bougé un peu pour trouver ce qui m'allait le mieux et je me suis retrouvé au pôle informatique de Norauto.
+Dans ce domaine en tension, j'avais le choix des entreprises, alors j'ai bougé un peu pour trouver ce qui m'allait le mieux et je me suis retrouvé au pôle informatique d'une entreprise internationale.
 
 # Le goût du jeu
 
-C'est super facile de se passionner pour les métiers de l'informatiques : on gagne (très) bien sa vie, on a des horaires de bureau, l'ambiance est (généralement) joviale et puis ce n'est pas un boulot trop physique, sauf quand il y a une table de ping pong.
+*C'est super facile de se passionner pour les métiers de l'informatiques* : on gagne (très) bien sa vie, on a des horaires de bureau, l'ambiance est (généralement) joviale et puis ce n'est pas un boulot trop physique, sauf quand il y a une table de ping pong.
 Donc, quand on est jeune, on y va à fond.
 
-Puis, comme beaucoup d'informaticiens, je me suis rendu compte d'une réalité qui est difficle à croire et/ou à accepter :
+Puis, comme beaucoup d'informaticiens, je me suis rendu compte d'une réalité qui est difficle à accepter :
 
 **L'informatique n'est qu'un jouet**.
 
@@ -60,7 +65,7 @@ Mais à partir du moment où ça devient pregnant voir bloquant dans tous les pa
 
 J'ai donc décidé, en transition tranquiloute, de commencer à faire de l'écologie.
 
-Alors, avec le recul, je vous en parle comme si c'était une suite logique, mais dans la réalité, à ce moment là, je faisais de l'écologie pour les mauvaises raisons.
+Alors, avec le recul, je t'en parle comme si c'était une suite logique, mais dans la réalité, à ce moment là, je faisais de l'écologie pour les mauvaises raisons.
 
 # La mauvaise écologie
 
@@ -76,12 +81,12 @@ La peur ne crée pas de liens, mais au contraire les défait.
 Bref, l'écologie, c'est souvent de la peur ; et la peur, c'est pas fait pour avoir une vision long terme de ce qui nous arrive.
 
 Je dis tout ça aujourd'hui, mais je n'avais pas le même discours à l'époque.
-Car, voyez-vous : à 25 ans, on pense qu'on a tout compris ; à 30 ans, on *sais* qu'on n'a rien compris ; et à 35 ans, on réalise finalement qu'en fait personne ne comprend rien.
+Car, vois-tu : à 25 ans, on pense qu'on a tout compris ; à 30 ans, on *sais* qu'on n'a rien compris ; et à 35 ans, on réalise finalement qu'en fait personne ne comprend rien.
 
 Ainsi, à l'époque ai-je parlé, avec mon acolyte, des petits gestes dits "écologiques" qui permettaient de limiter son impact sur l'environnement tout en faisant de substantielles économies.
 
 En même temps, professionnellement, j'avais suivi les conseils des bouquins à la mode à ce moment-là.
-Vous savez, tous ceux sui disaient "trouvez votre job de sens".
+Tous ceux qui disaient "trouvez votre job de sens".
 J'ai donc lentement migré de l'informatique vers la communication pour le développement durable.
 
 Quelle tâche !
@@ -102,7 +107,7 @@ Petit à petit, je réalise que tous les défauts de nos sociétés sont inhéra
 Voilà mon nouveau combat.
 
 J'ai compulsé le travail de Bernard Friot, en pensant que c'était la solution que j'attendais.
-Et je peux vous dire qu'il faut être motivé, car la manière d'écrire de ce grand bonhomme est très "académique", c'est-à-dire qu'une phrase peut durer une ou deux pages entière, pas de problème !
+Et je peux te dire qu'il faut être motivé, car la manière d'écrire de ce grand bonhomme est très "académique", c'est-à-dire qu'une phrase peut durer une ou deux pages entière, pas de problème !
 Mais quelque chose me chifonne tout de même.
 Une sorte d'incomplétude et, surtout, une impossibilité de mise en pratique.
 Alors je lis et je réfléchis.
@@ -155,7 +160,7 @@ Je me construit doucement une pensée plus profonde, approche des évènement ba
 
 Je suis certainement encore loin du compte, mais j'ai déjà la sensation d'être dans le vrai, du moins pas dans le flou.
 
-Et donc me voilà aujourd'hui, sur ce site internet, pour vous parler de l'économie organique.
+Et donc me voilà aujourd'hui, sur ce site internet, pour te parler de l'économie organique.
 Car je pense bel et bien qu'elle est le seul chemin possible vers un monde plus joyeux, plus écologique et plus juste.
 
 En tout cas, j'ai cherché mais n'ai rien trouvé mieux.
