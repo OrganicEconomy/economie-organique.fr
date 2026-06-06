@@ -1,5 +1,5 @@
 ﻿AUTHOR = 'Suipotryot'
-SITENAME = "L'Ã©conomie organique"
+SITENAME = "Économie organique"
 SITEURL = ""
 
 PATH = "content"

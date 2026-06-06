@@ -11,6 +11,7 @@
   {% else %}<meta name="author" content="{{ AUTHOR }}">{% endif %}
   {% block meta %}{% endblock %}
   <title>{% block title %}{{ SITENAME|striptags|e }}{% endblock %}</title>
+  <link rel="icon" type="image/png" href="{{ SITEURL }}/images/O.png">
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pico.min.css">
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/theme.css">
   {% if page and page.custom_css %}{% set cssLinks = page.custom_css.split(', ') %}{% elif article and article.custom_css %}{% set cssLinks = article.custom_css.split(', ') %}{% else %}{% set cssLinks = [] %}{% endif %}
@@ -32,9 +33,9 @@
     </nav>
 
     <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
-      <a href="{{ SITEURL }}/en-savoir-plus.html">En savoir plus</a>
-      <a href="{{ SITEURL }}/blog.html">Blog</a>
-      <a href="{{ SITEURL }}/contact.html">Contact</a>
+      <a href="{{ SITEURL }}/pages/en-savoir-plus.html">En savoir plus</a>
+      <a href="{{ SITEURL }}/pages/blog.html">Blog</a>
+      <a href="{{ SITEURL }}/pages/contact.html">Contact</a>
       <div class="nav-mobile-social">{{ social_icons(22) }}</div>
     </div>
   </header>
@@ -47,9 +48,9 @@
     <div class="footer-inner">
       <nav class="footer-links">
         <a href="{{ SITEURL }}/">Accueil</a>
-        <a href="{{ SITEURL }}/en-savoir-plus.html">En savoir plus</a>
-        <a href="{{ SITEURL }}/blog.html">Blog</a>
-        <a href="{{ SITEURL }}/contact.html">Contact</a>
+        <a href="{{ SITEURL }}/pages/en-savoir-plus.html">En savoir plus</a>
+        <a href="{{ SITEURL }}/pages/blog.html">Blog</a>
+        <a href="{{ SITEURL }}/pages/contact.html">Contact</a>
       </nav>
       <div class="footer-social">{{ social_icons(22) }}</div>
       <small>Site fait avec <a href="https://getpelican.com/" target="_blank" rel="noopener noreferrer">Pelican</a></small>

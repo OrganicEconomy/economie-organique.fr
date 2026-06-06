@@ -8,6 +8,7 @@ Lang: fr
 Author: Gus
 Summary: Vous connaissez l'usure ? Le prêt avec intérêt ? Et bien ce poison de l'économie disparait en monnaie organique.
 Status: published
+Featured_image: images/engrenages.png
 
 C'est les vacances, le froid est là et nous mord les joues de son vent polaire.
 Quand le poêle chauffe et que la neige tombe, le face à face des extrêmes températures nous réconforte.

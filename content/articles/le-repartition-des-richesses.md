@@ -8,7 +8,7 @@ Lang: fr
 Author: Gus
 Summary: La répartition des richesses dans notre bon vieux capitalisme est une catastrophe. Comparons à celle-ci les extrêmes de l'économie organique.
 Status: published
-Featured_image: images/evolution-salaire-elon-musk.png
+Featured_image: images/croissance-monnaie.png
 
 Connaissez-vous la version capitaliste de la répartition des richesses ?
 Bien sûr, parce que vous vivez dedans et que vous avez déjà sûrement largement constaté que l’argent est mal distribué.

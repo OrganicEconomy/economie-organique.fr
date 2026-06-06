@@ -30,7 +30,6 @@
         {% if article.summary %}
         <p>{{ article.summary|striptags|truncate(120) }}</p>
         {% endif %}
-        <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
       </div>
     </a>
     {% endif %}

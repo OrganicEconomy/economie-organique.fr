@@ -17,12 +17,16 @@
 <section class="home-block home-block--flush-top home-block--dark">
   <div class="home-block__inner">
     <div class="home-block__image home-block__image--top">
-      <img src="{{ SITEURL }}/images/racines.png" alt="Racines" class="home-img home-img--blend">
+      <img src="{{ SITEURL }}/images/racines-blanc.png" alt="Racines" class="home-img">
     </div>
     <div class="home-block__text">
-      <h2>Et si l'économie pouvait fonctionner pour tout le monde&nbsp;?</h2>
-      <p>L'économie organique, c'est une proposition simple et concrète&nbsp;: repenser la création monétaire pour qu'elle serve les individus directement, sans dette ni inflation incontrôlée.</p>
-      <p>Pas d'utopie&nbsp;— une mécanique claire, juste, et qui tient la route. <strong>La solution existe.</strong></p>
+      <h2>Agir sur l'origine des maux</h2>
+      <p>L'économie organique ne se focalise pas sur un problème de société, mais <strong>elle les résoud tous en même temps</strong>.</p>
+      <p>Pollutions, destructions du vivant, guerres, inégalités, pauvreté, inflation, etc.</p>
+      <p>Comment ? Et bien plutôt que d'agir sur les symptômes du capitalisme, elle le transforme à sa base pour le quitter en
+        douceur.</p>
+      <p>Pas une utopie&nbsp;— une mécanique claire, simple et qui, pourtant, transforme le monde pour le meilleur. </p>
+      <p><strong>La solution pour profondément et durablement changer le monde.</strong></p>
     </div>
   </div>
 </section>
@@ -31,9 +35,9 @@
   <div class="home-block__inner home-block__inner--reverse">
     <div class="home-block__text">
       <h2>Comprendre le principe en quelques minutes</h2>
-      <p>Comment cette économie fonctionnerait-elle concrètement&nbsp;? Qui crée la monnaie&nbsp;? Comment sont rémunérés les individus, les entreprises, les services publics&nbsp;?</p>
-      <p>Les réponses sont accessibles, logiques, et elles tiennent la route.</p>
-      <a href="{{ SITEURL }}/en-savoir-plus.html" class="home-btn">Découvrir l'économie organique →</a>
+      <p>Comment cette économie fonctionne-t-elle concrètement&nbsp;? Quelle forme prend la monnaie&nbsp;? D'où vient-elle&nbsp;? Qui la crée&nbsp;? Comment fonctionnent les entreprises&nbsp;? </p>
+      <p>Tant de questions qui trouveront des réponses dans ce <strong>résumé de 5 minutes</strong>.</p>
+      <a href="{{ SITEURL }}/pages/en-savoir-plus.html" class="home-btn">Découvrir l'économie organique →</a>
     </div>
     <div class="home-block__image home-block__image--top">
       <img src="{{ SITEURL }}/images/montre-gousset.jpg" alt="Montre gousset" class="home-img home-img--blend">
@@ -47,9 +51,11 @@
       <img src="{{ SITEURL }}/images/livre.png" alt="Livret économie organique" class="home-img home-img--blend">
     </div>
     <div class="home-block__text">
-      <h2>Le livret à télécharger</h2>
-      <p>Retrouve les bases de l'économie organique dans un format compact et clair. Pour le lire tranquillement, le relire, ou l'expliquer à quelqu'un qui se pose les mêmes questions.</p>
-      <a href="{{ SITEURL }}/downloads/livret-economie-organique.pdf" class="home-btn" download>Télécharger le livret ↓</a>
+      <h2>Télécharge le livret</h2>
+      <p>Retrouve les bases de l'économie organique dans un format compact et clair. Pour le lire, le relire ou l'expliquer à quelqu'un qui se pose les mêmes questions.</p>
+      <div class="newsletter-widget">
+        <div class="sender-form-field" data-sender-form-id="m69gy7psaad1g9bcvba"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -57,7 +63,7 @@
 {% if articles %}
 <section class="home-articles">
   <div class="home-articles__inner">
-    <h2>Derniers articles</h2>
+    <h2>Derniers articles du blog</h2>
     <div class="articles-grid">
       {% for article in articles[:3] %}
       <a href="{{ SITEURL }}/{{ article.url }}" class="article-card article-card--home" rel="bookmark">
