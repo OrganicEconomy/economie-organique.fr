@@ -35,7 +35,15 @@ PLUGINS = []
 
 DEFAULT_PAGINATION = 10
 
-STATIC_PATHS = ['images', 'scripts', 'css', 'downloads']
+STATIC_PATHS = ['images', 'scripts', 'css', 'downloads', 'app']
+
+# Pelican's content reader scans every .html file under content/ looking for
+# an article/page (metadata in a <meta> tag) — including the built webapp's
+# own index.html in content/app/, which has none and gets skipped, silently
+# dropping it from the static copy. No hand-authored .html content exists on
+# this site (everything else is Markdown), so disabling the HTML reader
+# entirely is safe and leaves STATIC_PATHS' plain file copying unaffected.
+READERS = {'html': None}
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
