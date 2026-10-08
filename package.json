@@ -1,0 +1,8 @@
+{
+  "name": "economie-organique.fr",
+  "private": true,
+  "scripts": {
+    "buildSite": "node tools/build-site.mjs",
+    "pushToGithub": "node tools/push-to-github.mjs"
+  }
+}
